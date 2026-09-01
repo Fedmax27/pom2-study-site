@@ -1,15 +1,15 @@
 /*
  * Local exam engine. Draws a randomized 30-question set from a larger
  * per-objective bank (window.EXAM_DATA), covering every objective, mixing
- * multiple-choice and free-text questions. No API key, no network calls.
+ * multiple-choice and fill-in-the-blank questions. No API key, no network
+ * calls.
  *
- * Free-text answers are graded by a local concept-matching heuristic
- * (gradeFreeText), NOT true semantic understanding — it checks whether the
- * answer mentions enough of the expected key concepts, so exact wording
- * doesn't matter but the grading is approximate. To upgrade to real AI
- * question generation + grading, replace buildExamSet() and gradeFreeText()
- * with calls to your own backend (never call an LLM provider directly from
- * client-side JS with a secret key).
+ * Fill-in-the-blank answers are graded by a local match against a short
+ * list of accepted answers (gradeBlank) — the typed answer just needs to
+ * contain one of them, so minor wording/pluralization doesn't matter but
+ * the grading isn't true semantic understanding. The correct answer is
+ * revealed immediately after each question, and a running score tracker
+ * at the top of the exam updates as you go.
  */
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("exam-root");
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const retakeBtn = document.getElementById("exam-retake-btn");
   const nextBtn = document.getElementById("exam-next-btn");
 
+  const scoreTrackerValue = document.getElementById("exam-score-tracker-value");
   const progressFill = document.getElementById("exam-progress-fill");
   const progressLabel = document.getElementById("exam-progress-label");
   const questionTag = document.getElementById("exam-question-tag");
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let examSet = [];
   let currentIndex = 0;
   let currentAnswer = null;
+  let answered = false;
 
   function shuffle(arr) {
     const copy = arr.slice();
@@ -84,12 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return str.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
   }
 
-  function gradeFreeText(answer, q) {
+  function gradeBlank(answer, q) {
     const normalized = normalize(answer);
-    const matched = q.keyPoints.filter((group) =>
-      group.some((term) => normalized.includes(term.toLowerCase()))
-    ).length;
-    return matched >= q.minKeyPoints;
+    if (!normalized) return false;
+    return q.answers.some((accepted) => normalized.includes(normalize(accepted)));
   }
 
   function showScreen(screen) {
@@ -98,20 +98,34 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsEl.hidden = screen !== "results";
   }
 
+  function updateScoreTracker() {
+    const answeredSoFar = examSet.slice(0, currentIndex).filter((q) => q.isCorrect !== undefined);
+    const correctSoFar = answeredSoFar.filter((q) => q.isCorrect).length;
+    const currentGraded = examSet[currentIndex] && examSet[currentIndex].isCorrect !== undefined;
+    const total = answeredSoFar.length + (currentGraded ? 1 : 0);
+    const correct = correctSoFar + (currentGraded && examSet[currentIndex].isCorrect ? 1 : 0);
+    scoreTrackerValue.textContent = `${correct}/${total}`;
+  }
+
   function renderQuestion() {
     const q = examSet[currentIndex];
     currentAnswer = null;
+    answered = false;
     nextBtn.disabled = true;
     nextBtn.textContent = currentIndex === examSet.length - 1 ? "Finish Exam" : "Next";
 
     progressFill.style.width = `${(currentIndex / examSet.length) * 100}%`;
     progressLabel.textContent = `Question ${currentIndex + 1} of ${examSet.length}`;
+    updateScoreTracker();
 
     const obj = data.objectives.find((o) => o.id === q.objective);
     questionTag.textContent = obj ? obj.label : "";
-    questionText.textContent = q.question;
+    questionText.textContent = q.type === "blank" ? q.prompt : q.question;
 
     answerArea.innerHTML = "";
+
+    const feedback = document.createElement("div");
+    feedback.className = "exam-answer-feedback";
 
     if (q.type === "mcq") {
       const wrap = document.createElement("div");
@@ -122,41 +136,83 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.className = "exam-option";
         btn.textContent = optionText;
         btn.addEventListener("click", () => {
-          wrap.querySelectorAll(".exam-option").forEach((b) => b.classList.remove("is-selected"));
-          btn.classList.add("is-selected");
+          if (answered) return;
           currentAnswer = optionText;
-          nextBtn.disabled = false;
+          checkAnswer(wrap, feedback);
         });
         wrap.appendChild(btn);
       });
       answerArea.appendChild(wrap);
+      answerArea.appendChild(feedback);
     } else {
-      const textarea = document.createElement("textarea");
-      textarea.className = "exam-text-input";
-      textarea.placeholder = "Type your answer — exact wording doesn't matter.";
-      textarea.addEventListener("input", () => {
-        currentAnswer = textarea.value;
-        nextBtn.disabled = textarea.value.trim().length === 0;
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "exam-blank-input";
+      input.placeholder = "Type the missing word or phrase…";
+      input.autocomplete = "off";
+      input.addEventListener("input", () => {
+        currentAnswer = input.value;
       });
-      answerArea.appendChild(textarea);
-      const hint = document.createElement("div");
-      hint.className = "exam-answer-feedback";
-      hint.textContent = "Short-answer questions are graded on key concepts, not exact phrasing.";
-      answerArea.appendChild(hint);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !answered && input.value.trim().length > 0) {
+          e.preventDefault();
+          checkAnswer(null, feedback, input, checkBtn);
+        }
+      });
+      answerArea.appendChild(input);
+
+      const checkBtn = document.createElement("button");
+      checkBtn.type = "button";
+      checkBtn.className = "exam-check-btn";
+      checkBtn.textContent = "Check Answer";
+      checkBtn.addEventListener("click", () => checkAnswer(null, feedback, input, checkBtn));
+      answerArea.appendChild(checkBtn);
+
+      answerArea.appendChild(feedback);
     }
   }
 
-  function recordAndAdvance() {
+  function checkAnswer(optionsWrap, feedback, blankInput, checkBtn) {
+    if (answered) return;
     const q = examSet[currentIndex];
+
+    if (blankInput && blankInput.value.trim().length === 0) return;
+
     let isCorrect;
+    let correctText;
     if (q.type === "mcq") {
-      isCorrect = currentAnswer === q.options[q.correctIndex];
+      correctText = q.options[q.correctIndex];
+      isCorrect = currentAnswer === correctText;
+      optionsWrap.querySelectorAll(".exam-option").forEach((btn) => {
+        btn.disabled = true;
+        if (btn.textContent === currentAnswer) btn.classList.add("is-selected");
+        if (btn.textContent === correctText) btn.classList.add("correct");
+        else if (btn.textContent === currentAnswer) btn.classList.add("incorrect");
+      });
     } else {
-      isCorrect = gradeFreeText(currentAnswer || "", q);
+      correctText = q.answers[0];
+      isCorrect = gradeBlank(currentAnswer || "", q);
+      blankInput.disabled = true;
+      blankInput.classList.add(isCorrect ? "correct" : "incorrect");
+      if (checkBtn) checkBtn.disabled = true;
     }
+
     q.userAnswer = currentAnswer;
     q.isCorrect = isCorrect;
+    answered = true;
 
+    feedback.textContent = isCorrect
+      ? "Correct!"
+      : q.type === "mcq"
+        ? "Not quite — the correct answer is highlighted above."
+        : `Not quite — the correct answer is: ${correctText}`;
+    feedback.classList.add(isCorrect ? "correct" : "incorrect");
+
+    updateScoreTracker();
+    nextBtn.disabled = false;
+  }
+
+  function recordAndAdvance() {
     if (currentIndex < examSet.length - 1) {
       currentIndex++;
       renderQuestion();

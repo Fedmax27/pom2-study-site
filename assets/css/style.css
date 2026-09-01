@@ -778,6 +778,25 @@ main {
   background: var(--color-primary-dark);
 }
 
+.exam-score-tracker {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.exam-score-tracker span {
+  color: var(--color-primary);
+}
+
 .exam-progress-label {
   display: flex;
   justify-content: space-between;
@@ -854,20 +873,67 @@ main {
   font-weight: 600;
 }
 
-.exam-text-input {
+.exam-option.correct {
+  border-color: var(--color-success);
+  background: rgba(42, 157, 92, 0.12);
+  font-weight: 600;
+}
+
+.exam-option.incorrect {
+  border-color: var(--color-accent);
+  background: rgba(230, 57, 70, 0.1);
+}
+
+.exam-option:disabled {
+  cursor: default;
+}
+
+.exam-blank-input {
   width: 100%;
-  min-height: 90px;
   padding: 0.65rem 0.85rem;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   font-family: inherit;
   font-size: 0.95rem;
-  resize: vertical;
 }
 
-.exam-text-input:focus {
+.exam-blank-input:focus {
   outline: none;
   border-color: var(--color-primary);
+}
+
+.exam-blank-input.correct {
+  border-color: var(--color-success);
+  background: rgba(42, 157, 92, 0.1);
+}
+
+.exam-blank-input.incorrect {
+  border-color: var(--color-accent);
+  background: rgba(230, 57, 70, 0.08);
+}
+
+.exam-check-btn {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  background: none;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-top: 0.65rem;
+}
+
+.exam-check-btn:hover {
+  background: rgba(13, 110, 253, 0.06);
+}
+
+.exam-check-btn:disabled {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: default;
+  background: none;
 }
 
 .exam-nav {
@@ -1019,8 +1085,18 @@ main {
 
 .exam-answer-feedback {
   font-size: 0.85rem;
+  font-weight: 600;
   color: var(--color-text-muted);
   margin-top: 0.75rem;
+  min-height: 1.2em;
+}
+
+.exam-answer-feedback.correct {
+  color: var(--color-success);
+}
+
+.exam-answer-feedback.incorrect {
+  color: var(--color-accent);
 }
 
 .toc-exam-row {
