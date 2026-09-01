@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!root || !window.EXAM_DATA) return;
 
   const data = window.EXAM_DATA;
-  const TOTAL_QUESTIONS = 30;
+  const TOTAL_QUESTIONS = data.totalQuestions || 30;
 
   const introEl = document.getElementById("exam-intro");
   const activeEl = document.getElementById("exam-active");

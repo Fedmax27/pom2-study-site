@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Unit Exam | Endocrinology | POM2</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="../../../index.html">POM<span>2</span></a>
+      <nav class="unit-nav">
+        <a class="unit-nav-item is-active" href="../../../units/endocrinology/index.html">Endocrinology</a>
+        <span class="unit-nav-item is-disabled">Female Reproductive</span>
+        <span class="unit-nav-item is-disabled">MSK</span>
+        <span class="unit-nav-item is-disabled">Neuro</span>
+        <span class="unit-nav-item is-disabled">Psych</span>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="../../../index.html">Home</a> /
+    <a href="../index.html">Endocrinology</a> /
+    Unit Exam
+  </nav>
+
+  <main>
+    <div class="exam-shell" id="exam-root">
+
+      <div id="exam-intro" class="topic-content">
+        <h1>Endocrinology Unit Exam</h1>
+        <p class="exam-meta">Endocrinology &middot; 10 questions &middot; multiple choice &amp; fill-in-the-blank</p>
+        <div class="placeholder-note">This exam is a template with a small sample question bank. Replace <code>window.EXAM_DATA</code> below with real objectives and questions covering all three weeks, and adjust <code>TOTAL_QUESTIONS</code> in <code>assets/js/exam.js</code> if you want a different exam length.</div>
+        <p>This exam draws a randomized question set every attempt from the question bank below, covering every listed objective, mixing multiple-choice and fill-in-the-blank questions. The correct answer is revealed right after you answer each question, and the score tracker at the top updates as you go.</p>
+        <button id="exam-start-btn" class="exam-start-btn">Start Exam</button>
+      </div>
+
+      <div id="exam-active" hidden>
+        <div class="exam-score-tracker" id="exam-score-tracker">Score: <span id="exam-score-tracker-value">0/0</span> correct</div>
+        <div class="exam-progress-label" id="exam-progress-label">Question 1 of 10</div>
+        <div class="exam-progress-track"><div class="exam-progress-fill" id="exam-progress-fill" style="width:0%"></div></div>
+        <div class="exam-question-card">
+          <div class="exam-question-tag" id="exam-question-tag"></div>
+          <div class="exam-question-text" id="exam-question-text"></div>
+          <div id="exam-answer-area"></div>
+        </div>
+        <div class="exam-nav">
+          <button id="exam-next-btn" class="exam-next-btn" disabled>Next</button>
+        </div>
+      </div>
+
+      <div id="exam-results" hidden>
+        <h1>Your Results</h1>
+        <div class="exam-score-summary" id="exam-score-summary"></div>
+
+        <h2>Performance by Objective</h2>
+        <div class="objective-chart">
+          <div id="objective-chart-body"></div>
+        </div>
+
+        <div class="exam-recommendations" id="exam-recommendations-body"></div>
+
+        <button id="exam-retake-btn" class="exam-retake-btn">Retake Exam</button>
+        <a href="../index.html" style="margin-left: 1rem;">Back to Endocrinology</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    POM2 &mdash; a work in progress.
+  </footer>
+
+  <script>
+    window.EXAM_DATA = {
+      objectives: [
+        { id: "o1", label: "Week 1", text: "Replace with a Week 1 objective." },
+        { id: "o2", label: "Week 2", text: "Replace with a Week 2 objective." }
+      ],
+      bank: [
+        { id: "o1q1", type: "mcq", objective: "o1", question: "Sample question 1 — replace with real content.", options: ["Wrong", "Correct", "Wrong", "Wrong"], correctIndex: 1 },
+        { id: "o1q2", type: "blank", objective: "o1", prompt: "Sample fill-in-the-blank — the missing word is ___.", answers: ["answer"] },
+        { id: "o1q3", type: "mcq", objective: "o1", question: "Sample question 3 — replace with real content.", options: ["Correct", "Wrong", "Wrong", "Wrong"], correctIndex: 0 },
+        { id: "o1q4", type: "mcq", objective: "o1", question: "Sample question 4 — replace with real content.", options: ["Wrong", "Wrong", "Correct", "Wrong"], correctIndex: 2 },
+        { id: "o1q5", type: "blank", objective: "o1", prompt: "Sample fill-in-the-blank 2 — the missing word is ___.", answers: ["sample"] },
+
+        { id: "o2q1", type: "mcq", objective: "o2", question: "Sample question 5 — replace with real content.", options: ["Wrong", "Correct", "Wrong", "Wrong"], correctIndex: 1 },
+        { id: "o2q2", type: "mcq", objective: "o2", question: "Sample question 6 — replace with real content.", options: ["Wrong", "Wrong", "Wrong", "Correct"], correctIndex: 3 },
+        { id: "o2q3", type: "blank", objective: "o2", prompt: "Sample fill-in-the-blank 3 — the missing word is ___.", answers: ["placeholder"] },
+        { id: "o2q4", type: "mcq", objective: "o2", question: "Sample question 7 — replace with real content.", options: ["Correct", "Wrong", "Wrong", "Wrong"], correctIndex: 0 },
+        { id: "o2q5", type: "mcq", objective: "o2", question: "Sample question 8 — replace with real content.", options: ["Wrong", "Wrong", "Correct", "Wrong"], correctIndex: 2 }
+      ]
+    };
+  </script>
+  <script src="../../../assets/js/exam.js"></script>
+</body>
+</html>
