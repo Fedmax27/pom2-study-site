@@ -29,8 +29,13 @@
     Pharmacology of Insulin
   </nav>
 
-  <main>
-    <article class="topic-content">
+  <main class="has-toc">
+    <div class="lecture-layout">
+      <nav class="lecture-toc" id="lecture-toc">
+        <div class="lecture-toc-title">On This Page</div>
+        <ol></ol>
+      </nav>
+      <article class="topic-content">
       <h1>Pharmacology of Insulin</h1>
 
       <section id="objectives">
@@ -62,7 +67,7 @@
         <table class="data-table">
           <thead><tr><th>Fasting state</th><th>Prandial state</th></tr></thead>
           <tbody>
-            <tr><td>Liver does gluconeogenesis via glycogenolysis, driven by fatty acids and glucagon</td><td>Liver stops breaking down glycogen and instead takes up glucose for storage</td></tr>
+            <tr><td>Liver does glycogenolysis <em>and</em> gluconeogenesis, both driven by fatty acids and glucagon</td><td>Liver stops breaking down glycogen and instead takes up glucose for storage</td></tr>
             <tr><td>Adipose tissue supplies fatty acids to fuel the process</td><td>Adipose tissue stops breaking down fat and starts storing it</td></tr>
             <tr><td>&mdash;</td><td>Gut releases <strong>incretins</strong>, which stimulate &beta;-cells to secrete insulin</td></tr>
           </tbody>
@@ -123,7 +128,7 @@
           <tbody>
             <tr><td>Lispro</td><td>Proline/lysine reversed (B chain)</td><td>10&ndash;15 min</td><td>1&ndash;2 h</td><td>3.5&ndash;6 h</td></tr>
             <tr><td>Aspart</td><td>Proline &rarr; aspartic acid</td><td>10&ndash;15 min</td><td>40 min</td><td>3&ndash;5 h</td></tr>
-            <tr><td>Glulisine</td><td>Asparagine&harr;lysine swap; zinc-free</td><td>5&ndash;15 min</td><td>1 h</td><td>3&ndash;5 h</td></tr>
+            <tr><td>Glulisine</td><td>Asparagine&rarr;lysine, and lysine&rarr;glutamic acid (two separate substitutions); zinc-free</td><td>5&ndash;15 min</td><td>1 h</td><td>3&ndash;5 h</td></tr>
             <tr><td>Fast-Acting Aspart</td><td>Aspart + nicotinamide/arginine added</td><td>~2.5 min</td><td>similar to Aspart</td><td>similar to Aspart</td></tr>
             <tr><td>Regular (human)</td><td>&mdash; (unmodified)</td><td>30&ndash;60 min</td><td>&mdash;</td><td>longer tail</td></tr>
           </tbody>
@@ -137,17 +142,6 @@
           <li><strong>Analogues aren't more effective at lowering A1C</strong> than regular insulin &mdash; they're just safer and more convenient (lower hypoglycemia risk, more flexible timing).</li>
           <li><strong>Regular insulin is preferred for IV use</strong>: it's cheaper, better characterized, and dissociation kinetics don't matter when the dose goes straight into the bloodstream.</li>
         </ul>
-
-        <div class="quiz-box" data-correct="a">
-          <div class="quiz-question">Which insulin is preferred for IV administration, and why?</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">Regular insulin &mdash; cheaper, well-characterized, and dissociation kinetics are irrelevant IV</button>
-            <button class="quiz-option" data-value="b">Lispro &mdash; fastest onset of any insulin</button>
-            <button class="quiz-option" data-value="c">Glargine &mdash; longest duration of action</button>
-            <button class="quiz-option" data-value="d">NPH &mdash; intermediate duration is ideal for IV</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
       </section>
 
       <section id="basal-insulins">
@@ -176,15 +170,6 @@
             <tr><td>75% Lispro protamine + 25% Lispro, or 70% Aspart protamine + 30% Aspart</td><td>Convenient &mdash; fewer injections/day</td><td>Less flexible; least physiologic regimen</td></tr>
           </tbody>
         </table>
-
-        <div class="quiz-box" data-correct="b">
-          <div class="quiz-question">True or false: insulin analogues (rapid or long-acting) are more effective than regular/NPH insulin at lowering A1C.</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">True</button>
-            <button class="quiz-option" data-value="b">False &mdash; they're safer and more convenient, not more effective at lowering A1C</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
       </section>
 
       <section id="adverse-effects">
@@ -225,17 +210,6 @@
             <tr><td>Mixing</td><td>Most basal insulins should <strong>not</strong> be mixed with other insulins before injection (different buffers)</td></tr>
           </tbody>
         </table>
-
-        <div class="quiz-box" data-correct="a">
-          <div class="quiz-question">Which insulin type is generally NOT used in insulin pumps?</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">Basal insulins (e.g. glargine, detemir, degludec)</button>
-            <button class="quiz-option" data-value="b">Rapid-acting analogues (e.g. lispro, aspart)</button>
-            <button class="quiz-option" data-value="c">Regular human insulin</button>
-            <button class="quiz-option" data-value="d">All insulins are equally suitable for pumps</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
       </section>
 
       <p class="topic-source">
@@ -246,13 +220,14 @@
         <a href="../t1dm-management/index.html">&larr; T1DM: Diagnosis &amp; Management</a>
         <a href="../approach-to-endocrine-disease/index.html">Next: Approach to Endocrine Disease &rarr;</a>
       </div>
-    </article>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
     POM2 &mdash; a work in progress.
   </footer>
 
-  <script src="../../../../assets/js/quiz.js"></script>
+  <script src="../../../../assets/js/toc.js"></script>
 </body>
 </html>

@@ -377,6 +377,72 @@ main {
   white-space: nowrap;
 }
 
+/* Daily Case banner (homepage) */
+
+.daily-case-banner {
+  background: #fff7ed;
+  border: 1px solid #fbd9a8;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.daily-case-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9a3412;
+  margin-bottom: 0.35rem;
+}
+
+.daily-case-banner h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.25rem;
+  color: #9a3412;
+}
+
+.daily-case-banner p {
+  margin: 0;
+  color: #9a5b34;
+  font-size: 0.92rem;
+  max-width: 46ch;
+}
+
+.daily-case-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.daily-case-start-link {
+  font-weight: 700;
+  color: #9a3412;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #fbd9a8;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+}
+
+.daily-case-start-link:hover {
+  background: #fef0dd;
+  text-decoration: none;
+}
+
+.daily-case-archive-link {
+  font-size: 0.85rem;
+  color: #9a5b34;
+  white-space: nowrap;
+}
+
 /* Topic / week content page */
 
 .topic-content {
@@ -402,6 +468,109 @@ main {
   font-size: 1.15rem;
   border-bottom: 1px solid var(--color-border);
   padding-bottom: 0.4rem;
+  padding-left: 0.65rem;
+  border-left: 4px solid var(--color-primary);
+  margin-left: -0.05rem;
+}
+
+.topic-content h3 {
+  color: var(--color-primary-dark);
+}
+
+/* Lecture table-of-contents sidebar */
+
+main.has-toc {
+  max-width: 1280px;
+}
+
+.lecture-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.lecture-layout .topic-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lecture-toc {
+  flex: 0 0 220px;
+  position: sticky;
+  top: 1.25rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+}
+
+.lecture-toc-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.lecture-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--color-border);
+}
+
+.lecture-toc li a {
+  display: block;
+  padding: 0.4rem 0 0.4rem 0.9rem;
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.lecture-toc li a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.lecture-toc li a.is-active {
+  color: var(--color-primary-dark);
+  border-left-color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .lecture-layout {
+    display: block;
+  }
+
+  .lecture-toc {
+    position: static;
+    max-height: none;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lecture-toc ol {
+    border-left: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .lecture-toc li a {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    margin-left: 0;
+  }
+
+  .lecture-toc li a.is-active {
+    border-color: var(--color-primary);
+    background: rgba(109, 40, 217, 0.08);
+  }
 }
 
 .objectives-list, .key-points-list {
@@ -500,6 +669,7 @@ main {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: #fff;
+  box-shadow: 0 2px 10px rgba(32, 26, 52, 0.06);
 }
 
 .topic-figure figcaption {
@@ -601,6 +771,14 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--color-text-muted);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: rgba(109, 40, 217, 0.035);
+}
+
+.data-table tbody tr:hover {
+  background: rgba(109, 40, 217, 0.08);
 }
 
 /* AI tutor widget */
@@ -1326,4 +1504,642 @@ main {
 
 .exam-answer-feedback.incorrect {
   color: var(--color-accent);
+}
+
+/* Daily Case slideshow */
+
+.slideshow-shell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.slideshow-head {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.slideshow-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9a3412;
+  background: #fff7ed;
+  border: 1px solid #fbd9a8;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+
+.slide-progress-track {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.9rem 0 0.5rem;
+}
+
+.slide-progress-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.slide-counter {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.slideshow {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.5rem;
+  min-height: 380px;
+}
+
+.slide {
+  display: none;
+  animation: slide-in 0.2s ease;
+}
+
+.slide.is-active {
+  display: block;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+  background: rgba(109, 40, 217, 0.08);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.slide-tag.is-knowledge {
+  color: #9a3412;
+  background: #fff7ed;
+}
+
+.slide-tag.is-approach {
+  color: #0f766e;
+  background: rgba(13, 148, 136, 0.1);
+}
+
+.slide h2 {
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+}
+
+.slide h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.slide-lead {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: 0 0 1.25rem;
+}
+
+.slide-text p {
+  margin: 0 0 0.75rem;
+}
+
+.slide-figure {
+  margin: 0.5rem 0 1.25rem;
+  text-align: center;
+}
+
+.slide-figure svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.slideshow-footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--color-bg);
+  padding-bottom: 0.75rem;
+}
+
+.slide-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.slide-nav-btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.slide-nav-btn.slide-next {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.slide-nav-btn.slide-next:hover {
+  background: var(--color-primary-dark);
+}
+
+.slide-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  cursor: pointer;
+}
+
+.slide-dot.is-active {
+  background: var(--color-accent);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Type-answer + reveal question widgets */
+
+.type-answer-box, .reveal-box {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.type-answer-prompt, .reveal-prompt {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.type-answer-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.type-answer-row input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.type-answer-row input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.type-answer-check, .reveal-btn {
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.type-answer-check:hover, .reveal-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+.type-answer-feedback {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  min-height: 1.2em;
+}
+
+.type-answer-feedback.correct {
+  color: var(--color-success);
+}
+
+.type-answer-feedback.incorrect {
+  color: var(--color-accent);
+}
+
+.type-answer-explain, .reveal-panel {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.type-answer-explain p, .reveal-panel p {
+  margin: 0;
+}
+
+.type-answer-explain p + p, .reveal-panel p + p {
+  margin-top: 0.5rem;
+}
+
+.reveal-box textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.7rem;
+  resize: vertical;
+}
+
+.reveal-box textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.slide .quiz-box {
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Slide graphics: vitals monitor */
+
+.monitor-panel {
+  background: #16182b;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.9rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.monitor-cell {
+  text-align: center;
+}
+
+.monitor-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8b93b8;
+  margin-bottom: 0.15rem;
+}
+
+.monitor-value {
+  font-family: "SF Mono", "Courier New", monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.monitor-value.is-flagged {
+  color: #fb923c;
+}
+
+.slide-source-card {
+  background: #fff7ed;
+  border: 1px solid #fbd9a8;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.slide-source-card p {
+  color: #9a5b34;
+  font-size: 0.9rem;
+}
+
+.slide-source-link {
+  display: inline-block;
+  margin: 0.75rem 0;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: #9a3412;
+  color: #fff;
+  font-weight: 700;
+}
+
+.slide-source-link:hover {
+  background: #7c2d12;
+  text-decoration: none;
+  color: #fff;
+}
+
+.slide-citation {
+  font-size: 0.8rem;
+  color: #9a5b34;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .slideshow {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .slide-nav {
+    flex-wrap: wrap;
+  }
+}
+
+.med-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1.25rem;
+  justify-content: center;
+}
+
+.med-chip {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.med-chip.is-flagged {
+  background: #fff7ed;
+  border-color: #fbd9a8;
+  color: #9a3412;
+  font-weight: 700;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.trend-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  text-align: center;
+}
+
+.trend-card-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.trend-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: "SF Mono", "Courier New", monospace;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.trend-arrow {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.trend-values .is-worse {
+  color: var(--color-accent);
+}
+
+.trend-values .is-better {
+  color: var(--color-success);
+}
+
+.trend-card-note {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Hover glossary: drug names & jargon get a quick-definition popup */
+
+.term {
+  position: relative;
+  border-bottom: 1px dotted var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  cursor: help;
+}
+
+.med-chip {
+  position: relative;
+  cursor: help;
+}
+
+.term-tip {
+  position: absolute;
+  left: 50%;
+  bottom: 130%;
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: 230px;
+  background: #16182b;
+  color: #f1eefb;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 30;
+}
+
+.term-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #16182b;
+}
+
+.term:hover .term-tip,
+.term:focus .term-tip,
+.med-chip:hover .term-tip,
+.med-chip:focus .term-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* "How an EM physician thinks" reasoning callouts */
+
+.reasoning-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.reasoning-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.reasoning-box p {
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.reasoning-box p + p {
+  margin-top: 0.5rem;
+}
+
+.slide-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: -0.5rem 0 0;
+}
+
+/* Answer/reasoning that follows a quiz-box stays hidden until it's answered */
+
+.quiz-explain {
+  display: none;
+}
+
+.quiz-box.answered ~ .quiz-explain {
+  display: block;
+}
+
+/* "Approach to..." numbered stepper (reusable review framework) */
+
+.approach-steps {
+  position: relative;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.approach-steps::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  bottom: 30px;
+  width: 2px;
+  background: var(--color-border);
+  z-index: 0;
+}
+
+.approach-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.approach-step + .approach-step {
+  margin-top: 0.9rem;
+}
+
+.approach-step-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approach-step-body strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.96rem;
+}
+
+.approach-step-body p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* End-of-case flowchart legend */
+
+.flow-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.flow-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.flow-legend-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 0;
+  border-top: 3px solid var(--color-success);
+}
+
+.flow-legend-swatch.is-alt {
+  border-top: 3px dashed var(--color-accent);
 }

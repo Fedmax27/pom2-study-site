@@ -29,8 +29,13 @@
     T1DM: Diagnosis &amp; Management
   </nav>
 
-  <main>
-    <article class="topic-content">
+  <main class="has-toc">
+    <div class="lecture-layout">
+      <nav class="lecture-toc" id="lecture-toc">
+        <div class="lecture-toc-title">On This Page</div>
+        <ol></ol>
+      </nav>
+      <article class="topic-content">
       <h1>T1DM: Diagnosis &amp; Management in Children &amp; Adolescents</h1>
 
       <section id="objectives">
@@ -98,24 +103,11 @@
           <li><strong>Asymptomatic</strong> patient: need <strong>two</strong> abnormal values.</li>
           <li>Fasting glucose and HbA1c are usually <strong>not necessary</strong> for diagnosing T1DM (unlike T2DM).</li>
         </ul>
-
-        <div class="quiz-box" data-correct="a">
-          <div class="quiz-question">A child has polyuria, polydipsia, and weight loss, plus a random glucose of 13.2 mmol/L. How many more abnormal glucose readings are needed to diagnose T1DM?</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">None &mdash; one abnormal value is enough with symptoms present</button>
-            <button class="quiz-option" data-value="b">One more</button>
-            <button class="quiz-option" data-value="c">Two more</button>
-            <button class="quiz-option" data-value="d">A confirmatory HbA1c is required first</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
       </section>
 
-      <section id="management">
-        <h2>Management of the Newly Diagnosed Patient</h2>
-        <p>Outpatient management rests on five pillars: BG monitoring, insulin administration, dietary counselling, education on optimizing metabolic control, and a multidisciplinary team.</p>
-
-        <h3>Blood glucose monitoring</h3>
+      <section id="bg-monitoring">
+        <h2>Blood Glucose Monitoring</h2>
+        <p style="font-size:0.9rem;color:var(--color-text-muted);">Outpatient management of the newly diagnosed patient rests on five pillars: BG monitoring, insulin administration, dietary counselling, education on optimizing metabolic control, and a multidisciplinary team.</p>
         <ul class="key-points-list">
           <li>4&times;/day by finger-poke meter (before meals + bedtime), or continuous glucose monitor (CGM)</li>
           <li>Occasional overnight checks; every 2&ndash;3 hours during illness; anytime hypoglycemia is suspected</li>
@@ -129,8 +121,10 @@
           </tbody>
         </table>
         <p style="font-size:0.9rem;color:var(--color-text-muted);">Normal (non-diabetic) fasting BG is 3&ndash;6 mmol/L, and normal HbA1c is 4&ndash;6%. Targets are relaxed for patients with severe/frequent hypoglycemia or hypoglycemia unawareness. <em>Diabetes Canada CPG, 2018</em></p>
+      </section>
 
-        <h3>Insulin dosing &amp; types</h3>
+      <section id="insulin-dosing">
+        <h2>Insulin Dosing &amp; Types</h2>
         <table class="data-table">
           <thead><tr><th>Phase</th><th>Dose (units/kg/day)</th></tr></thead>
           <tbody>
@@ -148,8 +142,10 @@
             <tr><td>Basal &mdash; Long</td><td>Slow onset, long duration</td><td>Detemir, Glargine, Degludec</td></tr>
           </tbody>
         </table>
+      </section>
 
-        <h3>Insulin regimens</h3>
+      <section id="insulin-regimens">
+        <h2>Insulin Regimens</h2>
         <table class="data-table">
           <thead><tr><th>Regimen</th><th>Composition</th><th>Trade-off</th></tr></thead>
           <tbody>
@@ -161,8 +157,10 @@
           <img src="../../../../assets/images/week-1/t1dm-management/basal-bolus-insulin-concept.png" alt="Basal-bolus insulin concept graph: endogenous insulin rises sharply at each meal (breakfast, lunch, supper) and stays low but steady between meals, which basal plus bolus insulin injections try to mimic">
           <figcaption>Basal-bolus dosing mimics the body's own insulin release around meals (B/L/S/HS). Adapted with permission from McCall A. In: Leahy J, Cefalu W, eds. <em>Insulin Therapy</em>. Marcel Dekker; 2002:193</figcaption>
         </figure>
+      </section>
 
-        <h3>Adjusting doses: sliding scale &amp; carb ratios</h3>
+      <section id="dose-adjustment">
+        <h2>Adjusting Doses: Sliding Scale &amp; Carb Ratios</h2>
         <p>A fixed dose isn't enough &mdash; the <strong>sliding scale</strong> adds/subtracts insulin based on the pre-meal BG reading, and a <strong>carb ratio</strong> covers however many carbs are actually eaten:</p>
         <table class="data-table">
           <thead><tr><th>BG (mmol/L)</th><th>Extra rapid insulin (units)</th></tr></thead>
@@ -177,23 +175,14 @@
           </tbody>
         </table>
         <p><strong>Key adjustment rule:</strong> a high (or low) reading reflects the insulin dose given <em>before</em> it &mdash; so fix the <em>preceding</em> dose, not the one at the same meal. A high lunch BG means the <strong>breakfast</strong> rapid-acting dose needs to go up.</p>
+      </section>
 
-        <div class="quiz-box" data-correct="a">
-          <div class="quiz-question">A patient's pre-lunch BG readings are consistently high, but breakfast, supper, and bedtime readings are on target. Which dose should be adjusted?</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">Breakfast rapid-acting insulin</button>
-            <button class="quiz-option" data-value="b">Lunch rapid-acting insulin</button>
-            <button class="quiz-option" data-value="c">Bedtime basal insulin</button>
-            <button class="quiz-option" data-value="d">No adjustment needed</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
-
-        <h3>Insulin pumps &amp; CGM</h3>
+      <section id="pumps-cgm">
+        <h2>Insulin Pumps &amp; CGM</h2>
         <ul class="key-points-list">
           <li><strong>Pump:</strong> continuous subcutaneous insulin infusion into adipose tissue; a steady <strong>basal rate</strong> covers non-food needs, and patient-triggered <strong>boluses</strong> (from an entered carb ratio) cover meals and correct highs.</li>
           <li><strong>Advantages:</strong> more reliable absorption, more precise dosing, less hypoglycemia risk &mdash; plus lifestyle flexibility (optional snack timing, skippable meals, easier shift work/travel).</li>
-          <li><strong>CGM:</strong> measures interstitial glucose every 5 minutes, sensor changed every 2 weeks; alerts before a patient goes out of range. Modern CGMs talk directly to pumps.</li>
+          <li><strong>CGM:</strong> measures interstitial glucose every 5 minutes; sensor wear time varies by device (roughly 1&ndash;2 weeks). Alerts before a patient goes out of range. Modern CGMs talk directly to pumps.</li>
           <li>Two patients can share an identical HbA1c of 7% yet have very different <strong>time-in-range</strong> &mdash; CGM captures day-to-day glycemic stability that A1c alone hides.</li>
         </ul>
       </section>
@@ -206,17 +195,6 @@
           <figcaption>Lower A1C = lower retinopathy risk, but higher severe hypoglycemia risk. <em>N Engl J Med</em> 1993;328:977</figcaption>
         </figure>
         <p>This is the central tension of T1DM management: push glucose down to prevent long-term microvascular complications, without pushing so hard that severe hypoglycemia becomes common.</p>
-
-        <div class="quiz-box" data-correct="a">
-          <div class="quiz-question">In the DCCT trial, intensive insulin therapy (vs. conventional therapy) was associated with:</div>
-          <div class="quiz-options">
-            <button class="quiz-option" data-value="a">Lower A1C and lower retinopathy risk, but higher severe hypoglycemia risk</button>
-            <button class="quiz-option" data-value="b">Lower A1C with no change in any complication risk</button>
-            <button class="quiz-option" data-value="c">Higher A1C but lower hypoglycemia risk</button>
-            <button class="quiz-option" data-value="d">No meaningful difference from conventional therapy</button>
-          </div>
-          <div class="quiz-feedback"></div>
-        </div>
       </section>
 
       <section id="acute-complications">
@@ -247,13 +225,14 @@
         <a href="../diabetes-pathophysiology-t1dm-t2dm/index.html">&larr; Diabetes Pathophysiology: T1DM &amp; T2DM</a>
         <a href="../insulin-pharmacology/index.html">Next: Pharmacology of Insulin &rarr;</a>
       </div>
-    </article>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
     POM2 &mdash; a work in progress.
   </footer>
 
-  <script src="../../../../assets/js/quiz.js"></script>
+  <script src="../../../../assets/js/toc.js"></script>
 </body>
 </html>

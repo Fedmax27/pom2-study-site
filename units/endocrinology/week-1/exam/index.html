@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Week 1 Exam | Endocrinology | POM2</title>
+  <link rel="stylesheet" href="../../../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="../../../../index.html">POM<span>2</span></a>
+      <nav class="unit-nav">
+        <a class="unit-nav-item is-active" href="../../../../units/endocrinology/index.html">Endocrinology</a>
+        <span class="unit-nav-item is-disabled">Female Reproductive</span>
+        <span class="unit-nav-item is-disabled">MSK</span>
+        <span class="unit-nav-item is-disabled">Neuro</span>
+        <span class="unit-nav-item is-disabled">Psych</span>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="../../../../index.html">Home</a> /
+    <a href="../../index.html">Endocrinology</a> /
+    <a href="../index.html">Week 1</a> /
+    Week 1 Exam
+  </nav>
+
+  <main>
+    <div class="exam-shell" id="exam-root">
+
+      <div id="exam-intro" class="topic-content">
+        <h1>Week 1 Exam</h1>
+        <p class="exam-meta">Endocrinology &middot; Week 1 &middot; 25 questions &middot; multiple choice &amp; true/false</p>
+        <p>Every question from all seven Week 1 lectures, pulled together in one place &mdash; the lecture pages themselves stay quiz-free. Each attempt shuffles the question and option order. The correct answer is revealed right after you answer each question, and you'll get a performance breakdown by lecture at the end.</p>
+        <button id="exam-start-btn" class="exam-start-btn">Start Exam</button>
+      </div>
+
+      <div id="exam-active" hidden>
+        <div class="exam-score-tracker" id="exam-score-tracker">Score: <span id="exam-score-tracker-value">0/0</span> correct</div>
+        <div class="exam-progress-label" id="exam-progress-label">Question 1 of 25</div>
+        <div class="exam-progress-track"><div class="exam-progress-fill" id="exam-progress-fill" style="width:0%"></div></div>
+        <div class="exam-question-card">
+          <div class="exam-question-tag" id="exam-question-tag"></div>
+          <div class="exam-question-text" id="exam-question-text"></div>
+          <div id="exam-answer-area"></div>
+        </div>
+        <div class="exam-nav">
+          <button id="exam-next-btn" class="exam-next-btn" disabled>Next</button>
+        </div>
+      </div>
+
+      <div id="exam-results" hidden>
+        <h1>Your Results</h1>
+        <div class="exam-score-summary" id="exam-score-summary"></div>
+
+        <h2>Performance by Lecture</h2>
+        <div class="objective-chart">
+          <div id="objective-chart-body"></div>
+        </div>
+
+        <div class="exam-recommendations" id="exam-recommendations-body"></div>
+
+        <button id="exam-retake-btn" class="exam-retake-btn">Retake Exam</button>
+        <a href="../index.html" style="margin-left: 1rem;">Back to Week 1</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    POM2 &mdash; a work in progress.
+  </footer>
+
+  <script>
+    window.EXAM_DATA = {
+      totalQuestions: 25,
+      objectives: [
+        { id: "o1", label: "1.1", text: "Diabetes Pathophysiology: T1DM & T2DM" },
+        { id: "o2", label: "1.2", text: "T1DM: Diagnosis & Management" },
+        { id: "o3", label: "1.3", text: "Pharmacology of Insulin" },
+        { id: "o4", label: "1.4", text: "Approach to Endocrine Disease" },
+        { id: "o5", label: "1.5", text: "T2DM: Diagnosis, Pathogenesis & Epidemiology" },
+        { id: "o6", label: "1.6", text: "Pharmacology of Glucose-Lowering Drugs" },
+        { id: "o7", label: "1.7", text: "Acute & Chronic Complications of Diabetes" }
+      ],
+      bank: [
+        { id: "o1q1", type: "mcq", objective: "o1", question: "A 10-year-old with a sibling who has T1DM is found to have anti-GAD and anti-insulin antibody positivity. Fasting glucose is 6.5 mmol/L. Which stage of T1DM development is he in?", options: ["Stage 1", "Stage 2", "Stage 3", "Stage 4"], correctIndex: 1 },
+        { id: "o1q2", type: "mcq", objective: "o1", question: "True or false: GIP levels are decreased in those with Type 2 diabetes.", options: ["True", "False"], correctIndex: 1 },
+        { id: "o1q3", type: "mcq", objective: "o1", question: "True or false: renal reabsorption of glucose is increased in those with Type 2 diabetes.", options: ["True", "False"], correctIndex: 0 },
+        { id: "o1q4", type: "mcq", objective: "o1", question: "True or false: glucose production by the liver is increased in those with Type 2 diabetes.", options: ["True", "False"], correctIndex: 0 },
+        { id: "o1q5", type: "mcq", objective: "o1", question: "True or false: elevated GLP-1 levels lead to increased satiety in those with Type 2 diabetes.", options: ["True", "False"], correctIndex: 1 },
+        { id: "o1q6", type: "mcq", objective: "o1", question: "True or false: beta cell function is not impaired in those with prediabetes.", options: ["True", "False"], correctIndex: 1 },
+
+        { id: "o2q1", type: "mcq", objective: "o2", question: "A child has polyuria, polydipsia, and weight loss, plus a random glucose of 13.2 mmol/L. How many more abnormal glucose readings are needed to diagnose T1DM?", options: ["None — one abnormal value is enough with symptoms present", "One more", "Two more", "A confirmatory HbA1c is required first"], correctIndex: 0 },
+        { id: "o2q2", type: "mcq", objective: "o2", question: "A patient's pre-lunch BG readings are consistently high, but breakfast, supper, and bedtime readings are on target. Which dose should be adjusted?", options: ["Breakfast rapid-acting insulin", "Lunch rapid-acting insulin", "Bedtime basal insulin", "No adjustment needed"], correctIndex: 0 },
+        { id: "o2q3", type: "mcq", objective: "o2", question: "In the DCCT trial, intensive insulin therapy (vs. conventional therapy) was associated with:", options: ["Lower A1C and lower retinopathy risk, but higher severe hypoglycemia risk", "Lower A1C with no change in any complication risk", "Higher A1C but lower hypoglycemia risk", "No meaningful difference from conventional therapy"], correctIndex: 0 },
+
+        { id: "o3q1", type: "mcq", objective: "o3", question: "Which insulin is preferred for IV administration, and why?", options: ["Regular insulin — cheaper, well-characterized, and dissociation kinetics are irrelevant IV", "Lispro — fastest onset of any insulin", "Glargine — longest duration of action", "NPH — intermediate duration is ideal for IV"], correctIndex: 0 },
+        { id: "o3q2", type: "mcq", objective: "o3", question: "True or false: insulin analogues (rapid or long-acting) are more effective than regular/NPH insulin at lowering A1C.", options: ["True", "False — they're safer and more convenient, not more effective at lowering A1C"], correctIndex: 1 },
+        { id: "o3q3", type: "mcq", objective: "o3", question: "Which insulin type is generally NOT used in insulin pumps?", options: ["Basal insulins (e.g. glargine, detemir, degludec)", "Rapid-acting analogues (e.g. lispro, aspart)", "Regular human insulin", "All insulins are equally suitable for pumps"], correctIndex: 0 },
+
+        { id: "o4q1", type: "mcq", objective: "o4", question: "A patient has muscle wasting, central fat deposition, thin skin, and osteoporosis. Which axis hormone's excess explains all of these findings?", options: ["Cortisol", "ACTH acting directly on muscle/bone/skin", "CRH", "Aldosterone"], correctIndex: 0 },
+
+        { id: "o5q1", type: "mcq", objective: "o5", question: "Which of the following is correct?", options: ["T2DM is diagnosed by the BG level associated with risk for MI", "T2DM is associated with increased risk for stroke, MI, and forefoot amputation", "Metabolic syndrome is most common in middle-aged people with T1DM for > 30 years", "T2DM is diagnosed by the BG level associated with risk for foot numbness and tingling"], correctIndex: 1 },
+        { id: "o5q2", type: "mcq", objective: "o5", question: "A patient's mother had T1DM during pregnancy with her (excellent glucose control); she was born at 34 weeks (unrelated premature rupture of membranes). Is she at increased risk for T2DM?", options: ["Yes — in-utero glucose exposure plus prematurity both raise later metabolic risk", "No — maternal glucose control was excellent, so there's no added risk", "Only if she is also obese as an adult", "Only if the mother's T1DM was diagnosed before pregnancy"], correctIndex: 0 },
+
+        { id: "o6q1", type: "mcq", objective: "o6", question: "Which patient on metformin is at greatest risk of developing lactic acidosis?", options: ["45yo, T2DM, eGFR 75, stable on metformin 1000mg BID for 2 years", "68yo, T2DM, stable CKD (eGFR 50), no recent change in health", "72yo, T2DM, heart failure, admitted with 2 days of vomiting and reduced oral intake", "55yo, newly diagnosed T2DM, started metformin 500mg daily 1 week ago, mild nausea"], correctIndex: 2 },
+        { id: "o6q2", type: "mcq", objective: "o6", question: "For which patient would pioglitazone be contraindicated?", options: ["A patient with CKD", "A patient with osteopenia", "A patient with well-controlled hypertension", "A patient with mild asthma", "A patient with heart failure"], correctIndex: 4 },
+        { id: "o6q3", type: "mcq", objective: "o6", question: "Oral and IV glucose were given to produce matched blood glucose levels over time. What's the main conclusion?", options: ["IV glucose is a stronger insulin stimulus, since it reaches the pancreas more directly", "Oral and IV glucose produce a similar insulin response, since blood glucose is the main driver", "Oral glucose produces a substantially greater insulin response than IV at matched blood glucose", "The difference reflects faster glucose absorption via the oral route"], correctIndex: 2 },
+        { id: "o6q4", type: "mcq", objective: "o6", question: "Which adverse effect is associated with α-glucosidase inhibitors?", options: ["Flatulence", "Hypoglycemia", "Weight gain", "Constipation"], correctIndex: 0 },
+        { id: "o6q5", type: "mcq", objective: "o6", question: "Which of these is NOT a recognized adverse effect of SGLT2 inhibitors?", options: ["Weight gain", "Genital infections", "Polyuria", "Hypovolemia"], correctIndex: 0 },
+
+        { id: "o7q1", type: "mcq", objective: "o7", question: "A 22-year-old man presents with severe abdominal pain, nausea, and vomiting. Labs: Na 130, K 3.2, HCO3 10, random glucose 25 mmol/L. Which test would be most helpful to confirm the diagnosis?", options: ["Venous blood gas and serum ketones (beta-hydroxybutyrate)", "Liver enzymes (ALT, ALP, AST, total bilirubin)", "CBC", "Urine electrolytes and osmolality"], correctIndex: 0 },
+        { id: "o7q2", type: "mcq", objective: "o7", question: "True or false: patients presenting with HHS are typically older and do not usually present with abdominal pain and vomiting.", options: ["True", "False"], correctIndex: 0 },
+        { id: "o7q3", type: "mcq", objective: "o7", question: "Which of the following would NOT be appropriate emergency therapy for DKA?", options: ["Assess heart rate, respiratory rate, and blood pressure", "Start 2 intravenous lines", "Start IV fluid resuscitation with normal saline", "Start metformin"], correctIndex: 3 },
+        { id: "o7q4", type: "mcq", objective: "o7", question: "Which biochemical flux during DKA emergency treatment should you watch very carefully?", options: ["Magnesium", "Potassium", "Sodium", "Phosphate"], correctIndex: 1 },
+        { id: "o7q5", type: "mcq", objective: "o7", question: "A patient with T1DM has tingling/numb feet, a foot ulcer that took 1.5 months to heal, and non-proliferative retinopathy on eye exam. No chest pain, claudication, or stroke/TIA symptoms. Which category of complications does he have?", options: ["Microvascular", "Macrovascular", "Both microvascular and macrovascular", "Neither"], correctIndex: 0 }
+      ]
+    };
+  </script>
+  <script src="../../../../assets/js/exam.js"></script>
+</body>
+</html>

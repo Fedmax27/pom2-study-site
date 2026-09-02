@@ -13,5 +13,6 @@ class NoCacheHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", port), NoCacheHTTPRequestHandler) as httpd:
         httpd.serve_forever()
