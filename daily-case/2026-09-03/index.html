@@ -34,7 +34,7 @@
       <div class="slideshow-head">
         <span class="slideshow-eyebrow">Daily Case &middot; Emergency Medicine Workshop</span>
         <div class="slide-progress-track"><div class="slide-progress-fill" style="width:0%"></div></div>
-        <div class="slide-counter">1 / 17</div>
+        <div class="slide-counter">1 / 19</div>
       </div>
 
       <div class="slideshow">
@@ -55,7 +55,7 @@
             </svg>
           </div>
           <h1>The Hypoglycemia That Kept Coming Back</h1>
-          <p class="slide-lead">A real ED presentation, worked through one step at a time. The first correction isn't the twist here &mdash; figuring out why it doesn't hold is.</p>
+          <p class="slide-lead">A real ED presentation, worked through step by step &mdash; from an ambiguous drowsy patient, through an incomplete initial response to treatment, to the pharmacology and labs that explain why.</p>
           <p class="slide-hint">Dotted, colored terms &mdash; like this &mdash; show a quick definition on hover or tap.</p>
         </section>
 
@@ -109,15 +109,14 @@
         <!-- 5: Initial correction -->
         <section class="slide">
           <span class="slide-tag">First Response</span>
-          <h2>The Obvious Fix</h2>
-          <p>The ambulance crew give 250mL of IV 10% dextrose en route. By the time he reaches the ED, he's more alert and talking normally &mdash; the kind of fast, satisfying response that makes a case feel finished.</p>
-          <p>It isn't.</p>
+          <h2>Initial Correction</h2>
+          <p>The ambulance crew give 250mL of IV 10% dextrose en route. By the time he reaches the ED, he is more alert and speaking normally, and his capillary glucose has corrected. Taken on its own, this looks like a straightforward hypoglycemic episode that has already been treated.</p>
         </section>
 
         <!-- 6: Recurrence trend -->
         <section class="slide">
-          <span class="slide-tag">The Problem</span>
-          <h2>It Doesn't Stay Fixed</h2>
+          <span class="slide-tag">Clinical Course</span>
+          <h2>Recurrent Hypoglycemia Despite Treatment</h2>
           <div class="slide-figure">
             <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Glucose readings over several hours in the ED: corrects after dextrose, drops below 3.5 mmol/L again, corrects again, drops again, despite an ongoing IV dextrose infusion">
               <line x1="30" y1="140" x2="610" y2="140" stroke="var(--color-border)" stroke-width="2"/>
@@ -145,6 +144,40 @@
             <p>A single hypoglycemic episode that corrects with dextrose and stays corrected is one story. Recurring hypoglycemia <em>despite</em> an active dextrose infusion is a different story entirely &mdash; it means something is still actively pushing insulin out of his pancreas, faster than you can pour sugar in. Turning the dextrose rate up further is treating the symptom, not the driver.</p>
             <p>The question stops being "how do we raise his glucose" and becomes "what do we do to make his own insulin stop being the problem."</p>
           </div>
+        </section>
+
+        <!-- 7b: First bloodwork -->
+        <section class="slide">
+          <span class="slide-tag">Lab Interpretation</span>
+          <h2>Confirming the Cause</h2>
+          <div class="monitor-panel">
+            <div class="monitor-cell"><div class="monitor-label">Venous pH</div><div class="monitor-value">7.41</div></div>
+            <div class="monitor-cell"><div class="monitor-label">Lactate (mmol/L)</div><div class="monitor-value is-flagged">2.3</div></div>
+            <div class="monitor-cell"><div class="monitor-label">Renal Function</div><div class="monitor-value">Normal</div></div>
+            <div class="monitor-cell"><div class="monitor-label">Urine Sulfonylurea Screen</div><div class="monitor-value is-flagged">Positive</div></div>
+          </div>
+          <p>Venous pH reference range is roughly 7.35&ndash;7.45, so 7.41 is normal. Lactate's reference range is approximately 0.5&ndash;2.2 mmol/L, so 2.3 mmol/L is only marginally above it. Renal function is normal, and a urine sulfonylurea screen returns <strong>positive</strong>.</p>
+          <div class="reasoning-box">
+            <span class="reasoning-tag">Reading This Panel</span>
+            <p>A normal pH with only a marginally elevated lactate argues against a primary metabolic acidosis or significant tissue hypoperfusion &mdash; this is not sepsis or shock driving the clinical picture. The mild lactate elevation is more consistent with the adrenergic stress response to hypoglycemia itself (catecholamine-driven glycogenolysis) than with a separate acid-base process. Normal renal function means reduced drug clearance is not compounding the picture. The positive sulfonylurea screen is the one result that actually confirms the mechanism, rather than simply being consistent with it.</p>
+          </div>
+        </section>
+
+        <!-- 7c: Knowledge check on the panel -->
+        <section class="slide">
+          <span class="slide-tag is-knowledge">Knowledge Check</span>
+          <h2>What This Panel Rules Out</h2>
+          <div class="quiz-box" data-correct="b">
+            <div class="quiz-question">A normal venous pH with only a mildly elevated lactate (2.3 mmol/L, reference 0.5&ndash;2.2) in this setting most likely reflects:</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-value="a">Early sepsis</button>
+              <button type="button" class="quiz-option" data-value="b">A catecholamine-driven stress response to hypoglycemia itself, not a separate acid-base process</button>
+              <button type="button" class="quiz-option" data-value="c">Alcoholic ketoacidosis</button>
+              <button type="button" class="quiz-option" data-value="d">Tissue hypoperfusion from cardiogenic shock</button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <p class="quiz-explain">Severe hypoglycemia triggers a counter-regulatory adrenergic surge, which can mildly raise lactate through glycogenolysis and increased glycolytic flux, independent of any perfusion or infectious process. The distinguishing feature is the normal pH: a lactic acidosis significant enough to explain a sick patient would be expected to lower it, not leave it untouched.</p>
         </section>
 
         <!-- 8: Typed checkpoint -->
@@ -176,7 +209,7 @@
             </div>
             <div class="approach-step">
               <div class="approach-step-num">2</div>
-              <div class="approach-step-body"><strong>Rule out exogenous causes first.</strong><p>Insulin, sulfonylureas, alcohol, and certain fluoroquinolone antibiotics are the most common <em>and</em> most directly treatable causes &mdash; check the medication list before chasing anything rarer.</p></div>
+              <div class="approach-step-body"><strong>Rule out exogenous causes first.</strong><p>Insulin, sulfonylureas, alcohol, and certain fluoroquinolone antibiotics are the most common <em>and</em> most directly treatable causes &mdash; check the medication list before chasing anything rarer. If the cause isn't obvious from history, a confirmatory panel drawn during the hypoglycemic episode &mdash; insulin, C-peptide, beta-hydroxybutyrate, and a sulfonylurea screen &mdash; can distinguish exogenous insulin (low C-peptide) from sulfonylurea or insulinoma (high C-peptide, only the former screen-positive).</p></div>
             </div>
             <div class="approach-step">
               <div class="approach-step-num">3</div>
@@ -254,10 +287,9 @@
 
         <!-- 12: What was given -->
         <section class="slide">
-          <span class="slide-tag">What Was Actually Done</span>
-          <h2>Octreotide, and It Holds</h2>
-          <p>50 micrograms of octreotide, given subcutaneously. His glucose stabilizes. With hourly monitoring, there are no further hypoglycemic episodes.</p>
-          <p>Renal function is normal, his venous pH is 7.41, and his lactate is only mildly elevated at 2.3 mmol/L &mdash; nothing here suggests a second process on top of the sulfonylurea effect. This was never a diagnostic mystery. It was a management problem, and it just took the right tool to actually solve it.</p>
+          <span class="slide-tag">Management</span>
+          <h2>Octreotide Given, Glucose Stabilizes</h2>
+          <p>50 micrograms of octreotide are given subcutaneously. His glucose stabilizes, and with hourly monitoring there are no further hypoglycemic episodes. The presentation, medication history, and the lab panel already reviewed were sufficient to confirm the cause &mdash; what remained was a management problem: suppressing ongoing insulin secretion for as long as the drug stayed active.</p>
         </section>
 
         <!-- 13: Reveal box -->
@@ -295,10 +327,10 @@
         <!-- 15: Reasoning box: what almost happened -->
         <section class="slide">
           <span class="slide-tag">Take-Home</span>
-          <h2>What Almost Happened</h2>
+          <h2>Why Early Discharge Would Have Been Unsafe</h2>
           <div class="reasoning-box">
-            <span class="reasoning-tag">The Version of This Case That Goes Badly</span>
-            <p>If his wife hadn't been home at lunchtime, or if the team had called this "fixed" after the first dextrose bolus brought him back to baseline, the next drop could easily have happened somewhere with nobody watching. There's no dramatic diagnostic twist in this case &mdash; the danger was never in figuring out <em>what</em> was wrong. It was in stopping too early, satisfied by a response that was never going to last on its own.</p>
+            <span class="reasoning-tag">Clinical Teaching Point</span>
+            <p>Had his wife not been present when the recurrence occurred at home, or had the team discharged him once his first dextrose bolus corrected his glucose, a subsequent episode could easily have gone unwitnessed. This case illustrates a management principle more than a diagnostic one &mdash; the cause was already clear from the history and confirmed on the sulfonylurea screen. The risk was in underestimating how long that cause would keep acting, not in identifying it.</p>
           </div>
           <ul class="key-points-list">
             <li>Recurrent hypoglycemia despite adequate dextrose means something is still actively driving insulin release &mdash; treat the driver, not just the number.</li>
