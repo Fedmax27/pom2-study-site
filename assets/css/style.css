@@ -2143,3 +2143,39 @@ main.has-toc {
 .flow-legend-swatch.is-alt {
   border-top: 3px dashed var(--color-accent);
 }
+
+/* Lecture-page "if you remember nothing else" capsule */
+
+.tldr-box {
+  background: #fff7ed;
+  border: 1px solid #fbd9a8;
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.75rem;
+}
+
+.tldr-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9a3412;
+  margin-bottom: 0.5rem;
+}
+
+.tldr-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.tldr-box li {
+  margin-bottom: 0.3rem;
+  font-size: 0.93rem;
+  color: #7c2d12;
+}
+
+.tldr-box li:last-child {
+  margin-bottom: 0;
+}
