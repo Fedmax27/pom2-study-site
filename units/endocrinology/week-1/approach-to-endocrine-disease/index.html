@@ -56,63 +56,83 @@
         <h2>Structure vs. Function</h2>
         <p>Adrenal disease as the worked example &mdash; but this same fork applies to any endocrine gland:</p>
         <figure class="topic-figure">
-          <svg viewBox="0 0 820 545" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: suspected endocrine problem splits into structure (a mass) versus function (a hormone). Structure splits into benign, such as adenoma or myelolipoma, treated only if causing local effects, versus malignant, such as metastasis or carcinoma, treated surgically. Function splits into excess, treated by trying to suppress it with a suppression test, versus deficiency, treated by trying to stimulate it with a stimulation test." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+          <svg viewBox="0 0 920 590" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: suspected endocrine problem splits into structure, a mass, versus function, a hormone. Structure splits into benign, leave alone unless symptomatic, versus malignant, surgically remove. Function splits into excess, suppression test, versus deficiency, stimulation test." style="max-width:100%;height:auto;">
             <defs>
-              <marker id="sf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <marker id="sf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
               </marker>
+              <filter id="sf-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="sf-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="sf-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="sf-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+              <linearGradient id="sf-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
+              <linearGradient id="sf-grad-primary" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ddd6fe"/>
+                <stop offset="100%" stop-color="#c4b5fd"/>
+              </linearGradient>
             </defs>
 
-            <line x1="380" y1="59" x2="380" y2="78" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="380" y1="198" x2="176" y2="246" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="380" y1="198" x2="588" y2="246" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="170" y1="350" x2="103" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="170" y1="350" x2="290" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="590" y1="350" x2="518" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
-            <line x1="590" y1="350" x2="710" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="435" y1="76" x2="435" y2="90" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M435,237 C435,262 220,262 220,278" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M435,237 C435,262 650,262 650,278" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M220,410 C220,440 112,440 112,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M220,410 C220,440 328,440 328,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M650,410 C650,440 542,440 542,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path d="M650,410 C650,440 758,440 758,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
 
-            <text x="248" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-primary)">STRUCTURAL</text>
-            <text x="248" y="242" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)">a mass</text>
-            <text x="512" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-accent)">FUNCTIONAL</text>
-            <text x="512" y="242" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)">a hormone</text>
+            <rect x="270" y="248" width="130" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="335" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">STRUCTURAL</text>
+            <rect x="530" y="248" width="140" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="600" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">FUNCTIONAL</text>
 
-            <rect x="290" y="15" width="180" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="380" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-text)">Suspected Endocrine Problem</text>
+            <rect x="315" y="20" width="240" height="56" rx="16" fill="url(#sf-grad-root)" filter="url(#sf-shadow)"/>
+            <text x="435" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Suspected Endocrine Problem</text>
 
-            <polygon points="380,82 495,140 380,198 265,140" fill="#fff" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="380" y="135" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--color-text)">Structure or</text>
-            <text x="380" y="151" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--color-text)">Function?</text>
+            <polygon points="435,93 570,165 435,237 300,165" fill="url(#sf-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#sf-shadow)"/>
+            <text x="435" y="159" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Structure or</text>
+            <text x="435" y="181" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Function?</text>
 
-            <polygon points="170,250 258,300 170,350 82,300" fill="#fff" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="170" y="295" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Benign or</text>
-            <text x="170" y="310" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Malignant?</text>
+            <polygon points="220,278 335,345 220,410 105,345" fill="url(#sf-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#sf-shadow)"/>
+            <text x="220" y="339" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Benign or</text>
+            <text x="220" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Malignant?</text>
 
-            <polygon points="590,250 685,300 590,350 495,300" fill="#fff" stroke="var(--color-accent)" stroke-width="2"/>
-            <text x="590" y="295" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Excess or</text>
-            <text x="590" y="310" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Deficiency?</text>
+            <polygon points="650,278 770,345 650,410 530,345" fill="url(#sf-grad-diamond)" stroke="var(--color-accent)" stroke-width="2.5" filter="url(#sf-shadow)"/>
+            <text x="650" y="339" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Excess or</text>
+            <text x="650" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Deficiency?</text>
 
-            <rect x="10" y="413" width="186" height="90" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="103" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Benign</text>
-            <text x="103" y="453" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)"><tspan x="103" dy="0">Adenoma, myelolipoma,</tspan><tspan x="103" dy="13">"all the rest"</tspan></text>
-            <text x="103" y="491" text-anchor="middle" font-size="10" font-weight="600" fill="var(--color-text)">Don't remove unless</text>
-            <text x="103" y="502" text-anchor="middle" font-size="10" font-weight="600" fill="var(--color-text)">causing local effects</text>
+            <rect x="10" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#sf-shadow)"/>
+            <text x="112" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Benign</text>
+            <text x="112" y="524" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)">Adenoma, myelolipoma</text>
+            <text x="112" y="547" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">Leave alone unless symptomatic</text>
 
-            <rect x="197" y="413" width="186" height="90" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
-            <text x="290" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Malignant</text>
-            <text x="290" y="453" text-anchor="middle" font-size="10.5" fill="#9a3412"><tspan x="290" dy="0">Metastasis, carcinoma,</tspan><tspan x="290" dy="13">malignant pheo</tspan></text>
-            <text x="290" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">&rarr; Surgically remove</text>
+            <rect x="226" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#sf-shadow)"/>
+            <text x="328" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Malignant</text>
+            <text x="328" y="524" text-anchor="middle" font-size="12.5" fill="#7c2d12">Metastasis, carcinoma</text>
+            <text x="328" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">&rarr; Surgically remove</text>
 
-            <rect x="425" y="413" width="186" height="90" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
-            <text x="518" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Excess</text>
-            <text x="518" y="455" text-anchor="middle" font-size="10.5" fill="#9a3412"><tspan x="518" dy="0">Cushing's, 1&deg; hyperaldo,</tspan><tspan x="518" dy="13">pheo, androgen excess</tspan></text>
-            <text x="518" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">Try to SUPPRESS it &rarr;</text>
-            <text x="518" y="502" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">suppression test</text>
+            <rect x="440" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#sf-shadow)"/>
+            <text x="542" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Excess</text>
+            <text x="542" y="524" text-anchor="middle" font-size="12.5" fill="#7c2d12">Cushing's, pheo, hyperaldo</text>
+            <text x="542" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">Suppression test</text>
 
-            <rect x="617" y="413" width="186" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="1.5"/>
-            <text x="710" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-primary-dark, var(--color-primary))">Deficiency</text>
-            <text x="710" y="455" text-anchor="middle" font-size="10.5" fill="var(--color-text)"><tspan x="710" dy="0">Addison's, CAH,</tspan><tspan x="710" dy="13">hormone failure</tspan></text>
-            <text x="710" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-text)">Try to STIMULATE it &rarr;</text>
-            <text x="710" y="502" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-text)">stimulation test</text>
+            <rect x="656" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#sf-shadow)"/>
+            <text x="758" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#4c1d95">Deficiency</text>
+            <text x="758" y="524" text-anchor="middle" font-size="12.5" fill="#4c1d95">Addison's, CAH</text>
+            <text x="758" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#4c1d95">Stimulation test</text>
           </svg>
           <figcaption>The same fork applies to any gland &mdash; structure vs. function, then benign/malignant or excess/deficiency.</figcaption>
         </figure>
@@ -195,43 +215,64 @@
         <h2>Where Does This All End Up? Treatment 101</h2>
         <p>The same structure/function fork decides treatment too &mdash; a useful shortcut for any endocrine problem, not just the diagnosis:</p>
         <figure class="topic-figure">
-          <svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: endocrine gland problem splits into structure versus function. Structure splits into benign, don't remove unless causing local problems, versus malignant, surgically remove. Function splits into hyperfunction, suppress, ablate, or surgically remove, versus hypofunction, replace the missing hormone." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+          <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: endocrine gland problem splits into structure versus function. Structure splits into benign, don't remove unless causing local problems, versus malignant, surgically remove. Function splits into hyperfunction, suppress, ablate, or surgically remove, versus hypofunction, replace the missing hormone." style="max-width:100%;height:auto;">
             <defs>
-              <marker id="t101-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <marker id="t101-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
               </marker>
+              <filter id="t101-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="t101-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="t101-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="t101-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+              <linearGradient id="t101-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
             </defs>
 
-            <line x1="400" y1="59" x2="400" y2="75" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
-            <line x1="400" y1="145" x2="97" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
-            <line x1="400" y1="145" x2="292" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
-            <line x1="400" y1="145" x2="507" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
-            <line x1="400" y1="145" x2="702" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+            <line x1="450" y1="76" x2="450" y2="93" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
+            <path d="M450,165 C450,195 112,195 112,228" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
+            <path d="M450,165 C450,195 328,195 328,228" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
+            <path d="M450,165 C450,195 572,195 572,228" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
+            <path d="M450,165 C450,195 788,195 788,228" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
 
-            <text x="195" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-primary)">STRUCTURE</text>
-            <text x="605" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-accent)">FUNCTION</text>
+            <rect x="150" y="182" width="130" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="215" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">STRUCTURE</text>
+            <rect x="620" y="182" width="130" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="685" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">FUNCTION</text>
 
-            <rect x="310" y="15" width="180" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="400" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-text)">Endocrine Gland Problem</text>
+            <rect x="330" y="20" width="240" height="56" rx="16" fill="url(#t101-grad-root)" filter="url(#t101-shadow)"/>
+            <text x="450" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Endocrine Gland Problem</text>
 
-            <polygon points="400,75 490,110 400,145 310,110" fill="#fff" stroke="var(--color-text)" stroke-width="1.5"/>
-            <text x="400" y="114" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Structure or Function?</text>
+            <polygon points="450,93 555,130 450,165 345,130" fill="url(#t101-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t101-shadow)"/>
+            <text x="450" y="135" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Structure or Function?</text>
 
-            <rect x="10" y="208" width="175" height="100" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="97" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Benign</text>
-            <text x="97" y="256" text-anchor="middle" font-size="10" fill="var(--color-text-muted)"><tspan x="97" dy="0">Don't surgically remove</tspan><tspan x="97" dy="13">unless it's causing</tspan><tspan x="97" dy="13">local problems</tspan></text>
+            <rect x="10" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#t101-shadow)"/>
+            <text x="112" y="262" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Benign</text>
+            <text x="112" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)"><tspan x="112" dy="0">Don't remove unless</tspan><tspan x="112" dy="16">causing local problems</tspan></text>
 
-            <rect x="205" y="208" width="175" height="100" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
-            <text x="292" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Malignant</text>
-            <text x="292" y="270" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9a3412">&rarr; Surgically remove</text>
+            <rect x="226" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t101-shadow)"/>
+            <text x="328" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Malignant</text>
+            <text x="328" y="296" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">&rarr; Surgically remove</text>
 
-            <rect x="420" y="208" width="175" height="100" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
-            <text x="507" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Hyperfunction</text>
-            <text x="507" y="256" text-anchor="middle" font-size="10" fill="#9a3412"><tspan x="507" dy="0">Suppress/ablate, or</tspan><tspan x="507" dy="13">surgically remove</tspan></text>
+            <rect x="470" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t101-shadow)"/>
+            <text x="572" y="262" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Hyperfunction</text>
+            <text x="572" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7c2d12"><tspan x="572" dy="0">Suppress/ablate, or</tspan><tspan x="572" dy="16">surgically remove</tspan></text>
 
-            <rect x="615" y="208" width="175" height="100" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="1.5"/>
-            <text x="702" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Hypofunction</text>
-            <text x="702" y="256" text-anchor="middle" font-size="10" fill="var(--color-text)"><tspan x="702" dy="0">Replace the missing</tspan><tspan x="702" dy="13">hormone(s)</tspan></text>
+            <rect x="686" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#t101-shadow)"/>
+            <text x="788" y="262" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Hypofunction</text>
+            <text x="788" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)"><tspan x="788" dy="0">Replace the missing</tspan><tspan x="788" dy="16">hormone(s)</tspan></text>
           </svg>
           <figcaption>Structure decides removal vs. leave alone; function decides suppress/ablate vs. replace.</figcaption>
         </figure>
