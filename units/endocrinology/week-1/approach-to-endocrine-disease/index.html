@@ -54,24 +54,68 @@
 
       <section id="structure-vs-function">
         <h2>Structure vs. Function</h2>
-        <div class="framework-diagram">
-          <div class="fw-node fw-start">Adrenal Glands (example)</div>
-          <div class="fw-arrow"></div>
-          <div class="fw-branches">
-            <div class="fw-branch fw-branch-t1">
-              <span class="fw-branch-label">Structure &mdash; Masses</span>
-              <div class="fw-node fw-action">Benign: adenoma (functioning or non-functioning), myelolipoma, "all the rest"</div>
-              <div class="fw-arrow"></div>
-              <div class="fw-node fw-action">Malignant: metastases to adrenal, malignant pheochromocytoma, adrenal cortical carcinoma</div>
-            </div>
-            <div class="fw-branch fw-branch-t2">
-              <span class="fw-branch-label">Function</span>
-              <div class="fw-node fw-action">Failure/insufficiency: &darr; cortisol &amp; aldosterone ("Addison's"), CAH, androgens, catecholamines</div>
-              <div class="fw-arrow"></div>
-              <div class="fw-node fw-action">Overproduction: cortisol (Cushing syndrome), aldosterone (1&deg; hyperaldosteronism), catecholamines (pheochromocytoma), androgens</div>
-            </div>
-          </div>
-        </div>
+        <p>Adrenal disease as the worked example &mdash; but this same fork applies to any endocrine gland:</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 820 545" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: suspected endocrine problem splits into structure (a mass) versus function (a hormone). Structure splits into benign, such as adenoma or myelolipoma, treated only if causing local effects, versus malignant, such as metastasis or carcinoma, treated surgically. Function splits into excess, treated by trying to suppress it with a suppression test, versus deficiency, treated by trying to stimulate it with a stimulation test." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+            <defs>
+              <marker id="sf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+            </defs>
+
+            <line x1="380" y1="59" x2="380" y2="78" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="380" y1="198" x2="176" y2="246" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="380" y1="198" x2="588" y2="246" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="170" y1="350" x2="103" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="170" y1="350" x2="290" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="590" y1="350" x2="518" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+            <line x1="590" y1="350" x2="710" y2="413" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#sf-arrow)"/>
+
+            <text x="248" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-primary)">STRUCTURAL</text>
+            <text x="248" y="242" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)">a mass</text>
+            <text x="512" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-accent)">FUNCTIONAL</text>
+            <text x="512" y="242" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)">a hormone</text>
+
+            <rect x="290" y="15" width="180" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="380" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-text)">Suspected Endocrine Problem</text>
+
+            <polygon points="380,82 495,140 380,198 265,140" fill="#fff" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="380" y="135" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--color-text)">Structure or</text>
+            <text x="380" y="151" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--color-text)">Function?</text>
+
+            <polygon points="170,250 258,300 170,350 82,300" fill="#fff" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="170" y="295" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Benign or</text>
+            <text x="170" y="310" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Malignant?</text>
+
+            <polygon points="590,250 685,300 590,350 495,300" fill="#fff" stroke="var(--color-accent)" stroke-width="2"/>
+            <text x="590" y="295" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Excess or</text>
+            <text x="590" y="310" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Deficiency?</text>
+
+            <rect x="10" y="413" width="186" height="90" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
+            <text x="103" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Benign</text>
+            <text x="103" y="453" text-anchor="middle" font-size="10.5" fill="var(--color-text-muted)"><tspan x="103" dy="0">Adenoma, myelolipoma,</tspan><tspan x="103" dy="13">"all the rest"</tspan></text>
+            <text x="103" y="491" text-anchor="middle" font-size="10" font-weight="600" fill="var(--color-text)">Don't remove unless</text>
+            <text x="103" y="502" text-anchor="middle" font-size="10" font-weight="600" fill="var(--color-text)">causing local effects</text>
+
+            <rect x="197" y="413" width="186" height="90" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
+            <text x="290" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Malignant</text>
+            <text x="290" y="453" text-anchor="middle" font-size="10.5" fill="#9a3412"><tspan x="290" dy="0">Metastasis, carcinoma,</tspan><tspan x="290" dy="13">malignant pheo</tspan></text>
+            <text x="290" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">&rarr; Surgically remove</text>
+
+            <rect x="425" y="413" width="186" height="90" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
+            <text x="518" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Excess</text>
+            <text x="518" y="455" text-anchor="middle" font-size="10.5" fill="#9a3412"><tspan x="518" dy="0">Cushing's, 1&deg; hyperaldo,</tspan><tspan x="518" dy="13">pheo, androgen excess</tspan></text>
+            <text x="518" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">Try to SUPPRESS it &rarr;</text>
+            <text x="518" y="502" text-anchor="middle" font-size="10" font-weight="700" fill="#9a3412">suppression test</text>
+
+            <rect x="617" y="413" width="186" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="1.5"/>
+            <text x="710" y="435" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-primary-dark, var(--color-primary))">Deficiency</text>
+            <text x="710" y="455" text-anchor="middle" font-size="10.5" fill="var(--color-text)"><tspan x="710" dy="0">Addison's, CAH,</tspan><tspan x="710" dy="13">hormone failure</tspan></text>
+            <text x="710" y="491" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-text)">Try to STIMULATE it &rarr;</text>
+            <text x="710" y="502" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-text)">stimulation test</text>
+          </svg>
+          <figcaption>The same fork applies to any gland &mdash; structure vs. function, then benign/malignant or excess/deficiency.</figcaption>
+        </figure>
 
         <h3>Eponyms worth knowing cold</h3>
         <table class="data-table">
@@ -149,24 +193,48 @@
 
       <section id="treatment-101">
         <h2>Where Does This All End Up? Treatment 101</h2>
-        <div class="framework-diagram">
-          <div class="fw-node fw-start">Endocrine gland problem</div>
-          <div class="fw-arrow"></div>
-          <div class="fw-branches">
-            <div class="fw-branch fw-branch-t1">
-              <span class="fw-branch-label">Structure</span>
-              <div class="fw-node fw-action">Benign &rarr; don't surgically remove unless it's causing local problems</div>
-              <div class="fw-arrow"></div>
-              <div class="fw-node fw-action">Malignant &rarr; surgically remove</div>
-            </div>
-            <div class="fw-branch fw-branch-t2">
-              <span class="fw-branch-label">Function</span>
-              <div class="fw-node fw-action">Hyperfunction &rarr; suppress/ablate, or surgically remove</div>
-              <div class="fw-arrow"></div>
-              <div class="fw-node fw-action">Hypofunction &rarr; replace the missing hormone(s)</div>
-            </div>
-          </div>
-        </div>
+        <p>The same structure/function fork decides treatment too &mdash; a useful shortcut for any endocrine problem, not just the diagnosis:</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: endocrine gland problem splits into structure versus function. Structure splits into benign, don't remove unless causing local problems, versus malignant, surgically remove. Function splits into hyperfunction, suppress, ablate, or surgically remove, versus hypofunction, replace the missing hormone." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+            <defs>
+              <marker id="t101-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+            </defs>
+
+            <line x1="400" y1="59" x2="400" y2="75" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+            <line x1="400" y1="145" x2="97" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+            <line x1="400" y1="145" x2="292" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+            <line x1="400" y1="145" x2="507" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+            <line x1="400" y1="145" x2="702" y2="208" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#t101-arrow)"/>
+
+            <text x="195" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-primary)">STRUCTURE</text>
+            <text x="605" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-accent)">FUNCTION</text>
+
+            <rect x="310" y="15" width="180" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
+            <text x="400" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-text)">Endocrine Gland Problem</text>
+
+            <polygon points="400,75 490,110 400,145 310,110" fill="#fff" stroke="var(--color-text)" stroke-width="1.5"/>
+            <text x="400" y="114" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Structure or Function?</text>
+
+            <rect x="10" y="208" width="175" height="100" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
+            <text x="97" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Benign</text>
+            <text x="97" y="256" text-anchor="middle" font-size="10" fill="var(--color-text-muted)"><tspan x="97" dy="0">Don't surgically remove</tspan><tspan x="97" dy="13">unless it's causing</tspan><tspan x="97" dy="13">local problems</tspan></text>
+
+            <rect x="205" y="208" width="175" height="100" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
+            <text x="292" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Malignant</text>
+            <text x="292" y="270" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9a3412">&rarr; Surgically remove</text>
+
+            <rect x="420" y="208" width="175" height="100" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
+            <text x="507" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">Hyperfunction</text>
+            <text x="507" y="256" text-anchor="middle" font-size="10" fill="#9a3412"><tspan x="507" dy="0">Suppress/ablate, or</tspan><tspan x="507" dy="13">surgically remove</tspan></text>
+
+            <rect x="615" y="208" width="175" height="100" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="1.5"/>
+            <text x="702" y="232" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">Hypofunction</text>
+            <text x="702" y="256" text-anchor="middle" font-size="10" fill="var(--color-text)"><tspan x="702" dy="0">Replace the missing</tspan><tspan x="702" dy="13">hormone(s)</tspan></text>
+          </svg>
+          <figcaption>Structure decides removal vs. leave alone; function decides suppress/ablate vs. replace.</figcaption>
+        </figure>
       </section>
 
       <p class="topic-source">
