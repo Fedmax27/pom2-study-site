@@ -95,4 +95,70 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.hidden = true;
     });
   });
+
+  // Clinical score calculators (e.g. Burch-Wartofsky). Each .score-group is a
+  // radio-style band; the running total and its interpretation band update live.
+  // Bands come from data-bands: "cut:class:label|cut:class:label", ascending,
+  // where cut is the minimum score for that band.
+  document.querySelectorAll(".score-calc").forEach((calc) => {
+    const readoutNum = calc.querySelector(".score-readout-num");
+    const readoutBand = calc.querySelector(".score-readout-band");
+    const explain = calc.querySelector(".score-explain");
+    const groups = Array.from(calc.querySelectorAll(".score-group"));
+
+    const bands = (calc.dataset.bands || "")
+      .split("|")
+      .map((b) => b.split(":"))
+      .filter((p) => p.length === 3)
+      .map(([cut, cls, label]) => ({ cut: Number(cut), cls, label }));
+
+    function bandFor(score) {
+      let match = null;
+      bands.forEach((b) => {
+        if (score >= b.cut) match = b;
+      });
+      return match;
+    }
+
+    function update() {
+      let total = 0;
+      let answered = 0;
+      groups.forEach((g) => {
+        const picked = g.querySelector(".score-opt.is-picked");
+        if (picked) {
+          total += Number(picked.dataset.points || 0);
+          answered += 1;
+        }
+      });
+
+      if (readoutNum) readoutNum.textContent = total;
+
+      const complete = answered === groups.length;
+      if (readoutBand) {
+        if (!complete) {
+          readoutBand.textContent = `${answered} of ${groups.length} categories scored`;
+          readoutBand.className = "score-readout-band";
+        } else {
+          const b = bandFor(total);
+          readoutBand.textContent = b ? b.label : "";
+          readoutBand.className = "score-readout-band " + (b ? b.cls : "");
+        }
+      }
+      if (explain) explain.hidden = !complete;
+    }
+
+    calc.querySelectorAll(".score-opt").forEach((opt) => {
+      opt.addEventListener("click", () => {
+        const group = opt.closest(".score-group");
+        if (!group) return;
+        group
+          .querySelectorAll(".score-opt")
+          .forEach((o) => o.classList.remove("is-picked"));
+        opt.classList.add("is-picked");
+        update();
+      });
+    });
+
+    update();
+  });
 });
