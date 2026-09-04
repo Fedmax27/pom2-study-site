@@ -20,6 +20,8 @@
   --callout-ink: #9a3412;
   --callout-ink-soft: #9a5b34;
   --callout-body: #7c2d12;
+  --chart-bound: #cdc4e6;
+  --chart-complex: #e9e5f4;
   --panel-bg: #f6f5fb;
   font-size: 16px;
 }
@@ -2674,6 +2676,8 @@ main.has-toc {
     --callout-ink: #f6b380;
     --callout-ink-soft: #cfa88c;
     --callout-body: #ecdfd4;
+    --chart-bound: #3d3659;
+    --chart-complex: #262236;
     --panel-bg: #191727;
   }
   :root:not([data-theme="light"]) .case-box { background: var(--panel-bg); border-color: var(--color-border); }
@@ -2689,6 +2693,8 @@ main.has-toc {
   --callout-ink: #f6b380;
   --callout-ink-soft: #cfa88c;
   --callout-body: #ecdfd4;
+  --chart-bound: #3d3659;
+  --chart-complex: #262236;
   --panel-bg: #191727;
 }
 :root[data-theme="dark"] .case-box { background: var(--panel-bg); border-color: var(--color-border); }
@@ -2999,3 +3005,43 @@ main.has-toc {
   .search-overlay { padding: 4vh 0.6rem 0.6rem; }
   .search-hit-where { display: none; }
 }
+
+
+/* ============================================================
+   Data-chart figures (composition bars and similar)
+   Themed through classes so they follow light/dark rather than
+   being pinned to a white plate.
+   ============================================================ */
+
+.chart-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.chart-title { font-size: 13.5px; font-weight: 700; fill: var(--color-text); }
+.chart-seg-active { fill: var(--color-primary); }
+.chart-seg-bound { fill: var(--chart-bound); }
+.chart-seg-complex { fill: var(--chart-complex); }
+.chart-seg-stroke { stroke: var(--color-border); stroke-width: 1; }
+.chart-in-label { font-size: 13px; font-weight: 700; fill: #fff; }
+.chart-in-sub { font-size: 11.5px; fill: rgba(255, 255, 255, 0.88); }
+.chart-on-label { font-size: 13px; font-weight: 700; fill: var(--color-text); }
+.chart-on-sub { font-size: 11.5px; fill: var(--color-text-muted); }
+.chart-lead { stroke: var(--color-text-muted); stroke-width: 1; }
+.chart-badge { fill: var(--color-primary); }
+.chart-badge-text { font-size: 9.5px; font-weight: 700; fill: #fff; letter-spacing: 0.06em; }
+
+/* In dark mode the active segment becomes a light lavender, so the
+   label inside it must flip to dark ink — white on that fill measures
+   2.7:1, under the 4.5 minimum. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .chart-in-label { fill: #1b1430; }
+  :root:not([data-theme="light"]) .chart-in-sub { fill: rgba(27, 20, 48, 0.82); }
+  :root:not([data-theme="light"]) .chart-badge-text { fill: #1b1430; }
+}
+
+:root[data-theme="dark"] .chart-in-label { fill: #1b1430; }
+:root[data-theme="dark"] .chart-in-sub { fill: rgba(27, 20, 48, 0.82); }
+:root[data-theme="dark"] .chart-badge-text { fill: #1b1430; }
