@@ -34,14 +34,14 @@
 
       <div id="exam-intro" class="topic-content">
         <h1>Week 1 Exam</h1>
-        <p class="exam-meta">Endocrinology &middot; Week 1 &middot; 25 questions &middot; multiple choice &amp; true/false</p>
-        <p>Every question from all seven Week 1 lectures, pulled together in one place &mdash; the lecture pages themselves stay quiz-free. Each attempt shuffles the question and option order. The correct answer is revealed right after you answer each question, and you'll get a performance breakdown by lecture at the end.</p>
+        <p class="exam-meta">Endocrinology &middot; Week 1 &middot; 36 questions &middot; multiple choice, true/false &amp; fill-in-the-blank</p>
+        <p>Drawn from all twelve Week 1 lectures, pulled together in one place &mdash; the lecture pages themselves stay quiz-free. Each attempt samples three questions per lecture from a larger bank, so retakes are not identical. Each attempt shuffles the question and option order. The correct answer is revealed right after you answer each question, and you'll get a performance breakdown by lecture at the end.</p>
         <button id="exam-start-btn" class="exam-start-btn">Start Exam</button>
       </div>
 
       <div id="exam-active" hidden>
         <div class="exam-score-tracker" id="exam-score-tracker">Score: <span id="exam-score-tracker-value">0/0</span> correct</div>
-        <div class="exam-progress-label" id="exam-progress-label">Question 1 of 25</div>
+        <div class="exam-progress-label" id="exam-progress-label">Question 1 of 36</div>
         <div class="exam-progress-track"><div class="exam-progress-fill" id="exam-progress-fill" style="width:0%"></div></div>
         <div class="exam-question-card">
           <div class="exam-question-tag" id="exam-question-tag"></div>
@@ -77,7 +77,7 @@
 
   <script>
     window.EXAM_DATA = {
-      totalQuestions: 25,
+      totalQuestions: 36,
       objectives: [
         { id: "o1", label: "1.1", text: "Diabetes Pathophysiology: T1DM & T2DM" },
         { id: "o2", label: "1.2", text: "T1DM: Diagnosis & Management" },
@@ -85,7 +85,12 @@
         { id: "o4", label: "1.4", text: "Approach to Endocrine Disease" },
         { id: "o5", label: "1.5", text: "T2DM: Diagnosis, Pathogenesis & Epidemiology" },
         { id: "o6", label: "1.6", text: "Pharmacology of Glucose-Lowering Drugs" },
-        { id: "o7", label: "1.7", text: "Acute & Chronic Complications of Diabetes" }
+        { id: "o7", label: "1.7", text: "Acute & Chronic Complications of Diabetes" },
+        { id: "o8", label: "1.8", text: "Diabetes & Pregnancy" },
+        { id: "o9", label: "1.9", text: "Glycemic Goals of Care" },
+        { id: "o10", label: "1.10", text: "Prevention of Chronic Complications" },
+        { id: "o11", label: "1.11", text: "Drugs Affecting Vitamin D & Calcium" },
+        { id: "o12", label: "1.12", text: "Thyroid & Parathyroid Physiology" }
       ],
       bank: [
         { id: "o1q1", type: "mcq", objective: "o1", question: "A 10-year-old with a sibling who has T1DM is found to have anti-GAD and anti-insulin antibody positivity. Fasting glucose is 6.5 mmol/L. Which stage of T1DM development is he in?", options: ["Stage 1", "Stage 2", "Stage 3", "Stage 4"], correctIndex: 1 },
@@ -118,7 +123,46 @@
         { id: "o7q2", type: "mcq", objective: "o7", question: "True or false: patients presenting with HHS are typically older and do not usually present with abdominal pain and vomiting.", options: ["True", "False"], correctIndex: 0 },
         { id: "o7q3", type: "mcq", objective: "o7", question: "Which of the following would NOT be appropriate emergency therapy for DKA?", options: ["Assess heart rate, respiratory rate, and blood pressure", "Start 2 intravenous lines", "Start IV fluid resuscitation with normal saline", "Start metformin"], correctIndex: 3 },
         { id: "o7q4", type: "mcq", objective: "o7", question: "Which biochemical flux during DKA emergency treatment should you watch very carefully?", options: ["Magnesium", "Potassium", "Sodium", "Phosphate"], correctIndex: 1 },
-        { id: "o7q5", type: "mcq", objective: "o7", question: "A patient with T1DM has tingling/numb feet, a foot ulcer that took 1.5 months to heal, and non-proliferative retinopathy on eye exam. No chest pain, claudication, or stroke/TIA symptoms. Which category of complications does he have?", options: ["Microvascular", "Macrovascular", "Both microvascular and macrovascular", "Neither"], correctIndex: 0 }
+        { id: "o7q5", type: "mcq", objective: "o7", question: "A patient with T1DM has tingling/numb feet, a foot ulcer that took 1.5 months to heal, and non-proliferative retinopathy on eye exam. No chest pain, claudication, or stroke/TIA symptoms. Which category of complications does he have?", options: ["Microvascular", "Macrovascular", "Both microvascular and macrovascular", "Neither"], correctIndex: 0 },
+
+        { id: "o2q4", type: "blank", objective: "o2", prompt: "Insulin requirements rise during puberty because of increasing insulin resistance. What is the typical daily insulin requirement during puberty, in units/kg/day? (give the range)", answers: ["1.0-2.0", "1-2", "1.0 to 2.0", "1 to 2"] },
+
+        { id: "o3q4", type: "mcq", objective: "o3", question: "Which of the following is a basal (long-acting) insulin?", options: ["Degludec", "Lispro", "Aspart", "Glulisine"], correctIndex: 0 },
+
+        { id: "o4q2", type: "mcq", objective: "o4", question: "You suspect a hormone deficiency rather than an excess. Which type of dynamic test is appropriate?", options: ["A stimulation test — try to stimulate the axis and see if it responds", "A suppression test — try to suppress the axis and see if it responds", "Either; the choice depends only on which gland is involved", "Neither; dynamic testing is never indicated for deficiency"], correctIndex: 0 },
+        { id: "o4q3", type: "mcq", objective: "o4", question: "A pituitary mass grows superiorly. Which clinical finding should you specifically look for?", options: ["Bitemporal hemianopsia on visual field testing", "CSF rhinorrhea", "Altered sensation over the forehead and cheek", "A dilated, non-reactive pupil with the eye 'down and out'"], correctIndex: 0 },
+        { id: "o4q4", type: "mcq", objective: "o4", question: "What does the eponym Cushing DISEASE specifically denote?", options: ["An ACTH-secreting pituitary adenoma", "Any cause of cortisol excess", "An aldosterone-secreting adrenal adenoma", "Destruction of the adrenal cortex"], correctIndex: 0 },
+
+        { id: "o5q3", type: "mcq", objective: "o5", question: "Which fasting plasma glucose value meets the diagnostic threshold for diabetes?", options: ["≥ 7.0 mmol/L", "≥ 5.6 mmol/L", "≥ 6.1 mmol/L", "≥ 11.1 mmol/L"], correctIndex: 0 },
+        { id: "o5q4", type: "mcq", objective: "o5", question: "A patient has a fasting plasma glucose of 6.5 mmol/L. How is this classified?", options: ["Impaired fasting glucose (prediabetes)", "Normal", "Diabetes", "Impaired glucose tolerance"], correctIndex: 0 },
+
+        { id: "o8q1", type: "mcq", objective: "o8", question: "Why does gestational diabetes NOT carry an increased risk of congenital malformation, while pre-pregnancy diabetes does?", options: ["GDM hyperglycemia begins after organogenesis (~8 weeks) is already complete", "GDM glucose levels never reach a teratogenic threshold", "The placenta blocks glucose transfer in GDM but not in pre-pregnancy diabetes", "GDM is always treated with insulin, which is protective"], correctIndex: 0 },
+        { id: "o8q2", type: "mcq", objective: "o8", question: "A woman at 26 weeks has a 50g glucose challenge result of 8.5 mmol/L. What is the next step?", options: ["Proceed to a 75g OGTT", "Diagnose GDM — no further testing needed", "Reassure; this is a normal result", "Repeat the 50g screen in 4 weeks"], correctIndex: 0 },
+        { id: "o8q3", type: "mcq", objective: "o8", question: "In a woman with pre-existing T1DM, what typically happens to insulin requirements in the FIRST trimester?", options: ["They may fall, raising the risk of hypoglycemia", "They rise steeply because of placental hormones", "They remain unchanged until delivery", "They rise, then drop sharply at 20 weeks"], correctIndex: 0 },
+        { id: "o8q4", type: "blank", objective: "o8", prompt: "Name the antihypertensive drug class that is contraindicated in pregnancy and must be stopped in a woman with diabetic nephropathy who becomes pregnant.", answers: ["ace inhibitor", "acei", "angiotensin converting enzyme inhibitor", "arb", "angiotensin receptor blocker"] },
+        { id: "o8q5", type: "mcq", objective: "o8", question: "A 50g glucose challenge returns at 11.4 mmol/L. What does this mean?", options: ["GDM is diagnosed directly — no OGTT is required", "A 75g OGTT is still required to confirm", "This is a normal screening result", "The test must be repeated fasting"], correctIndex: 0 },
+
+        { id: "o9q1", type: "mcq", objective: "o9", question: "An 85-year-old with severe dementia is dependent for all ADLs and takes gliclazide; her daughter administers all medications. What A1c target is most appropriate?", options: ["7.1–8.5%", "≤ 6.5%", "≤ 7.0%", "< 6.0%"], correctIndex: 0 },
+        { id: "o9q2", type: "mcq", objective: "o9", question: "A patient's A1c is 9.5% and reaching ≤7.0% is not realistic. Is lowering it to 8.5% worthwhile?", options: ["Yes — the risk relationship is continuous, so any reduction reduces risk", "No — benefit only occurs once the target of 7.0% is reached", "No — partial reduction increases hypoglycemia without benefit", "Only if the patient is under 40 years old"], correctIndex: 0 },
+        { id: "o9q3", type: "mcq", objective: "o9", question: "Which patient profile most supports tightening the A1c target to ≤ 6.5%?", options: ["Young, short disease duration, no complications, on an agent with low hypoglycemia risk", "Longstanding disease with established complications and frailty", "History of hypoglycemia unawareness", "Limited life expectancy of under two years"], correctIndex: 0 },
+        { id: "o9q4", type: "blank", objective: "o9", prompt: "Whatever A1c target is chosen, there is one minimum goal that applies to every patient with diabetes. Complete it: the patient should be free of ______ hyperglycemia and hypoglycemia.", answers: ["symptomatic"] },
+
+        { id: "o10q1", type: "blank", objective: "o10", prompt: "Name the landmark trial that established the benefit of intensive glycemic control in TYPE 1 diabetes.", answers: ["dcct", "diabetes control and complications trial"] },
+        { id: "o10q2", type: "mcq", objective: "o10", question: "Which trial demonstrated that intensive glucose control in TYPE 2 diabetes reduced complications, with a long-term all-cause mortality benefit on follow-up?", options: ["UKPDS", "DCCT", "Framingham Heart Study", "ACCORD"], correctIndex: 0 },
+        { id: "o10q3", type: "mcq", objective: "o10", question: "A patient with diabetes develops microalbuminuria but is normotensive. Why start an ACE inhibitor?", options: ["It is renoprotective independently of its blood-pressure-lowering effect", "It is being used purely to prevent future hypertension", "It directly lowers blood glucose", "It reverses established glomerular fibrosis"], correctIndex: 0 },
+        { id: "o10q4", type: "mcq", objective: "o10", question: "Which post-meal measure has been described as the stronger cardiovascular risk factor?", options: ["Post-prandial glucose", "Fasting glucose", "Bedtime glucose", "Pre-breakfast glucose"], correctIndex: 0 },
+
+        { id: "o11q1", type: "mcq", objective: "o11", question: "Which form of vitamin D is measured on a blood test to assess a patient's stores, and why?", options: ["Calcidiol (25-OH-D) — it is long-lived and unregulated, so it reflects true stores", "Calcitriol (1,25-(OH)₂D) — it is the active hormone", "Cholecalciferol (D3) — it is the form absorbed from the diet", "Ergocalciferol (D2) — it is the most stable in plasma"], correctIndex: 0 },
+        { id: "o11q2", type: "mcq", objective: "o11", question: "PTH excess causes bone resorption, yet teriparatide (a PTH fragment) BUILDS bone. What explains the difference?", options: ["The pattern of exposure — continuous PTH favours resorption, intermittent daily peaks favour formation", "Teriparatide binds a different receptor than endogenous PTH", "Teriparatide is given subcutaneously rather than secreted", "Teriparatide blocks RANKL in addition to activating the PTH receptor"], correctIndex: 0 },
+        { id: "o11q3", type: "blank", objective: "o11", prompt: "Name the kidney enzyme that converts calcidiol to active calcitriol — the step that PTH stimulates.", answers: ["1 alpha hydroxylase", "1a hydroxylase", "1-alpha-hydroxylase", "1alpha hydroxylase", "alpha hydroxylase"] },
+        { id: "o11q4", type: "mcq", objective: "o11", question: "Which agent carries a HIGHER risk of osteonecrosis of the jaw than bisphosphonates, and is contraindicated in hypocalcemia?", options: ["Denosumab", "Teriparatide", "Alendronate", "Calcitriol"], correctIndex: 0 },
+        { id: "o11q5", type: "mcq", objective: "o11", question: "Which adverse effect is distinctive to romosozumab and limits its use?", options: ["Cardiovascular events including MI and stroke", "Flatulence", "Genital infections", "Lactic acidosis"], correctIndex: 0 },
+
+        { id: "o12q1", type: "mcq", objective: "o12", question: "Hashimoto's and Graves' disease are both antibody-mediated but produce opposite diseases. Why?", options: ["Anti-TPO antibodies BLOCK hormone synthesis (hypothyroid); anti-TSH-receptor antibodies ACTIVATE the receptor (hyperthyroid)", "Both antibodies block, but Graves' additionally destroys the gland", "Anti-TPO antibodies activate the receptor; anti-TSH-receptor antibodies block it", "The antibodies are identical; the difference is the patient's iodine intake"], correctIndex: 0 },
+        { id: "o12q2", type: "mcq", objective: "o12", question: "Most of the body's active T3 comes from where?", options: ["Peripheral conversion of T4 by deiodinase D2", "Direct secretion by the thyroid follicles", "Conversion of reverse T3 back to T3", "Conversion of T2 in the liver"], correctIndex: 0 },
+        { id: "o12q3", type: "blank", objective: "o12", prompt: "Name the receptor on parathyroid chief cells that detects rising plasma calcium and rapidly shuts off PTH release.", answers: ["calcium sensing receptor", "casr", "calcium-sensing receptor"] },
+        { id: "o12q4", type: "mcq", objective: "o12", question: "How does the serum calcium differ between primary and secondary hyperparathyroidism?", options: ["Primary is hypercalcemic; secondary is low-to-normal calcium", "Both are hypercalcemic", "Primary is low-normal; secondary is hypercalcemic", "Both are hypocalcemic"], correctIndex: 0 },
+        { id: "o12q5", type: "mcq", objective: "o12", question: "Why do PTHrP-secreting tumours (classically lung and kidney) cause hypercalcemia?", options: ["PTHrP activates the same PTH receptor that PTH does", "PTHrP directly dissolves bone mineral without a receptor", "PTHrP stimulates the parathyroid glands to make more PTH", "PTHrP blocks calcium excretion at the glomerulus"], correctIndex: 0 }
       ]
     };
   </script>
