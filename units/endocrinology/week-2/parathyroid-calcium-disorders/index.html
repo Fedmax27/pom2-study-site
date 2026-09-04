@@ -144,43 +144,71 @@
           <p>In FHH, the mutated calcium-sensing receptor makes the kidney tubule (and parathyroid) require a higher calcium before it "registers" as high &mdash; so despite hypercalcemia, the kidney keeps reabsorbing calcium as if it were normal, and very little spills into urine. In primary hyperparathyroidism, the kidney's calcium-sensing is intact and correctly registers the excess, letting more escape into urine despite PTH's reabsorptive pull.</p>
         </div>
         <figure class="topic-figure">
-          <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypercalcemia with elevated or inappropriately normal PTH, calculate fractional excretion of calcium from a 24 hour urine collection. Below 0.01 means familial hypocalciuric hypercalcemia. 0.01 to 0.02 is an overlap zone, interpret only once off thiazides for 3 months with normal magnesium and 25-OH vitamin D above 50. Above 0.02 means primary hyperparathyroidism." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+          <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypercalcemia with elevated or inappropriately normal PTH, calculate fractional excretion of calcium from a 24 hour urine collection. Below 0.01 means familial hypocalciuric hypercalcemia. 0.01 to 0.02 is an overlap zone, interpret only once off thiazides for 3 months with normal magnesium and 25-OH vitamin D above 50. Above 0.02 means primary hyperparathyroidism." style="max-width:100%;height:auto;">
             <defs>
-              <marker id="feca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <marker id="feca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
               </marker>
+              <filter id="feca-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="feca-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="feca-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="feca-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+              <linearGradient id="feca-grad-primary" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ddd6fe"/>
+                <stop offset="100%" stop-color="#c4b5fd"/>
+              </linearGradient>
+              <linearGradient id="feca-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
             </defs>
 
-            <line x1="360" y1="59" x2="360" y2="78" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#feca-arrow)"/>
-            <line x1="360" y1="122" x2="360" y2="141" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#feca-arrow)"/>
-            <line x1="360" y1="196" x2="105" y2="240" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#feca-arrow)"/>
-            <line x1="360" y1="196" x2="360" y2="240" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#feca-arrow)"/>
-            <line x1="360" y1="196" x2="615" y2="240" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#feca-arrow)"/>
+            <line x1="440" y1="82" x2="440" y2="100" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
+            <line x1="440" y1="164" x2="440" y2="186" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
+            <path d="M440,258 C440,288 135,288 135,316" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
+            <line x1="440" y1="258" x2="440" y2="316" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
+            <path d="M440,258 C440,288 745,288 745,316" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
 
-            <text x="105" y="222" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-primary)">&lt; 0.01</text>
-            <text x="360" y="222" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text-muted)">0.01&ndash;0.02</text>
-            <text x="615" y="222" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-accent)">&gt; 0.02</text>
+            <rect x="85" y="278" width="100" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="135" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">&lt; 0.01</text>
+            <rect x="380" y="278" width="120" height="26" rx="13" fill="var(--color-text-muted)"/>
+            <text x="440" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">0.01&ndash;0.02</text>
+            <rect x="695" y="278" width="100" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="745" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">&gt; 0.02</text>
 
-            <rect x="230" y="15" width="260" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="360" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text)">Hypercalcemia, PTH high or</text>
-            <text x="360" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text)">inappropriately normal</text>
+            <rect x="290" y="20" width="300" height="62" rx="16" fill="url(#feca-grad-root)" filter="url(#feca-shadow)"/>
+            <text x="440" y="46" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">Hypercalcemia, PTH high or</text>
+            <text x="440" y="68" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">inappropriately normal</text>
 
-            <rect x="270" y="78" width="180" height="44" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="360" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text)">Calculate FeCa</text>
+            <rect x="320" y="100" width="240" height="64" rx="14" fill="url(#feca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#feca-shadow)"/>
+            <text x="440" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Calculate FeCa</text>
+            <text x="440" y="149" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)">24-hour urine collection</text>
 
-            <polygon points="360,141 430,168 360,196 290,168" fill="#fff" stroke="var(--color-text)" stroke-width="1.5"/>
-            <text x="360" y="172" text-anchor="middle" font-size="10.5" font-weight="600" fill="var(--color-text)">FeCa?</text>
+            <polygon points="440,186 545,222 440,258 335,222" fill="url(#feca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#feca-shadow)"/>
+            <text x="440" y="228" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">FeCa?</text>
 
-            <rect x="20" y="240" width="170" height="55" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="1.5"/>
-            <text x="105" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text)">FHH</text>
+            <rect x="20" y="316" width="230" height="72" rx="14" fill="url(#feca-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#feca-shadow)"/>
+            <text x="135" y="349" text-anchor="middle" font-size="19" font-weight="700" fill="#4c1d95">FHH</text>
+            <text x="135" y="372" text-anchor="middle" font-size="12" fill="#4c1d95">Kidney reabsorbs as if normal</text>
 
-            <rect x="245" y="240" width="230" height="55" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="360" y="262" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-text)">Overlap zone</text>
-            <text x="360" y="278" text-anchor="middle" font-size="8.5" fill="var(--color-text-muted)">Confirm off thiazides &times;3mo, normal Mg, 25OHD&gt;50</text>
+            <rect x="300" y="316" width="280" height="72" rx="14" fill="url(#feca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#feca-shadow)"/>
+            <text x="440" y="345" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Overlap zone</text>
+            <text x="440" y="368" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">Off thiazides &times;3mo &middot; normal Mg &middot; 25OHD &gt; 50</text>
 
-            <rect x="530" y="240" width="170" height="55" rx="8" fill="#fff7ed" stroke="var(--color-accent)" stroke-width="1.5"/>
-            <text x="615" y="266" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9a3412">Primary</text>
-            <text x="615" y="280" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9a3412">Hyperparathyroidism</text>
+            <rect x="630" y="316" width="230" height="72" rx="14" fill="url(#feca-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#feca-shadow)"/>
+            <text x="745" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Primary HyperPTH</text>
+            <text x="745" y="368" text-anchor="middle" font-size="12" fill="#7c2d12">Kidney senses excess correctly</text>
           </svg>
           <figcaption>Same threshold logic as above, but reading the kidney's calcium handling instead of the calcium itself.</figcaption>
         </figure>
@@ -230,45 +258,67 @@
         <h2>Hypocalcemia: Etiology by Lab Pattern</h2>
         <p>Hypocalcemia results from failure to secrete PTH, failure to <em>respond</em> to PTH, vitamin D deficiency, failure to respond to vitamin D, or (rarely) acute complexation of calcium. In practice, <strong>phosphate</strong> is what splits these into recognizable buckets, because PTH and vitamin D pull phosphate in opposite directions:</p>
         <figure class="topic-figure">
-          <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypocalcemia, check phosphate. High phosphate, check PTH: low PTH means hypoparathyroidism, PTH deficient; high PTH means pseudohypoparathyroidism, PTH resistant. Low phosphate means vitamin D deficient with secondary high PTH." style="border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(32,26,52,0.06);max-width:100%;height:auto;">
+          <svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypocalcemia, check phosphate. High phosphate, check PTH: low PTH means hypoparathyroidism, PTH deficient; high PTH means pseudohypoparathyroidism, PTH resistant. Low phosphate means vitamin D deficient with secondary high PTH." style="max-width:100%;height:auto;">
             <defs>
-              <marker id="hypoca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <marker id="hypoca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
               </marker>
+              <filter id="hypoca-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="hypoca-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="hypoca-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="hypoca-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+              <linearGradient id="hypoca-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
             </defs>
 
-            <line x1="360" y1="59" x2="360" y2="78" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypoca-arrow)"/>
-            <line x1="360" y1="150" x2="180" y2="196" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypoca-arrow)"/>
-            <line x1="360" y1="150" x2="560" y2="290" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypoca-arrow)"/>
-            <line x1="180" y1="255" x2="105" y2="305" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypoca-arrow)"/>
-            <line x1="180" y1="255" x2="310" y2="305" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypoca-arrow)"/>
+            <line x1="430" y1="76" x2="430" y2="94" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
+            <path d="M430,166 C430,196 240,196 240,224" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
+            <path d="M430,166 C430,240 670,250 670,340" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
+            <path d="M240,296 C240,326 130,326 130,354" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
+            <path d="M240,296 C240,326 350,326 350,354" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
 
-            <text x="230" y="180" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-primary)">HIGH</text>
-            <text x="500" y="230" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-accent)">LOW</text>
-            <text x="115" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--color-text-muted)">Low PTH</text>
-            <text x="298" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--color-text-muted)">High PTH</text>
+            <rect x="286" y="188" width="80" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="326" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">HIGH</text>
+            <rect x="560" y="236" width="80" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="600" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">LOW</text>
+            <text x="146" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">Low PTH</text>
+            <text x="336" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">High PTH</text>
 
-            <rect x="260" y="15" width="200" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="2"/>
-            <text x="360" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-text)">Hypocalcemia</text>
+            <rect x="310" y="20" width="240" height="56" rx="16" fill="url(#hypoca-grad-root)" filter="url(#hypoca-shadow)"/>
+            <text x="430" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Hypocalcemia</text>
 
-            <polygon points="360,78 445,114 360,150 275,114" fill="#fff" stroke="var(--color-text)" stroke-width="1.5"/>
-            <text x="360" y="119" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--color-text)">Phosphate?</text>
+            <polygon points="430,94 545,130 430,166 315,130" fill="url(#hypoca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypoca-shadow)"/>
+            <text x="430" y="136" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Phosphate?</text>
 
-            <polygon points="180,196 250,225 180,255 110,225" fill="#fff" stroke="var(--color-primary)" stroke-width="1.5"/>
-            <text x="180" y="229" text-anchor="middle" font-size="10.5" font-weight="600" fill="var(--color-text)">PTH?</text>
+            <polygon points="240,224 340,260 240,296 140,260" fill="url(#hypoca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypoca-shadow)"/>
+            <text x="240" y="266" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">PTH?</text>
 
-            <rect x="20" y="305" width="170" height="75" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="105" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text)">Hypoparathyroidism</text>
-            <text x="105" y="350" text-anchor="middle" font-size="9.5" fill="var(--color-text-muted)">PTH deficient</text>
+            <rect x="20" y="354" width="212" height="96" rx="14" fill="url(#hypoca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
+            <text x="126" y="388" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Hypoparathyroidism</text>
+            <text x="126" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">PTH deficient</text>
 
-            <rect x="225" y="305" width="170" height="75" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="310" y="326" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--color-text)">Pseudohypo-</text>
-            <text x="310" y="340" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--color-text)">parathyroidism</text>
-            <text x="310" y="360" text-anchor="middle" font-size="9.5" fill="var(--color-text-muted)">PTH resistant</text>
+            <rect x="244" y="354" width="212" height="96" rx="14" fill="url(#hypoca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
+            <text x="350" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Pseudohypo-</text>
+            <text x="350" y="401" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">parathyroidism</text>
+            <text x="350" y="426" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">PTH resistant</text>
 
-            <rect x="465" y="290" width="200" height="90" rx="8" fill="var(--color-bg)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="565" y="315" text-anchor="middle" font-size="11" font-weight="700" fill="var(--color-text)">Vitamin D Deficient</text>
-            <text x="565" y="335" text-anchor="middle" font-size="9.5" fill="var(--color-text-muted)"><tspan x="565" dy="0">2&deg; hyperPTH (compensatory,</tspan><tspan x="565" dy="13">not the primary problem)</tspan></text>
+            <rect x="540" y="340" width="260" height="110" rx="14" fill="url(#hypoca-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
+            <text x="670" y="378" text-anchor="middle" font-size="16" font-weight="700" fill="#7c2d12">Vitamin D Deficient</text>
+            <text x="670" y="402" text-anchor="middle" font-size="12.5" fill="#7c2d12"><tspan x="670" dy="0">2&deg; hyperPTH is compensatory,</tspan><tspan x="670" dy="16">not the primary problem</tspan></text>
+            <text x="670" y="440" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">Most common of the three</text>
           </svg>
           <figcaption>Phosphate splits PTH-axis problems from vitamin D problems; PTH then splits deficiency from resistance.</figcaption>
         </figure>
