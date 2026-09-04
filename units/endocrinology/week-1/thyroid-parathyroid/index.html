@@ -114,6 +114,85 @@
 
       <section id="thyroid-disorders">
         <h2>Thyroid Disorders</h2>
+        <p>Because TSH is driven by negative feedback, it moves <em>opposite</em> to the thyroid hormone level &mdash; which makes TSH plus free T4 enough to localize almost any thyroid problem:</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart for interpreting thyroid function tests. Start with TSH. High TSH with low free T4 means primary hypothyroidism, for example Hashimoto's or iodine deficiency. High TSH with normal free T4 means subclinical hypothyroidism. Low TSH with high free T4 means primary hyperthyroidism, for example Graves disease. Low TSH with low or normal free T4 suggests a central, pituitary or hypothalamic, cause." style="max-width:100%;height:auto;">
+            <defs>
+              <marker id="tft-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+              <filter id="tft-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="tft-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="tft-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="tft-grad-primary" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ddd6fe"/>
+                <stop offset="100%" stop-color="#c4b5fd"/>
+              </linearGradient>
+              <linearGradient id="tft-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
+              <linearGradient id="tft-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+            </defs>
+
+            <line x1="440" y1="76" x2="440" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M440,168 C440,196 215,196 215,224" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M440,168 C440,196 665,196 665,224" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M215,296 C215,322 120,322 120,348" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M215,296 C215,322 330,322 330,348" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M665,296 C665,322 560,322 560,348" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+            <path d="M665,296 C665,322 770,322 770,348" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#tft-arrow)"/>
+
+            <rect x="151" y="186" width="128" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="215" y="204" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">TSH HIGH &uarr;</text>
+            <rect x="601" y="186" width="128" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="665" y="204" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">TSH LOW &darr;</text>
+
+            <rect x="320" y="20" width="240" height="56" rx="16" fill="url(#tft-grad-root)" filter="url(#tft-shadow)"/>
+            <text x="440" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Check TSH first</text>
+
+            <polygon points="440,96 590,132 440,168 290,132" fill="url(#tft-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#tft-shadow)"/>
+            <text x="440" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">TSH level?</text>
+
+            <polygon points="215,224 320,260 215,296 110,260" fill="url(#tft-grad-diamond)" stroke="var(--color-primary)" stroke-width="2" filter="url(#tft-shadow)"/>
+            <text x="215" y="265" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">Free T4?</text>
+
+            <polygon points="665,224 770,260 665,296 560,260" fill="url(#tft-grad-diamond)" stroke="var(--color-accent)" stroke-width="2" filter="url(#tft-shadow)"/>
+            <text x="665" y="265" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">Free T4?</text>
+
+            <rect x="15" y="348" width="205" height="86" rx="14" fill="url(#tft-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#tft-shadow)"/>
+            <text x="117" y="371" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4c1d95">T4 LOW</text>
+            <text x="117" y="395" text-anchor="middle" font-size="14.5" font-weight="700" fill="#4c1d95">Primary hypothyroid</text>
+            <text x="117" y="418" text-anchor="middle" font-size="11.5" fill="#4c1d95">Hashimoto's, iodine deficiency</text>
+
+            <rect x="230" y="348" width="200" height="86" rx="14" fill="url(#tft-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#tft-shadow)"/>
+            <text x="330" y="371" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text-muted)">T4 NORMAL</text>
+            <text x="330" y="395" text-anchor="middle" font-size="14.5" font-weight="700" fill="var(--color-text)">Subclinical</text>
+            <text x="330" y="416" text-anchor="middle" font-size="14.5" font-weight="700" fill="var(--color-text)">hypothyroid</text>
+
+            <rect x="455" y="348" width="205" height="86" rx="14" fill="url(#tft-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#tft-shadow)"/>
+            <text x="557" y="371" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7c2d12">T4 HIGH</text>
+            <text x="557" y="395" text-anchor="middle" font-size="14.5" font-weight="700" fill="#7c2d12">Primary hyperthyroid</text>
+            <text x="557" y="418" text-anchor="middle" font-size="11.5" fill="#7c2d12">Graves' disease</text>
+
+            <rect x="670" y="348" width="200" height="86" rx="14" fill="url(#tft-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#tft-shadow)"/>
+            <text x="770" y="371" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--color-text-muted)">T4 LOW / NORMAL</text>
+            <text x="770" y="395" text-anchor="middle" font-size="14.5" font-weight="700" fill="var(--color-text)">Central cause</text>
+            <text x="770" y="418" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">Pituitary or hypothalamic</text>
+          </svg>
+          <figcaption>TSH moves opposite to thyroid hormone &mdash; so a <em>high</em> TSH with a <em>low</em> T4 means the thyroid itself is failing.</figcaption>
+        </figure>
         <p>Symptoms mirror thyroid hormone's normal actions &mdash; hypothyroidism looks like all of it running in reverse: <strong>slower heart rate, muscle cramping, cold intolerance, puffy eyes, poor concentration, low energy.</strong></p>
         <table class="data-table">
           <thead><tr><th>Cause</th><th>Mechanism</th></tr></thead>

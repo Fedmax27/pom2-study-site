@@ -83,6 +83,87 @@
 
       <section id="practical-considerations">
         <h2>Practical Considerations</h2>
+        <p>Putting the thresholds and the confirmation rule together:</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: glucose testing result. Below the prediabetes range is normal. In the grey zone, fasting 6.1 to 6.9, 2-hour OGTT 7.8 to 11.0, or A1c 6.0 to 6.4 percent, means prediabetes and prevention efforts. At or above diagnostic threshold, fasting 7.0, A1c 6.5 percent, or 2-hour OGTT 11.1, ask whether the patient has hyperglycemic symptoms. If symptomatic, one abnormal test diagnoses diabetes. If asymptomatic, a second abnormal test on a different day is required." style="max-width:100%;height:auto;">
+            <defs>
+              <marker id="t2dx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+              <filter id="t2dx-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="t2dx-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="t2dx-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="t2dx-grad-good" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#bbf7d0"/>
+                <stop offset="100%" stop-color="#86efac"/>
+              </linearGradient>
+              <linearGradient id="t2dx-grad-warn" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fef3c7"/>
+                <stop offset="100%" stop-color="#fde68a"/>
+              </linearGradient>
+              <linearGradient id="t2dx-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
+              <linearGradient id="t2dx-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+            </defs>
+
+            <line x1="440" y1="82" x2="440" y2="102" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path d="M440,184 C440,212 130,212 130,240" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path d="M440,184 C440,212 440,212 440,240" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path d="M440,184 C440,212 750,212 750,240" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path d="M750,312 C750,338 600,338 600,368" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path d="M750,312 C750,338 862,338 862,368" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+
+            <rect x="66" y="204" width="128" height="26" rx="13" fill="#16a34a"/>
+            <text x="130" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">BELOW RANGE</text>
+            <rect x="374" y="204" width="132" height="26" rx="13" fill="#d97706"/>
+            <text x="440" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">GREY ZONE</text>
+            <rect x="676" y="204" width="148" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="750" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">AT / ABOVE CUTOFF</text>
+
+            <rect x="300" y="20" width="280" height="62" rx="16" fill="url(#t2dx-grad-root)" filter="url(#t2dx-shadow)"/>
+            <text x="440" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Glucose testing result</text>
+            <text x="440" y="68" text-anchor="middle" font-size="12" fill="#e9d5ff">FPG &middot; A1c &middot; 2-hr OGTT</text>
+
+            <polygon points="440,102 580,143 440,184 300,143" fill="url(#t2dx-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t2dx-shadow)"/>
+            <text x="440" y="148" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Which range?</text>
+
+            <rect x="20" y="240" width="220" height="72" rx="14" fill="url(#t2dx-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
+            <text x="130" y="273" text-anchor="middle" font-size="17" font-weight="700" fill="#14532d">Normal</text>
+            <text x="130" y="296" text-anchor="middle" font-size="12" fill="#14532d">Routine screening only</text>
+
+            <rect x="310" y="240" width="260" height="72" rx="14" fill="url(#t2dx-grad-warn)" stroke="#d97706" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
+            <text x="440" y="268" text-anchor="middle" font-size="16" font-weight="700" fill="#78350f">Prediabetes</text>
+            <text x="440" y="290" text-anchor="middle" font-size="11.5" fill="#78350f"><tspan x="440" dy="0">IFG 6.1&ndash;6.9 &middot; IGT 7.8&ndash;11.0</tspan><tspan x="440" dy="14">A1c 6.0&ndash;6.4% &rarr; prevention</tspan></text>
+
+            <polygon points="750,240 880,276 750,312 620,276" fill="url(#t2dx-grad-diamond)" stroke="var(--color-accent)" stroke-width="2.5" filter="url(#t2dx-shadow)"/>
+            <text x="750" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">Symptoms?</text>
+            <text x="750" y="290" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">thirst, polyuria, wt loss</text>
+
+            <rect x="470" y="368" width="260" height="86" rx="14" fill="url(#t2dx-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
+            <text x="600" y="396" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Symptomatic &rarr; diagnose</text>
+            <text x="600" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#7c2d12">ONE abnormal test</text>
+            <text x="600" y="440" text-anchor="middle" font-size="11.5" fill="#7c2d12">is sufficient</text>
+
+            <rect x="745" y="368" width="130" height="86" rx="14" fill="url(#t2dx-grad-neutral)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
+            <text x="810" y="396" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">No symptoms</text>
+            <text x="810" y="420" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">TWO tests,</text>
+            <text x="810" y="438" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">different days</text>
+          </svg>
+          <figcaption>One result rarely settles it &mdash; the range decides the path, and symptoms decide whether confirmation is needed.</figcaption>
+        </figure>
         <table class="data-table">
           <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
           <tbody>

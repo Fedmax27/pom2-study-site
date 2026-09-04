@@ -108,11 +108,64 @@
             <tr><td>2-hr OGTT plasma glucose</td><td>&gt; 11.1 mmol/L</td></tr>
           </tbody>
         </table>
-        <ul class="key-points-list">
-          <li><strong>Symptomatic</strong> patient (polyuria/polydipsia/weight loss + glycosuria/ketonuria): <strong>one</strong> abnormal glucose value is enough to diagnose.</li>
-          <li><strong>Asymptomatic</strong> patient: need <strong>two</strong> abnormal values.</li>
-          <li>Fasting glucose and HbA1c are usually <strong>not necessary</strong> for diagnosing T1DM (unlike T2DM).</li>
-        </ul>
+        <p>Whether one abnormal value is enough depends entirely on whether the patient is symptomatic:</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: abnormal glucose value. If the patient is symptomatic with polyuria, polydipsia, weight loss, glycosuria or ketonuria, one abnormal value diagnoses diabetes. If asymptomatic, a second abnormal value on a different day is required before diagnosis." style="max-width:100%;height:auto;">
+            <defs>
+              <marker id="t1dx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+              <filter id="t1dx-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="t1dx-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="t1dx-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="t1dx-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
+              <linearGradient id="t1dx-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+            </defs>
+
+            <line x1="400" y1="76" x2="400" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
+            <path d="M400,178 C400,208 190,208 190,236" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
+            <path d="M400,178 C400,208 610,208 610,236" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
+
+            <rect x="126" y="198" width="128" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="190" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">SYMPTOMATIC</text>
+            <rect x="536" y="198" width="148" height="26" rx="13" fill="var(--color-primary)"/>
+            <text x="610" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">ASYMPTOMATIC</text>
+
+            <rect x="270" y="20" width="260" height="56" rx="16" fill="url(#t1dx-grad-root)" filter="url(#t1dx-shadow)"/>
+            <text x="400" y="45" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">Abnormal glucose value</text>
+            <text x="400" y="65" text-anchor="middle" font-size="12" fill="#e9d5ff">Random &gt; 11.1 &middot; fasting &gt; 7.0</text>
+
+            <polygon points="400,96 570,137 400,178 230,137" fill="url(#t1dx-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t1dx-shadow)"/>
+            <text x="400" y="132" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Symptoms present?</text>
+            <text x="400" y="152" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">Polyuria, polydipsia, weight loss</text>
+
+            <rect x="40" y="236" width="300" height="118" rx="14" fill="url(#t1dx-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t1dx-shadow)"/>
+            <text x="190" y="272" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Diagnose now</text>
+            <text x="190" y="300" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">ONE abnormal value is enough</text>
+            <text x="190" y="328" text-anchor="middle" font-size="12" fill="#7c2d12">Plus glycosuria / ketonuria</text>
+
+            <rect x="460" y="236" width="300" height="118" rx="14" fill="url(#t1dx-grad-neutral)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#t1dx-shadow)"/>
+            <text x="610" y="272" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Repeat testing</text>
+            <text x="610" y="300" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--color-primary)">TWO abnormal values needed</text>
+            <text x="610" y="328" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">Different day, different sample</text>
+          </svg>
+          <figcaption>Symptoms are what let you diagnose on a single value.</figcaption>
+        </figure>
+        <p style="font-size:0.9rem;color:var(--color-text-muted);">Fasting glucose and HbA1c are usually <strong>not necessary</strong> for diagnosing T1DM (unlike T2DM) &mdash; the presentation is typically acute and unambiguous.</p>
       </section>
 
       <section id="bg-monitoring">
@@ -220,11 +273,70 @@
             <tr><td>Pallor</td><td>Convulsion</td></tr>
           </tbody>
         </table>
-        <ul class="key-points-list">
-          <li><strong>Mild/moderate:</strong> glucose tablet, juice, or glucose gel (absorbed via buccal mucosa)</li>
-          <li><strong>Severe/can't take oral glucose:</strong> glucagon (IM/SC or intranasal) or IV dextrose</li>
-          <li><strong>Prevention</strong> beats treatment: prompt treatment of early symptoms, regular (incl. nocturnal) BG monitoring, insulin adjustments around exercise, and sticking to the meal plan</li>
-        </ul>
+        <p>Treatment hinges on one practical question &mdash; can they safely swallow?</p>
+        <figure class="topic-figure">
+          <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypoglycemia. If the patient is alert and able to swallow, give oral glucose such as a glucose tablet, juice, or glucose gel. If unconscious, seizing, or unable to take oral glucose, give glucagon by intramuscular, subcutaneous, or intranasal route, or IV dextrose. Recheck glucose in 15 minutes and repeat if still low." style="max-width:100%;height:auto;">
+            <defs>
+              <marker id="hypo-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              </marker>
+              <filter id="hypo-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
+              </filter>
+              <linearGradient id="hypo-grad-root" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+              </linearGradient>
+              <linearGradient id="hypo-grad-diamond" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f5f2fc"/>
+              </linearGradient>
+              <linearGradient id="hypo-grad-good" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#bbf7d0"/>
+                <stop offset="100%" stop-color="#86efac"/>
+              </linearGradient>
+              <linearGradient id="hypo-grad-accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="100%" stop-color="#fdba74"/>
+              </linearGradient>
+              <linearGradient id="hypo-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#f1eef8"/>
+              </linearGradient>
+            </defs>
+
+            <line x1="400" y1="76" x2="400" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
+            <path d="M400,168 C400,196 190,196 190,222" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
+            <path d="M400,168 C400,196 610,196 610,222" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
+            <path d="M190,306 C190,326 400,326 400,338" fill="none" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypo-arrow)"/>
+            <path d="M610,306 C610,326 400,326 400,338" fill="none" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypo-arrow)"/>
+
+            <rect x="120" y="186" width="140" height="26" rx="13" fill="#16a34a"/>
+            <text x="190" y="204" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">CAN SWALLOW</text>
+            <rect x="530" y="186" width="160" height="26" rx="13" fill="var(--color-accent)"/>
+            <text x="610" y="204" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">CANNOT / UNSAFE</text>
+
+            <rect x="290" y="20" width="220" height="56" rx="16" fill="url(#hypo-grad-root)" filter="url(#hypo-shadow)"/>
+            <text x="400" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Hypoglycemia</text>
+
+            <polygon points="400,96 560,132 400,168 240,132" fill="url(#hypo-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypo-shadow)"/>
+            <text x="400" y="129" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Alert &amp; able to swallow?</text>
+            <text x="400" y="148" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">vs. drowsy, confused, seizing</text>
+
+            <rect x="45" y="222" width="290" height="84" rx="14" fill="url(#hypo-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#hypo-shadow)"/>
+            <text x="190" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#14532d">Oral glucose</text>
+            <text x="190" y="276" text-anchor="middle" font-size="12.5" fill="#14532d"><tspan x="190" dy="0">Glucose tablet, juice, or gel</tspan><tspan x="190" dy="16">(gel absorbs via buccal mucosa)</tspan></text>
+
+            <rect x="465" y="222" width="290" height="84" rx="14" fill="url(#hypo-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#hypo-shadow)"/>
+            <text x="610" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Glucagon or IV dextrose</text>
+            <text x="610" y="276" text-anchor="middle" font-size="12.5" fill="#7c2d12"><tspan x="610" dy="0">Glucagon IM / SC / intranasal</tspan><tspan x="610" dy="16">IV dextrose if access available</tspan></text>
+
+            <rect x="255" y="338" width="290" height="0" rx="14" fill="none"/>
+            <text x="400" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">Recheck in 15 min &mdash; repeat if still low</text>
+          </svg>
+          <figcaption>Route depends on whether swallowing is safe; both paths end in a 15-minute recheck.</figcaption>
+        </figure>
+        <p style="font-size:0.9rem;color:var(--color-text-muted);"><strong>Prevention</strong> beats treatment: prompt treatment of early symptoms, regular (incl. nocturnal) BG monitoring, insulin adjustments around exercise, and sticking to the meal plan.</p>
       </section>
 
       <p class="topic-source">
