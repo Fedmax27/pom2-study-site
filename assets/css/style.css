@@ -2614,3 +2614,85 @@ main.has-toc {
   font-size: 0.88rem;
   line-height: 1.55;
 }
+
+/* ============================================================
+   Readable measure
+   Prose is capped near 68ch (the 55-75 character range eyes
+   track comfortably); tables, figures and algorithm diagrams
+   deliberately break out to full column width, where the extra
+   room helps rather than hurts.
+   ============================================================ */
+
+.topic-content {
+  /* 54ch measures to ~70 real characters in this font — the `ch`
+     unit is the width of "0", roughly 1.3x an average character,
+     so the nominal and actual counts differ. Verified by counting
+     characters on rendered first lines, not by eye. */
+  --measure: 54ch;
+}
+
+.topic-content > p,
+.topic-content > ul,
+.topic-content > ol,
+.topic-content > h1,
+.topic-content > h2,
+.topic-content > h3,
+.topic-content section > p,
+.topic-content section > ul,
+.topic-content section > ol,
+.topic-content section > h2,
+.topic-content section > h3,
+.topic-content section > h4,
+.topic-content .tldr-box,
+.topic-content .reasoning-box,
+.topic-content .case-box,
+.topic-content .approach-steps,
+.topic-content .objectives-list,
+.topic-content .key-points-list,
+.topic-content > .topic-source,
+.topic-content .algo-figure figcaption,
+.topic-content .topic-figure figcaption {
+  max-width: var(--measure);
+}
+
+/* Figure captions sit under a full-width figure, so left-align
+   them to the text column rather than centring under the image. */
+.topic-content .topic-figure figcaption {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Slightly roomier measure for the exam, whose question text is
+   short and benefits from sitting closer to its options. */
+.exam-shell .topic-content > p {
+  max-width: 62ch;
+}
+
+@media (max-width: 900px) {
+  .topic-content {
+    --measure: 100%;
+  }
+}
+
+/* Reclaim horizontal space on small screens — the default page
+   gutter plus card padding was squeezing prose to ~33 characters,
+   which is as hard to read as an over-long line. */
+@media (max-width: 640px) {
+  main {
+    padding: 1rem 0.75rem;
+  }
+
+  .topic-content {
+    padding: 1.25rem 1rem;
+    border-radius: 10px;
+  }
+
+  .topic-content h2 {
+    font-size: 1.08rem;
+  }
+
+  .breadcrumb {
+    padding: 0 0.75rem;
+  }
+}
