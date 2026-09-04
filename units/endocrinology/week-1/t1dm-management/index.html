@@ -109,59 +109,42 @@
           </tbody>
         </table>
         <p>Whether one abnormal value is enough depends entirely on whether the patient is symptomatic:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: abnormal glucose value. If the patient is symptomatic with polyuria, polydipsia, weight loss, glycosuria or ketonuria, one abnormal value diagnoses diabetes. If asymptomatic, a second abnormal value on a different day is required before diagnosis." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagnostic algorithm for type 1 diabetes. Given an abnormal glucose value — random above 11.1 or fasting above 7.0 millimoles per litre — assess whether hyperglycemic symptoms are present. If the patient is symptomatic with polyuria, polydipsia or weight loss, one abnormal value is sufficient to diagnose diabetes. If asymptomatic, a second abnormal value on a different day and a different sample is required.">
             <defs>
-              <marker id="t1dx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="t1dx-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="t1dx-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="t1dx-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="t1dx-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="t1dx-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="t1dx-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
             </defs>
 
-            <line x1="400" y1="76" x2="400" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
-            <path d="M400,178 C400,208 190,208 190,236" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
-            <path d="M400,178 C400,208 610,208 610,236" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t1dx-arrow)"/>
+            <path class="algo-edge" d="M440,66 V88" marker-end="url(#t1dx-tip)"/>
+            <path class="algo-edge" d="M440,168 V194 H222 V222" marker-end="url(#t1dx-tip)"/>
+            <path class="algo-edge" d="M440,168 V194 H658 V222" marker-end="url(#t1dx-tip)"/>
 
-            <rect x="126" y="198" width="128" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="190" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">SYMPTOMATIC</text>
-            <rect x="536" y="198" width="148" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="610" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">ASYMPTOMATIC</text>
+            <rect class="algo-root" x="300" y="16" width="280" height="50" rx="4"/>
+            <text class="algo-root-label" x="440" y="38" text-anchor="middle">Abnormal glucose value</text>
+            <text class="algo-root-sub" x="440" y="56" text-anchor="middle">random &gt; 11.1 &middot; fasting &gt; 7.0 mmol/L</text>
 
-            <rect x="270" y="20" width="260" height="56" rx="16" fill="url(#t1dx-grad-root)" filter="url(#t1dx-shadow)"/>
-            <text x="400" y="45" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">Abnormal glucose value</text>
-            <text x="400" y="65" text-anchor="middle" font-size="12" fill="#e9d5ff">Random &gt; 11.1 &middot; fasting &gt; 7.0</text>
+            <polygon class="algo-decision" points="440,88 580,128 440,168 300,128"/>
+            <text class="algo-q" x="440" y="124" text-anchor="middle">Hyperglycemic symptoms?</text>
+            <text class="algo-q-sub" x="440" y="140" text-anchor="middle">polyuria, polydipsia, weight loss</text>
 
-            <polygon points="400,96 570,137 400,178 230,137" fill="url(#t1dx-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t1dx-shadow)"/>
-            <text x="400" y="132" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Symptoms present?</text>
-            <text x="400" y="152" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">Polyuria, polydipsia, weight loss</text>
+            <rect class="algo-edge-plate" x="278" y="186" width="98" height="16"/>
+            <text class="algo-edge-label" x="327" y="198" text-anchor="middle">SYMPTOMATIC</text>
+            <rect class="algo-edge-plate" x="500" y="186" width="112" height="16"/>
+            <text class="algo-edge-label" x="556" y="198" text-anchor="middle">ASYMPTOMATIC</text>
 
-            <rect x="40" y="236" width="300" height="118" rx="14" fill="url(#t1dx-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t1dx-shadow)"/>
-            <text x="190" y="272" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Diagnose now</text>
-            <text x="190" y="300" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">ONE abnormal value is enough</text>
-            <text x="190" y="328" text-anchor="middle" font-size="12" fill="#7c2d12">Plus glycosuria / ketonuria</text>
+            <rect class="algo-node algo-orange" x="66" y="222" width="312" height="102" rx="4"/>
+            <text class="algo-title algo-title-orange" x="222" y="248" text-anchor="middle">Diagnose now</text>
+            <line x1="88" y1="260" x2="356" y2="260" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="222" y="281" text-anchor="middle">One abnormal value is sufficient</text>
+            <text class="algo-body" x="222" y="302" text-anchor="middle">usually with glycosuria and ketonuria</text>
 
-            <rect x="460" y="236" width="300" height="118" rx="14" fill="url(#t1dx-grad-neutral)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#t1dx-shadow)"/>
-            <text x="610" y="272" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Repeat testing</text>
-            <text x="610" y="300" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--color-primary)">TWO abnormal values needed</text>
-            <text x="610" y="328" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">Different day, different sample</text>
+            <rect class="algo-node algo-blue" x="502" y="222" width="312" height="102" rx="4"/>
+            <text class="algo-title algo-title-blue" x="658" y="248" text-anchor="middle">Confirm before diagnosing</text>
+            <line x1="524" y1="260" x2="792" y2="260" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="658" y="281" text-anchor="middle">Two abnormal values required</text>
+            <text class="algo-body" x="658" y="302" text-anchor="middle">different day, different sample</text>
           </svg>
           <figcaption>Symptoms are what let you diagnose on a single value.</figcaption>
         </figure>
@@ -274,65 +257,46 @@
           </tbody>
         </table>
         <p>Treatment hinges on one practical question &mdash; can they safely swallow?</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypoglycemia. If the patient is alert and able to swallow, give oral glucose such as a glucose tablet, juice, or glucose gel. If unconscious, seizing, or unable to take oral glucose, give glucagon by intramuscular, subcutaneous, or intranasal route, or IV dextrose. Recheck glucose in 15 minutes and repeat if still low." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Treatment algorithm for hypoglycemia. Assess whether the patient is alert and able to swallow safely. If yes, give oral glucose — a glucose tablet, juice, or glucose gel absorbed through the buccal mucosa. If the patient is drowsy, confused or seizing and cannot safely swallow, give glucagon by intramuscular, subcutaneous or intranasal route, or intravenous dextrose where access is available. Both pathways converge on rechecking the glucose after 15 minutes and repeating treatment if it remains low.">
             <defs>
-              <marker id="hypo-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="hypo-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="hypo-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="hypo-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="hypo-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="hypo-grad-good" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#bbf7d0"/>
-                <stop offset="100%" stop-color="#86efac"/>
-              </linearGradient>
-              <linearGradient id="hypo-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="hypo-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
             </defs>
 
-            <line x1="400" y1="76" x2="400" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
-            <path d="M400,168 C400,196 190,196 190,222" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
-            <path d="M400,168 C400,196 610,196 610,222" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#hypo-arrow)"/>
-            <path d="M190,306 C190,326 400,326 400,338" fill="none" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypo-arrow)"/>
-            <path d="M610,306 C610,326 400,326 400,338" fill="none" stroke="var(--color-text-muted)" stroke-width="2" marker-end="url(#hypo-arrow)"/>
+            <path class="algo-edge" d="M440,60 V82" marker-end="url(#hypo-tip)"/>
+            <path class="algo-edge" d="M440,162 V188 H222 V216" marker-end="url(#hypo-tip)"/>
+            <path class="algo-edge" d="M440,162 V188 H658 V216" marker-end="url(#hypo-tip)"/>
+            <path class="algo-edge" d="M222,300 V320 H440 V336" marker-end="url(#hypo-tip)"/>
+            <path class="algo-edge" d="M658,300 V320 H440 V336" marker-end="url(#hypo-tip)"/>
 
-            <rect x="120" y="186" width="140" height="26" rx="13" fill="#16a34a"/>
-            <text x="190" y="204" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">CAN SWALLOW</text>
-            <rect x="530" y="186" width="160" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="610" y="204" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">CANNOT / UNSAFE</text>
+            <rect class="algo-root" x="330" y="16" width="220" height="44" rx="4"/>
+            <text class="algo-root-label" x="440" y="43" text-anchor="middle">Hypoglycemia</text>
 
-            <rect x="290" y="20" width="220" height="56" rx="16" fill="url(#hypo-grad-root)" filter="url(#hypo-shadow)"/>
-            <text x="400" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Hypoglycemia</text>
+            <polygon class="algo-decision" points="440,82 580,122 440,162 300,122"/>
+            <text class="algo-q" x="440" y="118" text-anchor="middle">Alert and able to swallow?</text>
+            <text class="algo-q-sub" x="440" y="134" text-anchor="middle">vs. drowsy, confused, seizing</text>
 
-            <polygon points="400,96 560,132 400,168 240,132" fill="url(#hypo-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypo-shadow)"/>
-            <text x="400" y="129" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Alert &amp; able to swallow?</text>
-            <text x="400" y="148" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">vs. drowsy, confused, seizing</text>
+            <rect class="algo-edge-plate" x="280" y="180" width="92" height="16"/>
+            <text class="algo-edge-label" x="326" y="192" text-anchor="middle">CAN SWALLOW</text>
+            <rect class="algo-edge-plate" x="504" y="180" width="106" height="16"/>
+            <text class="algo-edge-label" x="557" y="192" text-anchor="middle">CANNOT / UNSAFE</text>
 
-            <rect x="45" y="222" width="290" height="84" rx="14" fill="url(#hypo-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#hypo-shadow)"/>
-            <text x="190" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#14532d">Oral glucose</text>
-            <text x="190" y="276" text-anchor="middle" font-size="12.5" fill="#14532d"><tspan x="190" dy="0">Glucose tablet, juice, or gel</tspan><tspan x="190" dy="16">(gel absorbs via buccal mucosa)</tspan></text>
+            <rect class="algo-node algo-green" x="66" y="216" width="312" height="84" rx="4"/>
+            <text class="algo-title algo-title-green" x="222" y="242" text-anchor="middle">Oral glucose</text>
+            <line x1="88" y1="254" x2="356" y2="254" stroke="#8dc9b6" stroke-width="1"/>
+            <text class="algo-body" x="222" y="274" text-anchor="middle">Glucose tablet, juice, or glucose gel</text>
+            <text class="algo-body" x="222" y="290" text-anchor="middle">(gel absorbs via buccal mucosa)</text>
 
-            <rect x="465" y="222" width="290" height="84" rx="14" fill="url(#hypo-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#hypo-shadow)"/>
-            <text x="610" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Glucagon or IV dextrose</text>
-            <text x="610" y="276" text-anchor="middle" font-size="12.5" fill="#7c2d12"><tspan x="610" dy="0">Glucagon IM / SC / intranasal</tspan><tspan x="610" dy="16">IV dextrose if access available</tspan></text>
+            <rect class="algo-node algo-orange" x="502" y="216" width="312" height="84" rx="4"/>
+            <text class="algo-title algo-title-orange" x="658" y="242" text-anchor="middle">Parenteral rescue</text>
+            <line x1="524" y1="254" x2="792" y2="254" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body" x="658" y="274" text-anchor="middle">Glucagon IM, SC, or intranasal</text>
+            <text class="algo-body" x="658" y="290" text-anchor="middle">or IV dextrose where access exists</text>
 
-            <rect x="255" y="338" width="290" height="0" rx="14" fill="none"/>
-            <text x="400" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">Recheck in 15 min &mdash; repeat if still low</text>
+            <rect class="algo-node algo-grey" x="270" y="336" width="340" height="30" rx="4"/>
+            <text class="algo-body-em" x="440" y="356" text-anchor="middle">Recheck glucose at 15 minutes; repeat if still low</text>
           </svg>
           <figcaption>Route depends on whether swallowing is safe; both paths end in a 15-minute recheck.</figcaption>
         </figure>

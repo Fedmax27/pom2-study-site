@@ -103,86 +103,67 @@
 
       <section id="gdm-screening">
         <h2>Screening, Treatment &amp; BG Goals</h2>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diabetes Canada GDM screening algorithm: all pregnant women between 24 and 28 weeks gestation get a 50 gram glucose challenge test with plasma glucose measured 1 hour later. Under 7.8 mmol per litre is normal. 7.8 to 11.0 mmol per litre requires a follow-up 75 gram OGTT measuring fasting, 1 hour, and 2 hour plasma glucose, with gestational diabetes diagnosed if fasting is 5.3 or higher, 1 hour is 10.6 or higher, or 2 hour is 9.0 or higher, otherwise normal. 11.1 mmol per litre or higher on the initial test diagnoses gestational diabetes directly." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gestational diabetes screening algorithm. All pregnant women at 24 to 28 weeks gestation receive a 50 gram glucose challenge test with plasma glucose measured at 1 hour. A result below 7.8 millimoles per litre is normal and needs no further testing. A result of 7.8 to 11.0 requires a follow-up 75 gram oral glucose tolerance test measuring fasting, 1 hour, and 2 hour plasma glucose; gestational diabetes is diagnosed if fasting is at least 5.3, 1 hour at least 10.6, or 2 hour at least 9.0 millimoles per litre, otherwise the result is normal. A result of 11.1 or higher diagnoses gestational diabetes directly without an oral glucose tolerance test.">
             <defs>
-              <marker id="gdm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="gdm-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="gdm-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="gdm-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="gdm-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="gdm-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
-              <linearGradient id="gdm-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="gdm-grad-good" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#bbf7d0"/>
-                <stop offset="100%" stop-color="#86efac"/>
-              </linearGradient>
             </defs>
 
-            <line x1="450" y1="76" x2="450" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <line x1="450" y1="160" x2="450" y2="182" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <path d="M450,264 C450,296 130,296 130,326" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <line x1="450" y1="264" x2="450" y2="326" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <path d="M450,264 C450,296 770,296 770,326" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <path d="M450,412 C450,440 310,440 310,466" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
-            <path d="M450,412 C450,440 590,440 590,466" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#gdm-arrow)"/>
+            <path class="algo-edge" d="M440,60 V80" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,136 V160" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,224 V250 H120 V278" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,224 V278" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,224 V250 H760 V278" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,356 V382 H300 V408" marker-end="url(#gdm-tip)"/>
+            <path class="algo-edge" d="M440,356 V382 H580 V408" marker-end="url(#gdm-tip)"/>
 
-            <rect x="62" y="288" width="136" height="26" rx="13" fill="#16a34a"/>
-            <text x="130" y="306" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">&lt; 7.8 mmol/L</text>
-            <rect x="382" y="288" width="136" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="450" y="306" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">7.8&ndash;11.0</text>
-            <rect x="702" y="288" width="136" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="770" y="306" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">&ge; 11.1 mmol/L</text>
+            <rect class="algo-root" x="320" y="16" width="240" height="44" rx="4"/>
+            <text class="algo-root-label" x="440" y="43" text-anchor="middle">Pregnant, 24&ndash;28 weeks</text>
 
-            <rect x="320" y="20" width="260" height="56" rx="16" fill="url(#gdm-grad-root)" filter="url(#gdm-shadow)"/>
-            <text x="450" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Pregnant, 24&ndash;28 weeks</text>
+            <rect class="algo-node" x="320" y="80" width="240" height="56" rx="4"/>
+            <text class="algo-title" x="440" y="104" text-anchor="middle">50 g glucose challenge</text>
+            <text class="algo-body" x="440" y="123" text-anchor="middle">plasma glucose at 1 hour</text>
 
-            <rect x="320" y="96" width="260" height="64" rx="14" fill="url(#gdm-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="450" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">50g Glucose Challenge</text>
-            <text x="450" y="145" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)">Plasma glucose at 1 hour</text>
+            <polygon class="algo-decision" points="440,160 550,192 440,224 330,192"/>
+            <text class="algo-q" x="440" y="197" text-anchor="middle">1-hour result?</text>
 
-            <polygon points="450,182 560,223 450,264 340,223" fill="url(#gdm-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#gdm-shadow)"/>
-            <text x="450" y="229" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Result?</text>
+            <rect class="algo-edge-plate" x="196" y="242" width="86" height="16"/>
+            <text class="algo-edge-label" x="239" y="254" text-anchor="middle">&lt; 7.8 mmol/L</text>
+            <rect class="algo-edge-plate" x="398" y="242" width="84" height="16"/>
+            <text class="algo-edge-label" x="440" y="254" text-anchor="middle">7.8&ndash;11.0</text>
+            <rect class="algo-edge-plate" x="598" y="242" width="90" height="16"/>
+            <text class="algo-edge-label" x="643" y="254" text-anchor="middle">&ge; 11.1 mmol/L</text>
 
-            <rect x="20" y="326" width="220" height="72" rx="14" fill="url(#gdm-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="130" y="359" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Normal</text>
-            <text x="130" y="382" text-anchor="middle" font-size="12.5" fill="#14532d">No further testing</text>
+            <rect class="algo-node algo-green" x="16" y="278" width="208" height="66" rx="4"/>
+            <text class="algo-title algo-title-green" x="120" y="304" text-anchor="middle">Normal</text>
+            <text class="algo-body" x="120" y="325" text-anchor="middle">No further testing</text>
 
-            <rect x="340" y="326" width="220" height="86" rx="14" fill="url(#gdm-grad-neutral)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="450" y="356" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">75g OGTT</text>
-            <text x="450" y="379" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)"><tspan x="450" dy="0">Fasting / 1hr / 2hr</tspan><tspan x="450" dy="16">plasma glucose</tspan></text>
+            <rect class="algo-node" x="336" y="278" width="208" height="78" rx="4"/>
+            <text class="algo-title" x="440" y="303" text-anchor="middle">75 g OGTT</text>
+            <line x1="356" y1="315" x2="524" y2="315" stroke="#c3c9d6" stroke-width="1"/>
+            <text class="algo-body" x="440" y="334" text-anchor="middle">fasting / 1 hr / 2 hr</text>
+            <text class="algo-body" x="440" y="348" text-anchor="middle">plasma glucose</text>
 
-            <rect x="660" y="326" width="220" height="72" rx="14" fill="url(#gdm-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="770" y="359" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">GDM Diagnosed</text>
-            <text x="770" y="382" text-anchor="middle" font-size="12" fill="#7c2d12">Directly &mdash; no OGTT needed</text>
+            <rect class="algo-node algo-orange" x="656" y="278" width="208" height="66" rx="4"/>
+            <text class="algo-title algo-title-orange" x="760" y="304" text-anchor="middle">GDM diagnosed</text>
+            <text class="algo-body" x="760" y="325" text-anchor="middle">directly &mdash; no OGTT needed</text>
 
-            <text x="238" y="452" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-accent)">any value &ge; threshold</text>
-            <text x="668" y="452" text-anchor="middle" font-size="12.5" font-weight="700" fill="#16a34a">all values normal</text>
+            <rect class="algo-edge-plate" x="316" y="374" width="132" height="16"/>
+            <text class="algo-edge-label" x="382" y="386" text-anchor="middle">ANY VALUE AT/OVER</text>
+            <rect class="algo-edge-plate" x="516" y="374" width="128" height="16"/>
+            <text class="algo-edge-label" x="580" y="386" text-anchor="middle">ALL VALUES NORMAL</text>
 
-            <rect x="190" y="466" width="240" height="84" rx="14" fill="url(#gdm-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="310" y="495" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">GDM Diagnosed</text>
-            <text x="310" y="518" text-anchor="middle" font-size="12" fill="#7c2d12"><tspan x="310" dy="0">Fasting &ge; 5.3 &middot; 1hr &ge; 10.6</tspan><tspan x="310" dy="15">2hr &ge; 9.0 mmol/L</tspan></text>
+            <rect class="algo-node algo-orange" x="186" y="408" width="228" height="56" rx="4"/>
+            <text class="algo-title algo-title-orange" x="300" y="430" text-anchor="middle">GDM diagnosed</text>
+            <text class="algo-body" x="300" y="450" text-anchor="middle">fasting &ge; 5.3 &middot; 1 hr &ge; 10.6 &middot; 2 hr &ge; 9.0</text>
 
-            <rect x="470" y="466" width="240" height="84" rx="14" fill="url(#gdm-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#gdm-shadow)"/>
-            <text x="590" y="503" text-anchor="middle" font-size="18" font-weight="700" fill="#14532d">Normal</text>
-            <text x="590" y="526" text-anchor="middle" font-size="12.5" fill="#14532d">All three values in range</text>
+            <rect class="algo-node algo-green" x="466" y="408" width="228" height="56" rx="4"/>
+            <text class="algo-title algo-title-green" x="580" y="430" text-anchor="middle">Normal</text>
+            <text class="algo-body" x="580" y="450" text-anchor="middle">all three values in range</text>
           </svg>
-          <figcaption>Diabetes Canada's two-step GDM screening pathway (universal screening preferred).</figcaption>
+          <figcaption>Two-step screening for gestational diabetes (Diabetes Canada; universal screening preferred). All glucose values are plasma, in mmol/L. A single value at or above threshold on the OGTT is sufficient for diagnosis.</figcaption>
         </figure>
         <ul class="key-points-list">
           <li><strong>Treatment:</strong> low simple-carb diet in 3 meals + 3 snacks, post-meal walks, home BG monitoring. If BG stays high: insulin or metformin first-line; glyburide crosses the placenta (neonatal hypoglycemia risk) and is more of a fallback.</li>

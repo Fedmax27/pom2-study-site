@@ -124,68 +124,51 @@
       <section id="comparison-table">
         <h2>Comparing DKA &amp; HHS</h2>
         <p>At the bedside, the split comes down to two questions &mdash; is there acidosis, and are there ketones:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hyperglycemic emergency, check pH and ketones. pH 7.3 or below with positive ketones and anion gap above 12 means DKA, typically younger type 1 diabetes with abdominal pain, vomiting, and Kussmaul breathing. pH above 7.3 with negative ketones and osmolality above 320 means HHS, typically older type 2 diabetes with no abdominal pain and no hyperventilation. Both are treated with fluids, IV insulin, and close potassium monitoring." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 434" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Algorithm distinguishing diabetic ketoacidosis from hyperosmolar hyperglycemic state. In a hyperglycemic emergency, assess acid-base status and ketones. A pH of 7.3 or below with positive ketones indicates DKA, with an anion gap above 12 and bicarbonate below 18; the typical patient is younger with type 1 diabetes, onset over hours, abdominal pain and vomiting, Kussmaul breathing and acetone breath. A pH above 7.3 with negative or trace ketones indicates HHS, with osmolality above 320 and glucose above 30 millimoles per litre; the typical patient is older with type 2 diabetes, onset over days, without abdominal pain, vomiting or hyperventilation. Both converge on the same core treatment: airway, breathing and circulation, then fluids, then intravenous insulin, with close potassium monitoring.">
             <defs>
-              <marker id="dka-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="dka-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="dka-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="dka-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="dka-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="dka-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="dka-grad-primary" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ddd6fe"/>
-                <stop offset="100%" stop-color="#c4b5fd"/>
-              </linearGradient>
-              <linearGradient id="dka-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
             </defs>
 
-            <line x1="430" y1="76" x2="430" y2="96" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#dka-arrow)"/>
-            <path d="M430,178 C430,210 210,210 210,240" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#dka-arrow)"/>
-            <path d="M430,178 C430,210 650,210 650,240" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#dka-arrow)"/>
-            <path d="M210,368 C210,392 430,392 430,410" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#dka-arrow)"/>
-            <path d="M650,368 C650,392 430,392 430,410" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#dka-arrow)"/>
+            <path class="algo-edge" d="M440,60 V82" marker-end="url(#dka-tip)"/>
+            <path class="algo-edge" d="M440,162 V188 H216 V216" marker-end="url(#dka-tip)"/>
+            <path class="algo-edge" d="M440,162 V188 H664 V216" marker-end="url(#dka-tip)"/>
+            <path class="algo-edge" d="M216,338 V360 H440 V378" marker-end="url(#dka-tip)"/>
+            <path class="algo-edge" d="M664,338 V360 H440 V378" marker-end="url(#dka-tip)"/>
 
-            <rect x="112" y="202" width="196" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="210" y="220" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">pH &le; 7.3 &middot; ketones +</text>
-            <rect x="552" y="202" width="196" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="650" y="220" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">pH &gt; 7.3 &middot; ketones &minus;</text>
+            <rect class="algo-root" x="320" y="16" width="240" height="44" rx="4"/>
+            <text class="algo-root-label" x="440" y="43" text-anchor="middle">Hyperglycemic emergency</text>
 
-            <rect x="290" y="20" width="280" height="56" rx="16" fill="url(#dka-grad-root)" filter="url(#dka-shadow)"/>
-            <text x="430" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Hyperglycemic Emergency</text>
+            <polygon class="algo-decision" points="440,82 580,122 440,162 300,122"/>
+            <text class="algo-q" x="440" y="118" text-anchor="middle">Acidosis? Ketones?</text>
+            <text class="algo-q-sub" x="440" y="134" text-anchor="middle">pH, bicarbonate, anion gap, ketones</text>
 
-            <polygon points="430,96 590,137 430,178 270,137" fill="url(#dka-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#dka-shadow)"/>
-            <text x="430" y="132" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Acidotic? Ketones?</text>
-            <text x="430" y="152" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">pH, bicarb, anion gap, ketones</text>
+            <rect class="algo-edge-plate" x="252" y="180" width="130" height="16"/>
+            <text class="algo-edge-label" x="317" y="192" text-anchor="middle">pH &le; 7.3, KETONES +</text>
+            <rect class="algo-edge-plate" x="500" y="180" width="130" height="16"/>
+            <text class="algo-edge-label" x="565" y="192" text-anchor="middle">pH &gt; 7.3, KETONES &minus;</text>
 
-            <rect x="60" y="240" width="300" height="128" rx="14" fill="url(#dka-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#dka-shadow)"/>
-            <text x="210" y="273" text-anchor="middle" font-size="21" font-weight="700" fill="#7c2d12">DKA</text>
-            <text x="210" y="299" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7c2d12">Anion gap &gt; 12 &middot; bicarb &lt; 18</text>
-            <text x="210" y="322" text-anchor="middle" font-size="12" fill="#7c2d12"><tspan x="210" dy="0">Younger, T1DM &middot; onset in hours</tspan><tspan x="210" dy="16">Abdominal pain, vomiting</tspan><tspan x="210" dy="16">Kussmaul breathing, acetone breath</tspan></text>
+            <rect class="algo-node algo-orange" x="60" y="216" width="312" height="122" rx="4"/>
+            <text class="algo-title algo-title-orange" x="216" y="242" text-anchor="middle">Diabetic ketoacidosis (DKA)</text>
+            <line x1="82" y1="254" x2="350" y2="254" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="216" y="274" text-anchor="middle">Anion gap &gt; 12 &middot; bicarbonate &lt; 18 mEq/L</text>
+            <text class="algo-body" x="216" y="294" text-anchor="middle">Younger, type 1 &middot; onset over hours</text>
+            <text class="algo-body" x="216" y="311" text-anchor="middle">Abdominal pain, vomiting</text>
+            <text class="algo-body" x="216" y="328" text-anchor="middle">Kussmaul breathing, acetone breath</text>
 
-            <rect x="500" y="240" width="300" height="128" rx="14" fill="url(#dka-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#dka-shadow)"/>
-            <text x="650" y="273" text-anchor="middle" font-size="21" font-weight="700" fill="#4c1d95">HHS</text>
-            <text x="650" y="299" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Osm &gt; 320 &middot; glucose &gt; 30 mmol/L</text>
-            <text x="650" y="322" text-anchor="middle" font-size="12" fill="#4c1d95"><tspan x="650" dy="0">Older, T2DM &middot; onset over days</tspan><tspan x="650" dy="16">NO abdominal pain or vomiting</tspan><tspan x="650" dy="16">NO hyperventilation</tspan></text>
+            <rect class="algo-node algo-blue" x="508" y="216" width="312" height="122" rx="4"/>
+            <text class="algo-title algo-title-blue" x="664" y="242" text-anchor="middle">Hyperosmolar hyperglycemic state</text>
+            <line x1="530" y1="254" x2="798" y2="254" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="664" y="274" text-anchor="middle">Osmolality &gt; 320 &middot; glucose &gt; 30 mmol/L</text>
+            <text class="algo-body" x="664" y="294" text-anchor="middle">Older, type 2 &middot; onset over days</text>
+            <text class="algo-body" x="664" y="311" text-anchor="middle">No abdominal pain or vomiting</text>
+            <text class="algo-body" x="664" y="328" text-anchor="middle">No hyperventilation</text>
 
-            <rect x="230" y="410" width="400" height="52" rx="14" fill="url(#dka-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#dka-shadow)"/>
-            <text x="430" y="432" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">Same core treatment: ABCs &rarr; fluids &rarr; IV insulin</text>
-            <text x="430" y="452" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">Watch K&#8314; closely &mdash; it falls once insulin starts</text>
+            <rect class="algo-node algo-grey" x="240" y="378" width="400" height="48" rx="4"/>
+            <text class="algo-body-em" x="440" y="398" text-anchor="middle">Shared treatment: ABCs &rarr; fluids &rarr; IV insulin</text>
+            <text class="algo-body" x="440" y="415" text-anchor="middle">monitor K&#8314; closely &mdash; it falls once insulin is started</text>
           </svg>
           <figcaption>Two questions separate them; the treatment pathway then converges.</figcaption>
         </figure>

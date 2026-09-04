@@ -117,62 +117,49 @@
       <section id="hypercalcemia-etiology">
         <h2>Etiology: PTH-Mediated vs. PTH-Independent</h2>
         <p>The cleanest way to organize the differential is by whether PTH is driving it &mdash; and a single PTH level splits the whole list in two:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: confirmed hypercalcemia with corrected calcium above 2.55. Check PTH. If PTH is high or inappropriately normal, the cause is PTH-mediated: primary hyperparathyroidism, tertiary hyperparathyroidism, or familial hypocalciuric hypercalcemia, and fractional excretion of calcium separates them. If PTH is suppressed, the cause is PTH-independent: malignancy including PTHrP and bony metastases, vitamin D excess or granulomatous disease, or other causes such as medications and milk-alkali syndrome." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 386" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Algorithm for the differential diagnosis of hypercalcemia. In confirmed hypercalcemia with a corrected calcium above 2.55 millimoles per litre, measure PTH. A PTH that is high or inappropriately normal indicates a PTH-mediated cause: primary hyperparathyroidism, most often a solitary adenoma; tertiary hyperparathyroidism from chronic renal failure; or familial hypocalciuric hypercalcemia, which fractional excretion of calcium then separates from primary hyperparathyroidism. A suppressed PTH indicates a PTH-independent cause: malignancy through PTH-related peptide or bony metastases; vitamin D excess or granulomatous disease; or medications, milk-alkali syndrome, immobilization and thyrotoxicosis.">
             <defs>
-              <marker id="hyperca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="hyperca-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="hyperca-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="hyperca-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="hyperca-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="hyperca-grad-primary" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ddd6fe"/>
-                <stop offset="100%" stop-color="#c4b5fd"/>
-              </linearGradient>
-              <linearGradient id="hyperca-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
             </defs>
 
-            <line x1="440" y1="82" x2="440" y2="102" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hyperca-arrow)"/>
-            <path d="M440,184 C440,214 220,214 220,244" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#hyperca-arrow)"/>
-            <path d="M440,184 C440,214 660,214 660,244" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#hyperca-arrow)"/>
+            <path class="algo-edge" d="M440,66 V88" marker-end="url(#hyperca-tip)"/>
+            <path class="algo-edge" d="M440,152 V178 H222 V206" marker-end="url(#hyperca-tip)"/>
+            <path class="algo-edge" d="M440,152 V178 H658 V206" marker-end="url(#hyperca-tip)"/>
 
-            <rect x="118" y="206" width="204" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="220" y="224" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">HIGH or INAPPROPRIATELY NORMAL</text>
-            <rect x="588" y="206" width="144" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="660" y="224" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">SUPPRESSED &darr;</text>
+            <rect class="algo-root" x="300" y="16" width="280" height="50" rx="4"/>
+            <text class="algo-root-label" x="440" y="38" text-anchor="middle">Confirmed hypercalcemia</text>
+            <text class="algo-root-sub" x="440" y="56" text-anchor="middle">corrected Ca &gt; 2.55 mmol/L</text>
 
-            <rect x="290" y="20" width="300" height="62" rx="16" fill="url(#hyperca-grad-root)" filter="url(#hyperca-shadow)"/>
-            <text x="440" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Confirmed hypercalcemia</text>
-            <text x="440" y="68" text-anchor="middle" font-size="12" fill="#e9d5ff">Corrected Ca &gt; 2.55 mmol/L</text>
+            <polygon class="algo-decision" points="440,88 555,120 440,152 325,120"/>
+            <text class="algo-q" x="440" y="125" text-anchor="middle">PTH level?</text>
 
-            <polygon points="440,102 570,143 440,184 310,143" fill="url(#hyperca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hyperca-shadow)"/>
-            <text x="440" y="149" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">PTH level?</text>
+            <rect class="algo-edge-plate" x="250" y="170" width="188" height="16"/>
+            <text class="algo-edge-label" x="344" y="182" text-anchor="middle">HIGH / INAPPROPRIATELY NORMAL</text>
+            <rect class="algo-edge-plate" x="516" y="170" width="94" height="16"/>
+            <text class="algo-edge-label" x="563" y="182" text-anchor="middle">SUPPRESSED</text>
 
-            <rect x="30" y="244" width="380" height="160" rx="14" fill="url(#hyperca-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#hyperca-shadow)"/>
-            <text x="220" y="275" text-anchor="middle" font-size="17" font-weight="700" fill="#4c1d95">PTH-mediated</text>
-            <text x="220" y="303" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Primary hyperparathyroidism (80% adenoma)</text>
-            <text x="220" y="325" text-anchor="middle" font-size="13" fill="#4c1d95">Tertiary hyperPTH (chronic renal failure)</text>
-            <text x="220" y="347" text-anchor="middle" font-size="13" fill="#4c1d95">Familial hypocalciuric hypercalcemia</text>
-            <text x="220" y="382" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">&rarr; FeCa separates 1&deg; hyperPTH from FHH</text>
+            <rect class="algo-node algo-blue" x="16" y="206" width="412" height="164" rx="4"/>
+            <text class="algo-title algo-title-blue" x="222" y="232" text-anchor="middle">PTH-mediated</text>
+            <line x1="40" y1="244" x2="404" y2="244" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="222" y="265" text-anchor="middle">Primary hyperparathyroidism &mdash; 80% adenoma</text>
+            <text class="algo-body" x="222" y="285" text-anchor="middle">Tertiary hyperparathyroidism (chronic renal failure)</text>
+            <text class="algo-body" x="222" y="303" text-anchor="middle">Familial hypocalciuric hypercalcemia</text>
+            <line x1="40" y1="320" x2="404" y2="320" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="222" y="341" text-anchor="middle">Next step: FE<tspan font-size="9" dy="2">Ca</tspan><tspan dy="-2"> separates 1&deg; hyperPTH from FHH</tspan></text>
+            <text class="algo-body" x="222" y="359" text-anchor="middle">(see following figure)</text>
 
-            <rect x="470" y="244" width="380" height="160" rx="14" fill="url(#hyperca-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#hyperca-shadow)"/>
-            <text x="660" y="275" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">PTH-independent</text>
-            <text x="660" y="303" text-anchor="middle" font-size="13" font-weight="700" fill="#7c2d12">Malignancy &mdash; PTHrP or bony metastases</text>
-            <text x="660" y="325" text-anchor="middle" font-size="13" fill="#7c2d12">Vitamin D excess, granulomatous disease</text>
-            <text x="660" y="347" text-anchor="middle" font-size="13" fill="#7c2d12">Meds, milk-alkali, immobilization, thyrotoxicosis</text>
-            <text x="660" y="382" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">&rarr; Malignancy is the one to exclude first</text>
+            <rect class="algo-node algo-orange" x="452" y="206" width="412" height="164" rx="4"/>
+            <text class="algo-title algo-title-orange" x="658" y="232" text-anchor="middle">PTH-independent</text>
+            <line x1="476" y1="244" x2="840" y2="244" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="658" y="265" text-anchor="middle">Malignancy &mdash; PTHrP or bony metastases</text>
+            <text class="algo-body" x="658" y="285" text-anchor="middle">Vitamin D excess, granulomatous disease</text>
+            <text class="algo-body" x="658" y="303" text-anchor="middle">Medications, milk-alkali, immobilization</text>
+            <line x1="476" y1="320" x2="840" y2="320" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="658" y="341" text-anchor="middle">Next step: exclude malignancy first</text>
+            <text class="algo-body" x="658" y="359" text-anchor="middle">it is the most time-critical cause</text>
           </svg>
           <figcaption>PTH splits the differential in two; together, primary hyperPTH and malignancy cover &gt;90% of cases.</figcaption>
         </figure>
@@ -202,74 +189,56 @@
           <p><strong>FeCa = (Urine Ca &times; Serum Cr / 1000) / (Serum Ca &times; Urine Cr)</strong> &mdash; from a 24-hour urine collection. It answers one question: given how high the calcium is, is the kidney letting a normal amount spill into urine, or is it hanging onto calcium it shouldn't?</p>
           <p>In FHH, the mutated calcium-sensing receptor makes the kidney tubule (and parathyroid) require a higher calcium before it "registers" as high &mdash; so despite hypercalcemia, the kidney keeps reabsorbing calcium as if it were normal, and very little spills into urine. In primary hyperparathyroidism, the kidney's calcium-sensing is intact and correctly registers the excess, letting more escape into urine despite PTH's reabsorptive pull.</p>
         </div>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypercalcemia with elevated or inappropriately normal PTH, calculate fractional excretion of calcium from a 24 hour urine collection. Below 0.01 means familial hypocalciuric hypercalcemia. 0.01 to 0.02 is an overlap zone, interpret only once off thiazides for 3 months with normal magnesium and 25-OH vitamin D above 50. Above 0.02 means primary hyperparathyroidism." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Algorithm using fractional excretion of calcium to distinguish familial hypocalciuric hypercalcemia from primary hyperparathyroidism. In a patient with hypercalcemia and a high or inappropriately normal PTH, calculate the fractional excretion of calcium from a 24-hour urine collection. A value below 0.01 indicates familial hypocalciuric hypercalcemia, in which the kidney reabsorbs calcium as though it were normal. A value above 0.02 indicates primary hyperparathyroidism, in which the kidney senses the excess correctly. Values between 0.01 and 0.02 are an overlap zone, interpretable only once the patient is off thiazide diuretics for three months, with normal magnesium and 25-hydroxyvitamin D above 50.">
             <defs>
-              <marker id="feca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="feca-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="feca-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="feca-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="feca-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="feca-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
-              <linearGradient id="feca-grad-primary" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ddd6fe"/>
-                <stop offset="100%" stop-color="#c4b5fd"/>
-              </linearGradient>
-              <linearGradient id="feca-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
             </defs>
 
-            <line x1="440" y1="82" x2="440" y2="100" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
-            <line x1="440" y1="164" x2="440" y2="186" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
-            <path d="M440,258 C440,288 135,288 135,316" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
-            <line x1="440" y1="258" x2="440" y2="316" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
-            <path d="M440,258 C440,288 745,288 745,316" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#feca-arrow)"/>
+            <path class="algo-edge" d="M440,66 V88" marker-end="url(#feca-tip)"/>
+            <path class="algo-edge" d="M440,144 V168" marker-end="url(#feca-tip)"/>
+            <path class="algo-edge" d="M440,232 V258 H130 V286" marker-end="url(#feca-tip)"/>
+            <path class="algo-edge" d="M440,232 V286" marker-end="url(#feca-tip)"/>
+            <path class="algo-edge" d="M440,232 V258 H750 V286" marker-end="url(#feca-tip)"/>
 
-            <rect x="85" y="278" width="100" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="135" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">&lt; 0.01</text>
-            <rect x="380" y="278" width="120" height="26" rx="13" fill="var(--color-text-muted)"/>
-            <text x="440" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">0.01&ndash;0.02</text>
-            <rect x="695" y="278" width="100" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="745" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">&gt; 0.02</text>
+            <rect class="algo-root" x="300" y="16" width="280" height="50" rx="4"/>
+            <text class="algo-root-label" x="440" y="38" text-anchor="middle">Hypercalcemia with PTH high or</text>
+            <text class="algo-root-label" x="440" y="56" text-anchor="middle">inappropriately normal</text>
 
-            <rect x="290" y="20" width="300" height="62" rx="16" fill="url(#feca-grad-root)" filter="url(#feca-shadow)"/>
-            <text x="440" y="46" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">Hypercalcemia, PTH high or</text>
-            <text x="440" y="68" text-anchor="middle" font-size="15.5" font-weight="700" fill="#fff">inappropriately normal</text>
+            <rect class="algo-node" x="330" y="88" width="220" height="56" rx="4"/>
+            <text class="algo-title" x="440" y="112" text-anchor="middle">Calculate FE<tspan font-size="10.5" dy="3">Ca</tspan></text>
+            <text class="algo-body" x="440" y="132" text-anchor="middle">from a 24-hour urine collection</text>
 
-            <rect x="320" y="100" width="240" height="64" rx="14" fill="url(#feca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#feca-shadow)"/>
-            <text x="440" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Calculate FeCa</text>
-            <text x="440" y="149" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)">24-hour urine collection</text>
+            <polygon class="algo-decision" points="440,168 545,200 440,232 335,200"/>
+            <text class="algo-q" x="440" y="205" text-anchor="middle">FE<tspan font-size="10.5" dy="3">Ca</tspan>?</text>
 
-            <polygon points="440,186 545,222 440,258 335,222" fill="url(#feca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#feca-shadow)"/>
-            <text x="440" y="228" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">FeCa?</text>
+            <rect class="algo-edge-plate" x="216" y="250" width="58" height="16"/>
+            <text class="algo-edge-label" x="245" y="262" text-anchor="middle">&lt; 0.01</text>
+            <rect class="algo-edge-plate" x="404" y="250" width="76" height="16"/>
+            <text class="algo-edge-label" x="442" y="262" text-anchor="middle">0.01&ndash;0.02</text>
+            <rect class="algo-edge-plate" x="606" y="250" width="58" height="16"/>
+            <text class="algo-edge-label" x="635" y="262" text-anchor="middle">&gt; 0.02</text>
 
-            <rect x="20" y="316" width="230" height="72" rx="14" fill="url(#feca-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#feca-shadow)"/>
-            <text x="135" y="349" text-anchor="middle" font-size="19" font-weight="700" fill="#4c1d95">FHH</text>
-            <text x="135" y="372" text-anchor="middle" font-size="12" fill="#4c1d95">Kidney reabsorbs as if normal</text>
+            <rect class="algo-node algo-blue" x="24" y="286" width="212" height="70" rx="4"/>
+            <text class="algo-title algo-title-blue" x="130" y="310" text-anchor="middle">FHH</text>
+            <line x1="44" y1="321" x2="216" y2="321" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body" x="130" y="340" text-anchor="middle">kidney reabsorbs as if normal</text>
 
-            <rect x="300" y="316" width="280" height="72" rx="14" fill="url(#feca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#feca-shadow)"/>
-            <text x="440" y="345" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Overlap zone</text>
-            <text x="440" y="368" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">Off thiazides &times;3mo &middot; normal Mg &middot; 25OHD &gt; 50</text>
+            <rect class="algo-node algo-grey" x="300" y="286" width="280" height="70" rx="4"/>
+            <text class="algo-title" x="440" y="310" text-anchor="middle">Overlap zone<tspan class="algo-fn" dy="-5">a</tspan></text>
+            <line x1="320" y1="321" x2="560" y2="321" stroke="#c3c9d6" stroke-width="1"/>
+            <text class="algo-body" x="440" y="340" text-anchor="middle">not interpretable until confounders excluded</text>
 
-            <rect x="630" y="316" width="230" height="72" rx="14" fill="url(#feca-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#feca-shadow)"/>
-            <text x="745" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Primary HyperPTH</text>
-            <text x="745" y="368" text-anchor="middle" font-size="12" fill="#7c2d12">Kidney senses excess correctly</text>
+            <rect class="algo-node algo-orange" x="644" y="286" width="212" height="70" rx="4"/>
+            <text class="algo-title algo-title-orange" x="750" y="310" text-anchor="middle">Primary hyperPTH</text>
+            <line x1="664" y1="321" x2="836" y2="321" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body" x="750" y="340" text-anchor="middle">kidney senses the excess correctly</text>
           </svg>
-          <figcaption>Same threshold logic as above, but reading the kidney's calcium handling instead of the calcium itself.</figcaption>
+          <figcaption>Distinguishing FHH from primary hyperparathyroidism by renal calcium handling. Both present with hypercalcemia and a PTH that is elevated or inappropriately normal, so the calcium and PTH values alone cannot separate them.
+            <span class="algo-notes"><span><sup>a</sup> About 20% of FHH cases fall in the 0.01&ndash;0.02 overlap zone. Interpret only once the patient has been off thiazide diuretics for 3 months, with a normal magnesium and 25-OH vitamin D &gt; 50 nmol/L &mdash; each of these independently lowers urinary calcium and mimics the FHH pattern.</span></span>
+          </figcaption>
         </figure>
       </section>
 
@@ -316,68 +285,58 @@
       <section id="hypocalcemia-etiology">
         <h2>Hypocalcemia: Etiology by Lab Pattern</h2>
         <p>Hypocalcemia results from failure to secrete PTH, failure to <em>respond</em> to PTH, vitamin D deficiency, failure to respond to vitamin D, or (rarely) acute complexation of calcium. In practice, <strong>phosphate</strong> is what splits these into recognizable buckets, because PTH and vitamin D pull phosphate in opposite directions:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: hypocalcemia, check phosphate. High phosphate, check PTH: low PTH means hypoparathyroidism, PTH deficient; high PTH means pseudohypoparathyroidism, PTH resistant. Low phosphate means vitamin D deficient with secondary high PTH." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Algorithm for the differential diagnosis of hypocalcemia by lab pattern. Start with serum phosphate. If phosphate is high, check PTH: a low PTH indicates hypoparathyroidism, a PTH-deficient state; a high PTH indicates pseudohypoparathyroidism, a PTH-resistant state. If phosphate is low, the cause is vitamin D deficiency, in which the raised PTH is a compensatory secondary response rather than the primary problem.">
             <defs>
-              <marker id="hypoca-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="hypoca-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="hypoca-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="hypoca-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="hypoca-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="hypoca-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
-              <linearGradient id="hypoca-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
             </defs>
 
-            <line x1="430" y1="76" x2="430" y2="94" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
-            <path d="M430,166 C430,196 240,196 240,224" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
-            <path d="M430,166 C430,240 670,250 670,340" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
-            <path d="M240,296 C240,326 130,326 130,354" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
-            <path d="M240,296 C240,326 350,326 350,354" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#hypoca-arrow)"/>
+            <path class="algo-edge" d="M430,60 V82" marker-end="url(#hypoca-tip)"/>
+            <path class="algo-edge" d="M430,146 V172 H240 V200" marker-end="url(#hypoca-tip)"/>
+            <path class="algo-edge" d="M430,146 V172 H690 V286" marker-end="url(#hypoca-tip)"/>
+            <path class="algo-edge" d="M240,264 V288 H128 V314" marker-end="url(#hypoca-tip)"/>
+            <path class="algo-edge" d="M240,264 V288 H352 V314" marker-end="url(#hypoca-tip)"/>
 
-            <rect x="286" y="188" width="80" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="326" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">HIGH</text>
-            <rect x="560" y="236" width="80" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="600" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">LOW</text>
-            <text x="146" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">Low PTH</text>
-            <text x="336" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">High PTH</text>
+            <rect class="algo-root" x="310" y="16" width="240" height="44" rx="4"/>
+            <text class="algo-root-label" x="430" y="43" text-anchor="middle">Hypocalcemia</text>
 
-            <rect x="310" y="20" width="240" height="56" rx="16" fill="url(#hypoca-grad-root)" filter="url(#hypoca-shadow)"/>
-            <text x="430" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">Hypocalcemia</text>
+            <polygon class="algo-decision" points="430,82 545,114 430,146 315,114"/>
+            <text class="algo-q" x="430" y="112" text-anchor="middle">Serum phosphate?</text>
+            <text class="algo-q-sub" x="430" y="127" text-anchor="middle">the discriminating value</text>
 
-            <polygon points="430,94 545,130 430,166 315,130" fill="url(#hypoca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypoca-shadow)"/>
-            <text x="430" y="136" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">Phosphate?</text>
+            <rect class="algo-edge-plate" x="292" y="164" width="66" height="16"/>
+            <text class="algo-edge-label" x="325" y="176" text-anchor="middle">HIGH PO&#8324;</text>
+            <rect class="algo-edge-plate" x="530" y="164" width="62" height="16"/>
+            <text class="algo-edge-label" x="561" y="176" text-anchor="middle">LOW PO&#8324;</text>
 
-            <polygon points="240,224 340,260 240,296 140,260" fill="url(#hypoca-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#hypoca-shadow)"/>
-            <text x="240" y="266" text-anchor="middle" font-size="16" font-weight="700" fill="var(--color-text)">PTH?</text>
+            <polygon class="algo-decision" points="240,200 340,232 240,264 140,232"/>
+            <text class="algo-q" x="240" y="237" text-anchor="middle">PTH level?</text>
 
-            <rect x="20" y="354" width="212" height="96" rx="14" fill="url(#hypoca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
-            <text x="126" y="388" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Hypoparathyroidism</text>
-            <text x="126" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">PTH deficient</text>
+            <rect class="algo-edge-plate" x="150" y="280" width="66" height="16"/>
+            <text class="algo-edge-label" x="183" y="292" text-anchor="middle">PTH LOW</text>
+            <rect class="algo-edge-plate" x="278" y="280" width="70" height="16"/>
+            <text class="algo-edge-label" x="313" y="292" text-anchor="middle">PTH HIGH</text>
 
-            <rect x="244" y="354" width="212" height="96" rx="14" fill="url(#hypoca-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
-            <text x="350" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Pseudohypo-</text>
-            <text x="350" y="401" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">parathyroidism</text>
-            <text x="350" y="426" text-anchor="middle" font-size="13" font-weight="700" fill="var(--color-primary)">PTH resistant</text>
+            <rect class="algo-node algo-blue" x="24" y="314" width="208" height="86" rx="4"/>
+            <text class="algo-title algo-title-blue" x="128" y="338" text-anchor="middle">Hypoparathyroidism</text>
+            <line x1="44" y1="350" x2="212" y2="350" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="128" y="369" text-anchor="middle">PTH deficient</text>
+            <text class="algo-body" x="128" y="386" text-anchor="middle">gland cannot secrete</text>
 
-            <rect x="540" y="340" width="260" height="110" rx="14" fill="url(#hypoca-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#hypoca-shadow)"/>
-            <text x="670" y="378" text-anchor="middle" font-size="16" font-weight="700" fill="#7c2d12">Vitamin D Deficient</text>
-            <text x="670" y="402" text-anchor="middle" font-size="12.5" fill="#7c2d12"><tspan x="670" dy="0">2&deg; hyperPTH is compensatory,</tspan><tspan x="670" dy="16">not the primary problem</tspan></text>
-            <text x="670" y="440" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">Most common of the three</text>
+            <rect class="algo-node algo-blue" x="248" y="314" width="208" height="86" rx="4"/>
+            <text class="algo-title algo-title-blue" x="352" y="338" text-anchor="middle">Pseudohypo-PTH</text>
+            <line x1="268" y1="350" x2="436" y2="350" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="352" y="369" text-anchor="middle">PTH resistant</text>
+            <text class="algo-body" x="352" y="386" text-anchor="middle">kidney cannot respond</text>
+
+            <rect class="algo-node algo-orange" x="586" y="286" width="270" height="114" rx="4"/>
+            <text class="algo-title algo-title-orange" x="721" y="312" text-anchor="middle">Vitamin D deficiency</text>
+            <line x1="606" y1="324" x2="836" y2="324" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body" x="721" y="343" text-anchor="middle">Raised PTH here is secondary and</text>
+            <text class="algo-body" x="721" y="358" text-anchor="middle">compensatory, not the primary problem</text>
+            <text class="algo-body-em" x="721" y="382" text-anchor="middle">More common than either PTH disorder</text>
           </svg>
           <figcaption>Phosphate splits PTH-axis problems from vitamin D problems; PTH then splits deficiency from resistance.</figcaption>
         </figure>

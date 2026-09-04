@@ -55,86 +55,78 @@
       <section id="structure-vs-function">
         <h2>Structure vs. Function</h2>
         <p>Adrenal disease as the worked example &mdash; but this same fork applies to any endocrine gland:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 920 590" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: suspected endocrine problem splits into structure, a mass, versus function, a hormone. Structure splits into benign, leave alone unless symptomatic, versus malignant, surgically remove. Function splits into excess, suppression test, versus deficiency, stimulation test." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagnostic algorithm. A suspected endocrine problem is first classified as structural (a mass) or functional (a hormone abnormality). Structural lesions are then classified benign — adenoma or myelolipoma, left alone unless symptomatic — or malignant — metastasis or carcinoma, surgically removed. Functional problems are classified as hormone excess — Cushing syndrome, pheochromocytoma, hyperaldosteronism — evaluated with a suppression test, or hormone deficiency — Addison disease, congenital adrenal hyperplasia — evaluated with a stimulation test.">
             <defs>
-              <marker id="sf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="sf-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="sf-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="sf-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="sf-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="sf-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
-              <linearGradient id="sf-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="sf-grad-primary" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ddd6fe"/>
-                <stop offset="100%" stop-color="#c4b5fd"/>
-              </linearGradient>
             </defs>
 
-            <line x1="435" y1="76" x2="435" y2="90" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M435,237 C435,262 220,262 220,278" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M435,237 C435,262 650,262 650,278" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M220,410 C220,440 112,440 112,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M220,410 C220,440 328,440 328,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M650,410 C650,440 542,440 542,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
-            <path d="M650,410 C650,440 758,440 758,468" fill="none" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#sf-arrow)"/>
+            <path class="algo-edge" d="M440,64 V86" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M440,154 V178 H220 V206" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M440,154 V178 H660 V206" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M220,268 V292 H112 V316" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M220,268 V292 H328 V316" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M660,268 V292 H552 V316" marker-end="url(#sf-tip)"/>
+            <path class="algo-edge" d="M660,268 V292 H768 V316" marker-end="url(#sf-tip)"/>
 
-            <rect x="270" y="248" width="130" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="335" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">STRUCTURAL</text>
-            <rect x="530" y="248" width="140" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="600" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">FUNCTIONAL</text>
+            <rect class="algo-root" x="320" y="16" width="240" height="48" rx="4"/>
+            <text class="algo-root-label" x="440" y="39" text-anchor="middle">Suspected endocrine problem</text>
+            <text class="algo-root-sub" x="440" y="55" text-anchor="middle">adrenal gland shown as the worked example</text>
 
-            <rect x="315" y="20" width="240" height="56" rx="16" fill="url(#sf-grad-root)" filter="url(#sf-shadow)"/>
-            <text x="435" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Suspected Endocrine Problem</text>
+            <polygon class="algo-decision" points="440,86 560,120 440,154 320,120"/>
+            <text class="algo-q" x="440" y="117" text-anchor="middle">Structural or functional?</text>
+            <text class="algo-q-sub" x="440" y="133" text-anchor="middle">a mass, or a hormone abnormality</text>
 
-            <polygon points="435,93 570,165 435,237 300,165" fill="url(#sf-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#sf-shadow)"/>
-            <text x="435" y="159" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Structure or</text>
-            <text x="435" y="181" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Function?</text>
+            <rect class="algo-edge-plate" x="286" y="170" width="88" height="16"/>
+            <text class="algo-edge-label" x="330" y="182" text-anchor="middle">STRUCTURAL</text>
+            <rect class="algo-edge-plate" x="506" y="170" width="88" height="16"/>
+            <text class="algo-edge-label" x="550" y="182" text-anchor="middle">FUNCTIONAL</text>
 
-            <polygon points="220,278 335,345 220,410 105,345" fill="url(#sf-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#sf-shadow)"/>
-            <text x="220" y="339" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Benign or</text>
-            <text x="220" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Malignant?</text>
+            <polygon class="algo-decision" points="220,206 325,237 220,268 115,237"/>
+            <text class="algo-q" x="220" y="242" text-anchor="middle">Benign or malignant?</text>
 
-            <polygon points="650,278 770,345 650,410 530,345" fill="url(#sf-grad-diamond)" stroke="var(--color-accent)" stroke-width="2.5" filter="url(#sf-shadow)"/>
-            <text x="650" y="339" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Excess or</text>
-            <text x="650" y="360" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text)">Deficiency?</text>
+            <polygon class="algo-decision" points="660,206 765,237 660,268 555,237"/>
+            <text class="algo-q" x="660" y="242" text-anchor="middle">Excess or deficiency?</text>
 
-            <rect x="10" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#sf-shadow)"/>
-            <text x="112" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Benign</text>
-            <text x="112" y="524" text-anchor="middle" font-size="12.5" fill="var(--color-text-muted)">Adenoma, myelolipoma</text>
-            <text x="112" y="547" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">Leave alone unless symptomatic</text>
+            <rect class="algo-edge-plate" x="136" y="284" width="60" height="16"/>
+            <text class="algo-edge-label" x="166" y="296" text-anchor="middle">BENIGN</text>
+            <rect class="algo-edge-plate" x="240" y="284" width="74" height="16"/>
+            <text class="algo-edge-label" x="277" y="296" text-anchor="middle">MALIGNANT</text>
+            <rect class="algo-edge-plate" x="576" y="284" width="60" height="16"/>
+            <text class="algo-edge-label" x="606" y="296" text-anchor="middle">EXCESS</text>
+            <rect class="algo-edge-plate" x="678" y="284" width="80" height="16"/>
+            <text class="algo-edge-label" x="718" y="296" text-anchor="middle">DEFICIENCY</text>
 
-            <rect x="226" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#sf-shadow)"/>
-            <text x="328" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Malignant</text>
-            <text x="328" y="524" text-anchor="middle" font-size="12.5" fill="#7c2d12">Metastasis, carcinoma</text>
-            <text x="328" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">&rarr; Surgically remove</text>
+            <rect class="algo-node algo-grey" x="8" y="316" width="208" height="98" rx="4"/>
+            <text class="algo-title" x="112" y="340" text-anchor="middle">Benign mass</text>
+            <text class="algo-body" x="112" y="360" text-anchor="middle">Adenoma, myelolipoma</text>
+            <line x1="28" y1="372" x2="196" y2="372" stroke="#c3c9d6" stroke-width="1"/>
+            <text class="algo-body-em" x="112" y="391" text-anchor="middle">Leave alone unless it</text>
+            <text class="algo-body-em" x="112" y="406" text-anchor="middle">causes local effects</text>
 
-            <rect x="440" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#sf-shadow)"/>
-            <text x="542" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Excess</text>
-            <text x="542" y="524" text-anchor="middle" font-size="12.5" fill="#7c2d12">Cushing's, pheo, hyperaldo</text>
-            <text x="542" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">Suppression test</text>
+            <rect class="algo-node algo-orange" x="224" y="316" width="208" height="98" rx="4"/>
+            <text class="algo-title algo-title-orange" x="328" y="340" text-anchor="middle">Malignant mass</text>
+            <text class="algo-body" x="328" y="360" text-anchor="middle">Metastasis, carcinoma</text>
+            <line x1="244" y1="372" x2="412" y2="372" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="328" y="391" text-anchor="middle">Surgical removal</text>
 
-            <rect x="656" y="468" width="204" height="95" rx="14" fill="url(#sf-grad-primary)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#sf-shadow)"/>
-            <text x="758" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#4c1d95">Deficiency</text>
-            <text x="758" y="524" text-anchor="middle" font-size="12.5" fill="#4c1d95">Addison's, CAH</text>
-            <text x="758" y="547" text-anchor="middle" font-size="13.5" font-weight="700" fill="#4c1d95">Stimulation test</text>
+            <rect class="algo-node algo-orange" x="448" y="316" width="208" height="98" rx="4"/>
+            <text class="algo-title algo-title-orange" x="552" y="340" text-anchor="middle">Hormone excess</text>
+            <text class="algo-body" x="552" y="360" text-anchor="middle">Cushing, pheo, hyperaldo</text>
+            <line x1="468" y1="372" x2="636" y2="372" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="552" y="391" text-anchor="middle">Try to suppress it</text>
+            <text class="algo-body" x="552" y="406" text-anchor="middle">&rarr; suppression test</text>
+
+            <rect class="algo-node algo-blue" x="664" y="316" width="208" height="98" rx="4"/>
+            <text class="algo-title algo-title-blue" x="768" y="340" text-anchor="middle">Hormone deficiency</text>
+            <text class="algo-body" x="768" y="360" text-anchor="middle">Addison disease, CAH</text>
+            <line x1="684" y1="372" x2="852" y2="372" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="768" y="391" text-anchor="middle">Try to stimulate it</text>
+            <text class="algo-body" x="768" y="406" text-anchor="middle">&rarr; stimulation test</text>
           </svg>
-          <figcaption>The same fork applies to any gland &mdash; structure vs. function, then benign/malignant or excess/deficiency.</figcaption>
+          <figcaption>Diagnostic approach to a suspected endocrine problem. The structural&ndash;functional fork applies to any gland; adrenal disease is shown as the worked example. Both classifications may apply to the same patient.</figcaption>
         </figure>
 
         <h3>Eponyms worth knowing cold</h3>
@@ -214,67 +206,55 @@
       <section id="treatment-101">
         <h2>Where Does This All End Up? Treatment 101</h2>
         <p>The same structure/function fork decides treatment too &mdash; a useful shortcut for any endocrine problem, not just the diagnosis:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: endocrine gland problem splits into structure versus function. Structure splits into benign, don't remove unless causing local problems, versus malignant, surgically remove. Function splits into hyperfunction, suppress, ablate, or surgically remove, versus hypofunction, replace the missing hormone." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 306" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Treatment algorithm. An endocrine gland problem is classified as structural or functional. Structural benign lesions are not removed unless they cause local problems; structural malignant lesions are surgically removed. Functional hyperfunction is suppressed, ablated, or surgically removed; functional hypofunction is treated by replacing the missing hormone.">
             <defs>
-              <marker id="t101-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="t101-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="t101-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="t101-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="t101-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="t101-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
-              <linearGradient id="t101-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
             </defs>
 
-            <line x1="450" y1="76" x2="450" y2="93" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
-            <path d="M450,165 C450,195 112,195 112,228" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
-            <path d="M450,165 C450,195 328,195 328,228" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
-            <path d="M450,165 C450,195 572,195 572,228" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
-            <path d="M450,165 C450,195 788,195 788,228" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t101-arrow)"/>
+            <path class="algo-edge" d="M440,60 V80" marker-end="url(#t101-tip)"/>
+            <path class="algo-edge" d="M440,144 V168 H112 V196" marker-end="url(#t101-tip)"/>
+            <path class="algo-edge" d="M440,144 V168 H328 V196" marker-end="url(#t101-tip)"/>
+            <path class="algo-edge" d="M440,144 V168 H552 V196" marker-end="url(#t101-tip)"/>
+            <path class="algo-edge" d="M440,144 V168 H768 V196" marker-end="url(#t101-tip)"/>
 
-            <rect x="150" y="182" width="130" height="26" rx="13" fill="var(--color-primary)"/>
-            <text x="215" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">STRUCTURE</text>
-            <rect x="620" y="182" width="130" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="685" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.5">FUNCTION</text>
+            <rect class="algo-root" x="320" y="16" width="240" height="44" rx="4"/>
+            <text class="algo-root-label" x="440" y="43" text-anchor="middle">Endocrine gland problem</text>
 
-            <rect x="330" y="20" width="240" height="56" rx="16" fill="url(#t101-grad-root)" filter="url(#t101-shadow)"/>
-            <text x="450" y="54" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Endocrine Gland Problem</text>
+            <polygon class="algo-decision" points="440,80 570,112 440,144 310,112"/>
+            <text class="algo-q" x="440" y="117" text-anchor="middle">Structural or functional?</text>
 
-            <polygon points="450,93 555,130 450,165 345,130" fill="url(#t101-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t101-shadow)"/>
-            <text x="450" y="135" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Structure or Function?</text>
+            <rect class="algo-edge-plate" x="178" y="160" width="86" height="16"/>
+            <text class="algo-edge-label" x="221" y="172" text-anchor="middle">STRUCTURAL</text>
+            <rect class="algo-edge-plate" x="616" y="160" width="86" height="16"/>
+            <text class="algo-edge-label" x="659" y="172" text-anchor="middle">FUNCTIONAL</text>
 
-            <rect x="10" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#t101-shadow)"/>
-            <text x="112" y="262" text-anchor="middle" font-size="18" font-weight="700" fill="var(--color-text)">Benign</text>
-            <text x="112" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)"><tspan x="112" dy="0">Don't remove unless</tspan><tspan x="112" dy="16">causing local problems</tspan></text>
+            <rect class="algo-node algo-grey" x="8" y="196" width="208" height="94" rx="4"/>
+            <text class="algo-title" x="112" y="220" text-anchor="middle">Benign</text>
+            <line x1="28" y1="232" x2="196" y2="232" stroke="#c3c9d6" stroke-width="1"/>
+            <text class="algo-body-em" x="112" y="251" text-anchor="middle">Do not remove unless</text>
+            <text class="algo-body-em" x="112" y="266" text-anchor="middle">causing local problems</text>
 
-            <rect x="226" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t101-shadow)"/>
-            <text x="328" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Malignant</text>
-            <text x="328" y="296" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7c2d12">&rarr; Surgically remove</text>
+            <rect class="algo-node algo-orange" x="224" y="196" width="208" height="94" rx="4"/>
+            <text class="algo-title algo-title-orange" x="328" y="220" text-anchor="middle">Malignant</text>
+            <line x1="244" y1="232" x2="412" y2="232" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="328" y="251" text-anchor="middle">Surgical removal</text>
 
-            <rect x="470" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t101-shadow)"/>
-            <text x="572" y="262" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Hyperfunction</text>
-            <text x="572" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7c2d12"><tspan x="572" dy="0">Suppress/ablate, or</tspan><tspan x="572" dy="16">surgically remove</tspan></text>
+            <rect class="algo-node algo-orange" x="448" y="196" width="208" height="94" rx="4"/>
+            <text class="algo-title algo-title-orange" x="552" y="220" text-anchor="middle">Hyperfunction</text>
+            <line x1="468" y1="232" x2="636" y2="232" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="552" y="251" text-anchor="middle">Suppress or ablate,</text>
+            <text class="algo-body-em" x="552" y="266" text-anchor="middle">or surgically remove</text>
 
-            <rect x="686" y="228" width="204" height="100" rx="14" fill="url(#t101-grad-neutral)" stroke="var(--color-border)" stroke-width="1.5" filter="url(#t101-shadow)"/>
-            <text x="788" y="262" text-anchor="middle" font-size="17" font-weight="700" fill="var(--color-text)">Hypofunction</text>
-            <text x="788" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)"><tspan x="788" dy="0">Replace the missing</tspan><tspan x="788" dy="16">hormone(s)</tspan></text>
+            <rect class="algo-node algo-blue" x="664" y="196" width="208" height="94" rx="4"/>
+            <text class="algo-title algo-title-blue" x="768" y="220" text-anchor="middle">Hypofunction</text>
+            <line x1="684" y1="232" x2="852" y2="232" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="768" y="251" text-anchor="middle">Replace the missing</text>
+            <text class="algo-body-em" x="768" y="266" text-anchor="middle">hormone</text>
           </svg>
-          <figcaption>Structure decides removal vs. leave alone; function decides suppress/ablate vs. replace.</figcaption>
+          <figcaption>Treatment approach by problem type. The same structural&ndash;functional classification that drives diagnosis also determines the treatment category.</figcaption>
         </figure>
       </section>
 

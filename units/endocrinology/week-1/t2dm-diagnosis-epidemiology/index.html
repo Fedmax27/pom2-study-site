@@ -84,83 +84,66 @@
       <section id="practical-considerations">
         <h2>Practical Considerations</h2>
         <p>Putting the thresholds and the confirmation rule together:</p>
-        <figure class="topic-figure">
-          <svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart: glucose testing result. Below the prediabetes range is normal. In the grey zone, fasting 6.1 to 6.9, 2-hour OGTT 7.8 to 11.0, or A1c 6.0 to 6.4 percent, means prediabetes and prevention efforts. At or above diagnostic threshold, fasting 7.0, A1c 6.5 percent, or 2-hour OGTT 11.1, ask whether the patient has hyperglycemic symptoms. If symptomatic, one abnormal test diagnoses diabetes. If asymptomatic, a second abnormal test on a different day is required." style="max-width:100%;height:auto;">
+        <figure class="topic-figure algo-figure">
+          <svg viewBox="0 0 880 448" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagnostic algorithm for type 2 diabetes. Classify the glucose test result into one of three ranges. Below the prediabetes range is normal, requiring routine screening only. The intermediate grey zone — impaired fasting glucose 6.1 to 6.9, impaired glucose tolerance 7.8 to 11.0, or A1c 6.0 to 6.4 percent — is prediabetes, the target population for prevention. At or above the diagnostic cutoff — fasting 7.0, A1c 6.5 percent, or 2-hour oral glucose tolerance test 11.1 — assess symptoms: if hyperglycemic symptoms are present, one abnormal test is sufficient to diagnose; if absent, two abnormal tests on different days are required.">
             <defs>
-              <marker id="t2dx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--color-text-muted)"/>
+              <marker id="t2dx-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
               </marker>
-              <filter id="t2dx-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20142f" flood-opacity="0.16"/>
-              </filter>
-              <linearGradient id="t2dx-grad-root" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8b5cf6"/>
-                <stop offset="100%" stop-color="#6d28d9"/>
-              </linearGradient>
-              <linearGradient id="t2dx-grad-diamond" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f5f2fc"/>
-              </linearGradient>
-              <linearGradient id="t2dx-grad-good" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#bbf7d0"/>
-                <stop offset="100%" stop-color="#86efac"/>
-              </linearGradient>
-              <linearGradient id="t2dx-grad-warn" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fef3c7"/>
-                <stop offset="100%" stop-color="#fde68a"/>
-              </linearGradient>
-              <linearGradient id="t2dx-grad-accent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fed7aa"/>
-                <stop offset="100%" stop-color="#fdba74"/>
-              </linearGradient>
-              <linearGradient id="t2dx-grad-neutral" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#f1eef8"/>
-              </linearGradient>
             </defs>
 
-            <line x1="440" y1="82" x2="440" y2="102" stroke="var(--color-text-muted)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
-            <path d="M440,184 C440,212 130,212 130,240" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
-            <path d="M440,184 C440,212 440,212 440,240" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
-            <path d="M440,184 C440,212 750,212 750,240" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
-            <path d="M750,312 C750,338 600,338 600,368" fill="none" stroke="var(--color-accent)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
-            <path d="M750,312 C750,338 862,338 862,368" fill="none" stroke="var(--color-primary)" stroke-width="2.5" marker-end="url(#t2dx-arrow)"/>
+            <path class="algo-edge" d="M420,66 V88" marker-end="url(#t2dx-tip)"/>
+            <path class="algo-edge" d="M420,152 V178 H124 V206" marker-end="url(#t2dx-tip)"/>
+            <path class="algo-edge" d="M420,152 V206" marker-end="url(#t2dx-tip)"/>
+            <path class="algo-edge" d="M420,152 V178 H716 V206" marker-end="url(#t2dx-tip)"/>
+            <path class="algo-edge" d="M716,270 V296 H600 V324" marker-end="url(#t2dx-tip)"/>
+            <path class="algo-edge" d="M716,270 V296 H820 V324" marker-end="url(#t2dx-tip)"/>
 
-            <rect x="66" y="204" width="128" height="26" rx="13" fill="#16a34a"/>
-            <text x="130" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">BELOW RANGE</text>
-            <rect x="374" y="204" width="132" height="26" rx="13" fill="#d97706"/>
-            <text x="440" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">GREY ZONE</text>
-            <rect x="676" y="204" width="148" height="26" rx="13" fill="var(--color-accent)"/>
-            <text x="750" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">AT / ABOVE CUTOFF</text>
+            <rect class="algo-root" x="280" y="16" width="280" height="50" rx="4"/>
+            <text class="algo-root-label" x="420" y="38" text-anchor="middle">Glucose testing result</text>
+            <text class="algo-root-sub" x="420" y="56" text-anchor="middle">fasting plasma glucose &middot; A1c &middot; 2-hr OGTT</text>
 
-            <rect x="300" y="20" width="280" height="62" rx="16" fill="url(#t2dx-grad-root)" filter="url(#t2dx-shadow)"/>
-            <text x="440" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Glucose testing result</text>
-            <text x="440" y="68" text-anchor="middle" font-size="12" fill="#e9d5ff">FPG &middot; A1c &middot; 2-hr OGTT</text>
+            <polygon class="algo-decision" points="420,88 530,120 420,152 310,120"/>
+            <text class="algo-q" x="420" y="125" text-anchor="middle">Which range?</text>
 
-            <polygon points="440,102 580,143 440,184 300,143" fill="url(#t2dx-grad-diamond)" stroke="var(--color-primary)" stroke-width="2.5" filter="url(#t2dx-shadow)"/>
-            <text x="440" y="148" text-anchor="middle" font-size="15.5" font-weight="700" fill="var(--color-text)">Which range?</text>
+            <rect class="algo-edge-plate" x="212" y="170" width="98" height="16"/>
+            <text class="algo-edge-label" x="261" y="182" text-anchor="middle">BELOW RANGE</text>
+            <rect class="algo-edge-plate" x="378" y="170" width="86" height="16"/>
+            <text class="algo-edge-label" x="421" y="182" text-anchor="middle">INTERMEDIATE</text>
+            <rect class="algo-edge-plate" x="546" y="170" width="118" height="16"/>
+            <text class="algo-edge-label" x="605" y="182" text-anchor="middle">AT / ABOVE CUTOFF</text>
 
-            <rect x="20" y="240" width="220" height="72" rx="14" fill="url(#t2dx-grad-good)" stroke="#16a34a" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
-            <text x="130" y="273" text-anchor="middle" font-size="17" font-weight="700" fill="#14532d">Normal</text>
-            <text x="130" y="296" text-anchor="middle" font-size="12" fill="#14532d">Routine screening only</text>
+            <rect class="algo-node algo-green" x="20" y="206" width="208" height="76" rx="4"/>
+            <text class="algo-title algo-title-green" x="124" y="232" text-anchor="middle">Normal</text>
+            <line x1="40" y1="244" x2="208" y2="244" stroke="#8dc9b6" stroke-width="1"/>
+            <text class="algo-body" x="124" y="264" text-anchor="middle">routine screening only</text>
 
-            <rect x="310" y="240" width="260" height="72" rx="14" fill="url(#t2dx-grad-warn)" stroke="#d97706" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
-            <text x="440" y="268" text-anchor="middle" font-size="16" font-weight="700" fill="#78350f">Prediabetes</text>
-            <text x="440" y="290" text-anchor="middle" font-size="11.5" fill="#78350f"><tspan x="440" dy="0">IFG 6.1&ndash;6.9 &middot; IGT 7.8&ndash;11.0</tspan><tspan x="440" dy="14">A1c 6.0&ndash;6.4% &rarr; prevention</tspan></text>
+            <rect class="algo-node algo-amber" x="300" y="206" width="240" height="76" rx="4"/>
+            <text class="algo-title algo-title-amber" x="420" y="232" text-anchor="middle">Prediabetes</text>
+            <line x1="320" y1="244" x2="520" y2="244" stroke="#d8bf7a" stroke-width="1"/>
+            <text class="algo-body" x="420" y="262" text-anchor="middle">IFG 6.1&ndash;6.9 &middot; IGT 7.8&ndash;11.0</text>
+            <text class="algo-body" x="420" y="276" text-anchor="middle">A1c 6.0&ndash;6.4% &mdash; target for prevention</text>
 
-            <polygon points="750,240 880,276 750,312 620,276" fill="url(#t2dx-grad-diamond)" stroke="var(--color-accent)" stroke-width="2.5" filter="url(#t2dx-shadow)"/>
-            <text x="750" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">Symptoms?</text>
-            <text x="750" y="290" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">thirst, polyuria, wt loss</text>
+            <polygon class="algo-decision" points="716,206 836,238 716,270 596,238"/>
+            <text class="algo-q" x="716" y="235" text-anchor="middle">Symptoms?</text>
+            <text class="algo-q-sub" x="716" y="250" text-anchor="middle">thirst, polyuria, weight loss</text>
 
-            <rect x="470" y="368" width="260" height="86" rx="14" fill="url(#t2dx-grad-accent)" stroke="var(--color-accent)" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
-            <text x="600" y="396" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Symptomatic &rarr; diagnose</text>
-            <text x="600" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#7c2d12">ONE abnormal test</text>
-            <text x="600" y="440" text-anchor="middle" font-size="11.5" fill="#7c2d12">is sufficient</text>
+            <rect class="algo-edge-plate" x="574" y="288" width="52" height="16"/>
+            <text class="algo-edge-label" x="600" y="300" text-anchor="middle">YES</text>
+            <rect class="algo-edge-plate" x="796" y="288" width="48" height="16"/>
+            <text class="algo-edge-label" x="820" y="300" text-anchor="middle">NO</text>
 
-            <rect x="745" y="368" width="130" height="86" rx="14" fill="url(#t2dx-grad-neutral)" stroke="var(--color-primary)" stroke-width="1.5" filter="url(#t2dx-shadow)"/>
-            <text x="810" y="396" text-anchor="middle" font-size="14" font-weight="700" fill="var(--color-text)">No symptoms</text>
-            <text x="810" y="420" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">TWO tests,</text>
-            <text x="810" y="438" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--color-primary)">different days</text>
+            <rect class="algo-node algo-orange" x="452" y="324" width="228" height="84" rx="4"/>
+            <text class="algo-title algo-title-orange" x="566" y="350" text-anchor="middle">Diagnose now</text>
+            <line x1="472" y1="362" x2="660" y2="362" stroke="#e2b48e" stroke-width="1"/>
+            <text class="algo-body-em" x="566" y="382" text-anchor="middle">One abnormal test</text>
+            <text class="algo-body" x="566" y="398" text-anchor="middle">is sufficient</text>
+
+            <rect class="algo-node algo-blue" x="700" y="324" width="168" height="84" rx="4"/>
+            <text class="algo-title algo-title-blue" x="784" y="350" text-anchor="middle">Confirm first</text>
+            <line x1="716" y1="362" x2="852" y2="362" stroke="#9dc4dd" stroke-width="1"/>
+            <text class="algo-body-em" x="784" y="382" text-anchor="middle">Two abnormal tests</text>
+            <text class="algo-body" x="784" y="398" text-anchor="middle">on different days</text>
           </svg>
           <figcaption>One result rarely settles it &mdash; the range decides the path, and symptoms decide whether confirmation is needed.</figcaption>
         </figure>

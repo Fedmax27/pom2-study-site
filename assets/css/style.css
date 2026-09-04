@@ -2179,3 +2179,172 @@ main.has-toc {
 .tldr-box li:last-child {
   margin-bottom: 0;
 }
+
+/* ============================================================
+   Clinical algorithm figures
+   Design follows published-figure conventions: colorblind-safe
+   (Okabe-Ito derived) muted palette, meaning never carried by
+   colour alone, flat print-style fills, orthogonal connectors,
+   and automatic figure numbering.
+   ============================================================ */
+
+.topic-content {
+  counter-reset: figure;
+}
+
+.topic-figure {
+  counter-increment: figure;
+}
+
+.topic-figure figcaption::before {
+  content: "Figure " counter(figure) ". ";
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.algo-figure {
+  margin: 1.75rem 0;
+  /* Wide diagrams pan inside their own frame rather than shrinking
+     to unreadable type or forcing the page to scroll sideways. */
+  overflow-x: auto;
+}
+
+.algo-figure svg {
+  display: block;
+  width: 100%;
+  min-width: 620px;
+  height: auto;
+  margin: 0 auto;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.algo-figure figcaption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.85rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--color-border);
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* --- connectors --- */
+.algo-edge {
+  fill: none;
+  stroke: #8b93a7;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.algo-edge-alt {
+  stroke-dasharray: 5 4;
+}
+
+/* --- node shells --- */
+.algo-node {
+  fill: #ffffff;
+  stroke: #c3c9d6;
+  stroke-width: 1.25;
+}
+
+.algo-root {
+  fill: #2b2540;
+  stroke: #2b2540;
+  stroke-width: 1.25;
+}
+
+.algo-decision {
+  fill: #f7f8fb;
+  stroke: #6b7385;
+  stroke-width: 1.4;
+}
+
+/* Outcome families — each pairs a tint with a distinct border tone.
+   Colour is always backed up by an explicit text label. */
+.algo-blue   { fill: #eaf2f8; stroke: #0072b2; stroke-width: 1.4; }
+.algo-orange { fill: #fdf1e7; stroke: #d55e00; stroke-width: 1.4; }
+.algo-green  { fill: #e7f4f0; stroke: #009e73; stroke-width: 1.4; }
+.algo-amber  { fill: #fdf6e3; stroke: #b8860b; stroke-width: 1.4; }
+.algo-grey   { fill: #f4f5f8; stroke: #8b93a7; stroke-width: 1.25; }
+
+/* --- type scale --- */
+.algo-root-label {
+  font-size: 15px;
+  font-weight: 600;
+  fill: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.algo-root-sub {
+  font-size: 11.5px;
+  font-weight: 400;
+  fill: #c9c3dd;
+}
+
+.algo-q {
+  font-size: 14px;
+  font-weight: 600;
+  fill: #201a34;
+}
+
+.algo-q-sub {
+  font-size: 10.5px;
+  font-weight: 400;
+  fill: #6b6580;
+}
+
+.algo-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  fill: #201a34;
+}
+
+.algo-title-blue   { fill: #005b8f; }
+.algo-title-orange { fill: #8f3f00; }
+.algo-title-green  { fill: #00674c; }
+.algo-title-amber  { fill: #7a5a06; }
+
+.algo-body {
+  font-size: 11.5px;
+  font-weight: 400;
+  fill: #4a4560;
+}
+
+.algo-body-em {
+  font-size: 11.5px;
+  font-weight: 600;
+  fill: #201a34;
+}
+
+/* Branch criterion labels — sit on the connector, on a white
+   knock-out plate so they stay legible over the line. */
+.algo-edge-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  fill: #201a34;
+  letter-spacing: 0.04em;
+}
+
+.algo-edge-plate {
+  fill: #ffffff;
+  stroke: none;
+}
+
+/* Small superscript markers for figure footnotes */
+.algo-fn {
+  font-size: 9px;
+  font-weight: 700;
+  fill: #6b6580;
+}
+
+.algo-figure .algo-notes {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.algo-figure .algo-notes span {
+  display: block;
+}
