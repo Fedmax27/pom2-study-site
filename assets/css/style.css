@@ -3432,3 +3432,357 @@ main.has-toc {
 }
 
 .sequence-explain strong { color: var(--color-text); }
+
+/* ============================================================
+   Interactive lecture figures
+   ------------------------------------------------------------
+   Both components are token-driven, so they follow the theme
+   without a separate dark-mode block.
+   ============================================================ */
+
+/* --- clickable diagram + detail panel --- */
+
+.hotspot-fig {
+  margin: 1.75rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  overflow: hidden;
+  counter-increment: figure;
+}
+
+.hotspot-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--panel-bg);
+}
+
+.hotspot-head h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hotspot-head h4::before {
+  content: "Figure " counter(figure) ". ";
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.hotspot-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hotspot-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+}
+
+.hotspot-canvas {
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  /* A step down from the card surface, so the white/dark node plates
+     read as objects sitting on the diagram rather than dissolving. */
+  background: var(--color-bg);
+}
+
+.hotspot-canvas svg {
+  display: block;
+  width: 100%;
+  min-width: 520px;
+  height: auto;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hotspot-panel {
+  border-left: 1px solid var(--color-border);
+  background: var(--panel-bg);
+  padding: 1rem 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  min-height: 100%;
+}
+
+.hotspot-panel h5 {
+  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.hotspot-panel .hs-kind {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.55rem;
+}
+
+.hotspot-panel p {
+  margin: 0 0 0.6rem;
+}
+
+.hotspot-panel p:last-child { margin-bottom: 0; }
+
+.hotspot-panel .hs-flag {
+  display: block;
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.hotspot-empty {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.hotspot-fig figcaption {
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Hotspot states. Colour is only ever a highlight — every region
+   also carries its own printed label in the diagram. */
+.hotspot-canvas [data-hotspot] {
+  cursor: pointer;
+  outline: none;
+}
+
+.hotspot-canvas [data-hotspot] .hs-shape {
+  fill: var(--color-surface);
+  stroke: #9aa0b4;
+  stroke-width: 1.25;
+  transition: fill 0.12s ease, stroke 0.12s ease;
+}
+
+.hotspot-canvas [data-hotspot]:hover .hs-shape,
+.hotspot-canvas [data-hotspot]:focus-visible .hs-shape {
+  stroke: var(--color-primary);
+  stroke-width: 2;
+}
+
+/* Selected state: a tinted plate plus a heavy primary rule. A solid
+   primary fill would be fine in light mode but drops white label text
+   to ~2.3:1 against the lighter dark-mode purple, so the labels keep
+   their normal colour and the outline carries the selection. */
+.hotspot-canvas [data-hotspot].is-active .hs-shape {
+  fill: var(--chart-complex);
+  stroke: var(--color-primary);
+  stroke-width: 2.5;
+}
+
+.hotspot-canvas [data-hotspot].is-active .hs-label { font-weight: 800; }
+
+/* Muted caption on the tinted selected plate lands at 4.47:1 — take it
+   to full text colour, which also reinforces the selection. */
+.hotspot-canvas [data-hotspot].is-active .hs-label-sm { fill: var(--color-text); }
+
+.hs-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  fill: var(--color-text);
+  pointer-events: none;
+}
+
+.hs-label-sm { font-size: 9px; font-weight: 600; fill: var(--color-text-muted); pointer-events: none; }
+.hs-static { fill: var(--chart-complex); stroke: var(--color-border); stroke-width: 1.25; }
+.hs-stalk { fill: none; stroke: #9aa0b4; stroke-width: 1.25; }
+.hs-outline { fill: none; stroke: var(--color-text-muted); stroke-width: 1.25; stroke-dasharray: 4 3; }
+.hs-axis { font-size: 9.5px; font-weight: 700; fill: var(--color-text-muted); letter-spacing: 0.06em; }
+
+@media (max-width: 820px) {
+  .hotspot-stage { grid-template-columns: 1fr; }
+  .hotspot-panel { border-left: none; border-top: 1px solid var(--color-border); }
+}
+
+/* --- GnRH pulse-frequency simulator --- */
+
+.pulse-sim {
+  margin: 1.75rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  overflow: hidden;
+  counter-increment: figure;
+}
+
+.pulse-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--panel-bg);
+}
+
+.pulse-opt {
+  flex: 1 1 150px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.pulse-opt:hover { border-color: var(--color-primary); }
+
+.pulse-opt.is-on {
+  border-color: var(--color-primary);
+  /* Token-driven rather than color-mix: the mixed value does not
+     always recompute when the theme tokens change under it. */
+  background: var(--chart-complex);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.pulse-opt input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pulse-opt-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pulse-opt-rate {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.pulse-plot { padding: 0.9rem 1rem 0.2rem; overflow-x: auto; }
+
+.pulse-plot svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.pulse-trace { fill: none; stroke: var(--color-primary); stroke-width: 2; stroke-linejoin: round; }
+.pulse-plateau { fill: none; stroke: var(--color-accent); stroke-width: 2; stroke-linejoin: round; }
+.pulse-axis { stroke: var(--color-border); stroke-width: 1; }
+.pulse-tick { font-size: 9.5px; fill: var(--color-text-muted); }
+.pulse-ylab { font-size: 10.5px; font-weight: 700; fill: var(--color-text); }
+
+.pulse-out {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem 1rem;
+}
+
+.pulse-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 150px;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.pulse-row-name { font-size: 0.85rem; font-weight: 800; }
+
+.pulse-track {
+  height: 16px;
+  border-radius: 999px;
+  background: var(--chart-complex);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.pulse-track > span {
+  display: block;
+  height: 100%;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pulse-bar-lh { background: var(--color-primary); }
+.pulse-bar-fsh { background: var(--chart-bound); }
+
+/* On the selected card the muted sub-label sits on a tinted ground,
+   which drops it just under 4.5:1 — take it up to full text colour. */
+.pulse-opt.is-on .pulse-opt-rate { color: var(--color-text); }
+
+.pulse-row-val { font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600; }
+
+.pulse-readout {
+  border-top: 1px solid var(--color-border);
+  background: var(--panel-bg);
+  padding: 0.95rem 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.pulse-readout h5 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.pulse-readout p { margin: 0 0 0.55rem; }
+.pulse-readout p:last-child { margin-bottom: 0; }
+
+.pulse-readout .pulse-clin {
+  display: block;
+  margin-top: 0.6rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.83rem;
+}
+
+.pulse-sim figcaption {
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .pulse-row { grid-template-columns: 38px minmax(0, 1fr); }
+  .pulse-row-val { grid-column: 2; font-size: 0.76rem; }
+}
+
+/* Line-chart primitives, used for time-course figures. The second
+   series is dashed as well as differently coloured, so the two are
+   still separable in greyscale or with colour vision deficiency. */
+.chart-line-primary { fill: none; stroke: var(--color-primary); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.chart-line-accent  { fill: none; stroke: var(--color-accent);  stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 7 4; }
+.chart-axis { stroke: var(--color-border); stroke-width: 1.25; }
+.chart-ref  { stroke: var(--color-text-muted); stroke-width: 1; stroke-dasharray: 4 4; }
+.chart-dot  { fill: var(--color-surface); stroke-width: 2; }
+
+/* Portal / vascular runs inside anatomical schematics */
+.hs-vessel { fill: none; stroke: var(--color-accent); stroke-width: 2.5; stroke-linejoin: round; }
+
+/* ============================================================
+   Figure sizing
+   ------------------------------------------------------------
+   Diagrams are drawn at a fixed unit size, so letting them
+   stretch to the full column blows the type up well past the
+   size it was designed at and adds a lot of page height for
+   nothing. Cap them near their design width and centre them,
+   the way a printed figure sits inside a text column.
+   ============================================================ */
+.algo-figure svg,
+.chart-figure svg { max-width: 860px; }
+.hotspot-canvas svg { max-width: 620px; }
+.pulse-plot svg { max-width: 720px; }
