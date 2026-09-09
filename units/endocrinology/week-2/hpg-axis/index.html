@@ -137,7 +137,7 @@
             <text class="algo-q-sub" x="20" y="460">One exception, covered below: estradiol held high for roughly 48 hours flips hypothalamic</text>
             <text class="algo-q-sub" x="20" y="474">feedback from negative to positive &mdash; the mid-cycle LH surge.</text>
           </svg>
-          <figcaption>The HPG axis. Two feedback rails, not one: steroids reach <em>both</em> upper storeys, inhibin reaches only the pituitary and only suppresses FSH. That asymmetry is the reason FSH and LH can move in opposite directions in the same patient &mdash; an isolated high FSH with a normal LH says the germ-cell compartment has failed while steroid output is holding.</figcaption>
+          <figcaption>Drawn for these notes as a clean overview &mdash; the lecture&rsquo;s own version of this diagram is in the pulse-generator section below. Two feedback rails, not one: steroids reach <em>both</em> upper storeys, inhibin reaches only the pituitary and only suppresses FSH. That asymmetry is the reason FSH and LH can move in opposite directions in the same patient &mdash; an isolated high FSH with a normal LH says the germ-cell compartment has failed while steroid output is holding.</figcaption>
         </figure>
 
         <div class="reasoning-box">
@@ -150,9 +150,20 @@
         <h2>The Hypothalamus: Where Everything Sits</h2>
         <p>The hypothalamus sits at the base of the forebrain, below the thalamus and above the pituitary. It is not one structure but a cluster of <strong>nuclei</strong> &mdash; discrete balls of cell bodies, each with its own job &mdash; laid out along a <strong>rostral&ndash;caudal axis</strong> from the <strong>preoptic area</strong> at the front to the <strong>mammillary bodies</strong> at the back. It also runs energy expenditure, body weight, fluid balance, blood pressure, temperature and sleep, which is why reproduction fails first when anything else goes wrong: it is all wired into the same box.</p>
 
+        <div class="fig-row" style="margin:1.5rem 0">
+          <figure>
+            <img src="../../../../assets/images/week-2/hpg-axis/brain-sagittal-hypothalamus.jpeg" alt="Midsagittal photograph of a human brain with the hypothalamus indicated below the thalamus and above the pituitary">
+            <span class="fig-cap"><strong>Where it actually is.</strong> Base of the forebrain, under the thalamus, sitting directly on top of the pituitary.</span>
+          </figure>
+          <figure>
+            <img src="../../../../assets/images/week-2/hpg-axis/hypothalamic-nuclei.jpeg" alt="Diagram of the hypothalamic nuclei showing the preoptic area, anteroventral periventricular nucleus, anterior hypothalamic area, premamillary nucleus, suprachiasmatic nucleus, arcuate nucleus, optic chiasm, median eminence and anterior pituitary">
+            <span class="fig-cap"><strong>The nuclei themselves.</strong> Preoptic area at the front, arcuate at the base beside the median eminence. Plant, <em>Front Neuroendocrinol</em> 2012;33:160&ndash;68, via the lecture.</span>
+          </figure>
+        </div>
+
         <figure class="hotspot-fig">
           <div class="hotspot-head">
-            <h4>The hypothalamic nuclei, midline sagittal view</h4>
+            <h4>Now work through them one at a time</h4>
             <span class="hotspot-hint">Click any structure &rarr;</span>
           </div>
           <div class="hotspot-stage">
@@ -336,7 +347,7 @@
               </div>
             </div>
           </div>
-          <figcaption>Relative positions along the rostral&ndash;caudal axis, drawn schematically. For the HPG axis specifically, only three of these carry the load: the <strong>preoptic area</strong> (GnRH cell bodies and the surge-generating kisspeptin neurons), the <strong>arcuate nucleus</strong> (the KNDy pulse generator) and the <strong>median eminence</strong> (the exit into portal blood).</figcaption>
+          <figcaption>Simplified navigation map drawn for these notes, laid out to match the figure above so the two read together. For the HPG axis specifically, only three of these carry the load: the <strong>preoptic area</strong> (GnRH cell bodies and the surge-generating kisspeptin neurons), the <strong>arcuate nucleus</strong> (the KNDy pulse generator) and the <strong>median eminence</strong> (the exit into portal blood).</figcaption>
         </figure>
 
         <div class="reasoning-box">
@@ -349,76 +360,23 @@
         <h2>Two Kinds of Neuron, Two Ways Out</h2>
         <p>Hypothalamic endocrine function is carried by exactly two neuron types. The difference is simply <strong>how far the axon goes</strong>, and everything else follows from that.</p>
 
-        <figure class="topic-figure algo-figure">
-          <svg viewBox="0 0 700 404" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of parvicellular and magnocellular neurons. On the left, a parvicellular neuron in the arcuate, preoptic or paraventricular nucleus sends a short axon that stops at the median eminence, releasing GnRH into the hypophysial portal veins, which carry it to the anterior pituitary, whose cells then secrete LH, FSH and the other anterior pituitary hormones into systemic blood. On the right, a magnocellular neuron in the supraoptic or paraventricular nucleus sends a long axon straight through the median eminence and down the stalk into the posterior pituitary, releasing oxytocin and vasopressin directly into systemic blood.">
-            <defs>
-              <marker id="neu-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
-              </marker>
-              <marker id="neu-tip-acc" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#d55e00"/>
-              </marker>
-            </defs>
-
-            <line class="hs-outline" x1="352" y1="14" x2="352" y2="392"/>
-
-            <!-- ============ LEFT LANE: parvicellular ============ -->
-            <text class="algo-title" x="176" y="28" text-anchor="middle">PARVICELLULAR</text>
-            <text class="algo-q-sub" x="176" y="44" text-anchor="middle">&ldquo;hypophysiotrophic&rdquo; &mdash; short axon, stops at the ME</text>
-
-            <rect class="algo-grey" x="36" y="56" width="280" height="66" rx="8"/>
-            <text class="algo-body-em" x="48" y="76">Hypothalamus</text>
-            <text class="algo-body" x="48" y="94">arcuate &middot; preoptic &middot; PVN</text>
-            <text class="algo-body" x="48" y="110">(parvicellular part)</text>
-            <circle class="algo-node" cx="266" cy="92" r="11"/>
-            <path class="algo-edge" d="M258,84 L248,76 M258,100 L248,108 M274,84 L284,76"/>
-
-            <path class="algo-edge" d="M266,103 V150" marker-end="url(#neu-tip)"/>
-
-            <rect class="algo-amber" x="56" y="150" width="240" height="30" rx="4"/>
-            <text class="algo-body-em" x="176" y="169" text-anchor="middle">MEDIAN EMINENCE &mdash; no BBB</text>
-
-            <path class="hs-vessel" d="M266,180 V206 H176 V236" marker-end="url(#neu-tip-acc)"/>
-            <text class="algo-edge-label" x="190" y="200">portal veins</text>
-
-            <rect class="algo-green" x="56" y="236" width="240" height="74" rx="14"/>
-            <text class="algo-title algo-title-green" x="176" y="260" text-anchor="middle">ANTERIOR PITUITARY</text>
-            <text class="algo-body" x="176" y="278" text-anchor="middle">gland cells with GnRH receptors</text>
-            <text class="algo-body" x="176" y="294" text-anchor="middle">&mdash; they make the hormone</text>
-
-            <path class="algo-edge" d="M176,310 V336" marker-end="url(#neu-tip)"/>
-            <rect class="algo-node" x="36" y="336" width="280" height="52" rx="8"/>
-            <text class="algo-body-em" x="176" y="357" text-anchor="middle">LH &middot; FSH &middot; TSH &middot; ACTH &middot; GH &middot; PRL</text>
-            <text class="algo-q-sub" x="176" y="374" text-anchor="middle">secreted by the pituitary cell into systemic blood</text>
-
-            <!-- ============ RIGHT LANE: magnocellular ============ -->
-            <text class="algo-title" x="528" y="28" text-anchor="middle">MAGNOCELLULAR</text>
-            <text class="algo-q-sub" x="528" y="44" text-anchor="middle">&ldquo;neurohypophyseal&rdquo; &mdash; long axon, runs the whole way</text>
-
-            <rect class="algo-grey" x="388" y="56" width="280" height="66" rx="8"/>
-            <text class="algo-body-em" x="400" y="76">Hypothalamus</text>
-            <text class="algo-body" x="400" y="94">supraoptic &middot; paraventricular</text>
-            <text class="algo-body" x="400" y="110">(magnocellular part)</text>
-            <circle class="algo-node" cx="618" cy="92" r="15"/>
-            <path class="algo-edge" d="M607,81 L595,71 M607,103 L595,113 M629,81 L641,71"/>
-
-            <rect class="algo-amber" x="408" y="150" width="240" height="30" rx="4"/>
-            <text class="algo-body-em" x="528" y="169" text-anchor="middle">MEDIAN EMINENCE &mdash; passes through</text>
-
-            <path class="algo-edge" d="M618,107 V206 H528 V262" marker-end="url(#neu-tip)"/>
-            <text class="algo-edge-label" x="540" y="200">axon</text>
-
-            <rect class="algo-blue" x="408" y="236" width="240" height="74" rx="14"/>
-            <text class="algo-title algo-title-blue" x="528" y="292" text-anchor="middle">POSTERIOR PITUITARY</text>
-            <text class="algo-body" x="528" y="256" text-anchor="middle">just axon terminals &mdash; no gland cells</text>
-
-            <path class="algo-edge" d="M528,310 V336" marker-end="url(#neu-tip)"/>
-            <rect class="algo-node" x="388" y="336" width="280" height="52" rx="8"/>
-            <text class="algo-body-em" x="528" y="357" text-anchor="middle">OXYTOCIN &middot; VASOPRESSIN</text>
-            <text class="algo-q-sub" x="528" y="374" text-anchor="middle">secreted by the neuron itself into systemic blood</text>
-          </svg>
-          <figcaption>The whole distinction in one line: a <strong>parvicellular</strong> neuron releases a peptide that tells <em>another cell</em> to make a hormone; a <strong>magnocellular</strong> neuron releases the hormone itself. Both routes exit through the median eminence, but only one of them stops there.</figcaption>
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/hypophysial-portal-system.jpeg" alt="Diagram of the hypothalamo-hypophyseal portal system showing supraoptic and paraventricular nuclei, neurons whose axons pass through the median eminence and infundibulum into the posterior lobe, the superior hypophyseal artery supplying capillary beds in the median eminence, portal veins running down the stalk to a second capillary bed among the endocrine cells of the anterior lobe, and hypophyseal veins draining into the systemic circulation">
+          <figcaption>Both routes on one picture. Neurons ending in the <strong>median eminence</strong> release peptide into the first capillary bed; the <strong>portal veins</strong> carry it down the stalk to a second capillary bed among the <strong>endocrine cells</strong> of the anterior lobe. The neurons that run all the way through to the <strong>posterior lobe</strong> release their hormone there, straight into the systemic circulation. &copy; 2004 Pearson Education, via the lecture.</figcaption>
         </figure>
+
+        <table class="data-table">
+          <thead><tr><th></th><th>Parvicellular</th><th>Magnocellular</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Also called</strong></td><td>Hypophysiotrophic</td><td>Neurohypophyseal</td></tr>
+            <tr><td><strong>Cell bodies</strong></td><td>Arcuate, preoptic, periventricular, PVN</td><td>Supraoptic and paraventricular nuclei</td></tr>
+            <tr><td><strong>Axon ends</strong></td><td>In the <strong>median eminence</strong> &mdash; goes no further</td><td>In the <strong>posterior pituitary</strong>, having crossed the ME and run down the stalk</td></tr>
+            <tr><td><strong>Releases into</strong></td><td>The <strong>portal</strong> circulation, locally</td><td>The <strong>general</strong> circulation, directly</td></tr>
+            <tr><td><strong>Products</strong></td><td><strong>GnRH</strong>, CRH, TRH, GHRH, somatostatin, dopamine</td><td>Oxytocin, vasopressin</td></tr>
+            <tr><td><strong>Net effect</strong></td><td>Tells <em>another cell</em> to make a hormone</td><td>The peptide <em>is</em> the hormone</td></tr>
+          </tbody>
+        </table>
+
 
         <h3>The hypophysial portal system</h3>
         <p>A <strong>portal system</strong> passes blood through <em>two</em> capillary beds in series. Here: <strong>superior hypophyseal artery</strong> &rarr; <strong>primary plexus</strong> in the median eminence, where parvicellular endings release GnRH &rarr; <strong>long portal veins</strong> down the stalk &rarr; <strong>secondary plexus</strong> in the anterior pituitary, where GnRH binds <strong>GnRH-R</strong> on gonadotropes and LH and FSH enter the same capillaries.</p>
@@ -524,6 +482,11 @@
           <figcaption>Frequency-encoded signalling. The pituitary is reading the interval between pulses, and transcribing a different &beta; subunit depending on the answer. Frequency data from Wildt et al., <em>Endocrinology</em> 1981;109:376&ndash;85 and Belchetz et al., <em>Science</em> 1978, as summarised in Endotext, <em>Physiology of GnRH and Gonadotropin Secretion</em>. Bar heights are illustrative, not measured values.</figcaption>
         </figure>
 
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/gnrh-pulse-generator.jpg" alt="Schematic of the hypothalamic-pituitary-gonadal axis showing neural inputs onto the GnRH neuron: norepinephrine, neuropeptide Y and glutamate as positive inputs, GABA and beta-endorphin as negative inputs, stress, nutrition, exercise and seasonal cues feeding in, and feedback of testosterone, estradiol, progesterone and inhibin from testis and ovary onto the hypothalamus and pituitary">
+          <figcaption>The lecture&rsquo;s own version of the axis, drawn from the GnRH neuron&rsquo;s point of view. Note what synapses onto it: <strong>NE, NPY and glutamate</strong> pushing (+), <strong>GABA and &beta;-endorphin</strong> braking (&minus;), and <strong>stress, nutrition, exercise and seasonal cues</strong> arriving through them. The receptor key top-right is the important detail &mdash; the steroid receptors sit on the <em>other</em> neurons and on the pituitary, not on the GnRH neuron itself.</figcaption>
+        </figure>
+
         <h3>What sets the pulse rate</h3>
         <p><strong>Speeds it up:</strong> <strong>kisspeptin</strong> (by far the strongest), glutamate, neuropeptide Y, norepinephrine. <strong>Slows it down:</strong> GABA and endogenous opioid peptides. <strong>Modulates it:</strong> estradiol and progesterone &mdash; but never by touching the GnRH neuron directly.</p>
       </section>
@@ -582,12 +545,17 @@
             <text class="algo-body-em algo-title-green" x="535" y="384" text-anchor="middle">GnRH surge &rarr; LH SURGE</text>
             <text class="algo-body" x="535" y="402" text-anchor="middle">ovulation</text>
           </svg>
-          <figcaption>The relay that makes steroid feedback possible. Two kisspeptin populations, opposite signs, same target. This is also how the same hormone &mdash; estradiol &mdash; can be inhibitory for most of the cycle and abruptly stimulatory at mid-cycle: it is not the hormone that changes, it is which population is dominant and for how long the level has been held up.</figcaption>
+          <figcaption>Drawn for these notes &mdash; the deck names kisspeptin as the strongest regulator but does not separate the two populations. The relay that makes steroid feedback possible. Two kisspeptin populations, opposite signs, same target. This is also how the same hormone &mdash; estradiol &mdash; can be inhibitory for most of the cycle and abruptly stimulatory at mid-cycle: it is not the hormone that changes, it is which population is dominant and for how long the level has been held up.</figcaption>
         </figure>
 
         <p><strong>The human proof:</strong> loss-of-function mutations in <em>KISS1R</em>/GPR54 &mdash; and in <em>TAC3</em>/<em>TACR3</em>, neurokinin B and its receptor &mdash; cause normosmic hypogonadotropic hypogonadism. Remove the relay and the axis never starts. About three-quarters of kisspeptin cells in the human infundibular nucleus co-express neurokinin B and dynorphin (the <strong>KNDy</strong> neurons): neurokinin B pushes the pulse on, dynorphin shuts it off. <span style="color:var(--color-text-muted)">(KNDy detail from Endotext.)</span></p>
 
         <p>Nutrition, body fat, stress, exercise and photoperiod all converge on <em>Kiss1</em> expression &mdash; the route by which a marathon runner or an underweight patient loses their cycle: leptin falls &rarr; arcuate kisspeptin falls &rarr; GnRH pulses stop.</p>
+
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/kisspeptin-regulation.jpeg" alt="Schematic of external and environmental factors acting on kiss1 messenger RNA levels in the rodent hypothalamus, showing neuropeptide and neurotransmitter inputs converging on kisspeptin neurons and their output to GnRH neurons">
+          <figcaption>External and environmental factors acting on <em>Kiss1</em> mRNA in the hypothalamus. Everything that reaches reproduction from outside the axis arrives here first. Saedi, Khoradmehr, Shirazi &amp; Tamadon, <em>J Chem Neuroanat</em> 2018;92:71&ndash;82, via the lecture.</figcaption>
+        </figure>
       </section>
 
       <section id="analogues">
@@ -628,7 +596,7 @@
 
             <text class="chart-on-sub" x="16" y="288">Illustrative time course, drawn to show the shape of the two responses &mdash; not measured patient data.</text>
           </svg>
-          <figcaption>Same endpoint, different path. The agonist has to stimulate the receptor before it can exhaust it, so testosterone <em>rises</em> for the first week. The antagonist simply blocks, so it falls from the first dose.</figcaption>
+          <figcaption>Drawn for these notes &mdash; the deck describes the flare in prose only. Same endpoint, different path. The agonist has to stimulate the receptor before it can exhaust it, so testosterone <em>rises</em> for the first week. The antagonist simply blocks, so it falls from the first dose.</figcaption>
         </figure>
 
         <table class="data-table">
@@ -653,6 +621,11 @@
       <section id="gonadotropins">
         <h2>LH and FSH: Structure and Signalling</h2>
         <p>Both are named for what they do <strong>in the ovary</strong> &mdash; a historical accident, since they do just as much in the testis.</p>
+
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/fsh-lh-signaling.jpeg" alt="Diagram of FSH and LH as glycoprotein heterodimers with a shared alpha subunit and distinct beta subunits, binding G protein coupled receptors on target cells and activating adenylyl cyclase to raise cyclic AMP" style="max-width:420px">
+          <figcaption>Both hormones are <strong>&alpha;&beta; heterodimers sharing the same &alpha; subunit</strong>; the &beta; subunit decides which receptor is bound. Both receptors are <strong>GPCRs</strong> that activate <strong>adenylyl cyclase</strong> and raise <strong>cAMP</strong>.</figcaption>
+        </figure>
 
         <table class="data-table">
           <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
@@ -733,7 +706,7 @@
             <text class="algo-q-sub" x="20" y="444">Clinical corollary: in PCOS, excess LH drive on theca cells with insufficient FSH-driven</text>
             <text class="algo-q-sub" x="20" y="458">aromatisation leaves the androgen unconverted &mdash; hence hyperandrogenism.</text>
           </svg>
-          <figcaption>The two-cell, two-gonadotropin model. The enzymatic division of labour is deliberate: it means estrogen output is controlled by two independent gonadotropins at two separate points, so the follicle cannot make estradiol without FSH having selected it.</figcaption>
+          <figcaption>Drawn for these notes; the deck gives this as a list of bullet points. The two-cell, two-gonadotropin model. The enzymatic division of labour is deliberate: it means estrogen output is controlled by two independent gonadotropins at two separate points, so the follicle cannot make estradiol without FSH having selected it.</figcaption>
         </figure>
 
         <h3>Inhibin, activin, and why FSH is regulated differently</h3>
@@ -764,90 +737,9 @@
         <h2>Steroids: One Precursor, Four Rings, Two Conversions That Matter</h2>
         <p>Steroids are <strong>terpenoid lipids</strong>: four fused rings in a <strong>6&ndash;6&ndash;6&ndash;5</strong> arrangement. Every steroid differs from the others only by the functional groups hung on those rings and their oxidation state &mdash; which is why a single enzyme can change a hormone&rsquo;s identity completely. All of them start as <strong>cholesterol</strong>.</p>
 
-        <figure class="topic-figure algo-figure">
-          <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Simplified steroidogenesis. Inside the mitochondrion, StAR transports cholesterol to the inner membrane where CYP11A1 converts it to pregnenolone. This is the rate-limiting step. In the smooth endoplasmic reticulum, pregnenolone becomes progesterone via 3-beta-HSD, or androstenedione via CYP17A1. Androstenedione becomes testosterone via 17-beta-HSD, or estrone via aromatase. Testosterone becomes estradiol via aromatase, or dihydrotestosterone via 5-alpha-reductase.">
-            <defs>
-              <marker id="ster-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
-              </marker>
-            </defs>
-
-            <rect class="hs-outline" x="10" y="150" width="400" height="118" rx="12"/>
-            <text class="hs-axis" x="22" y="260">MITOCHONDRION</text>
-
-            <rect class="hs-outline" x="430" y="32" width="322" height="330" rx="12"/>
-            <text class="hs-axis" x="442" y="352">SMOOTH ER &middot; CYTOSOL</text>
-
-            <rect class="algo-grey" x="26" y="180" width="124" height="56" rx="6"/>
-            <text class="algo-title" x="88" y="206" text-anchor="middle">Cholesterol</text>
-            <text class="algo-q-sub" x="88" y="222" text-anchor="middle">the only precursor</text>
-
-            <path class="algo-edge" d="M150,208 H248" marker-end="url(#ster-tip)"/>
-            <rect class="algo-root" x="156" y="184" width="88" height="16" rx="3"/>
-            <text x="200" y="196" text-anchor="middle" style="font-size:9px;font-weight:700;fill:#fff;letter-spacing:0.05em">RATE-LIMITING</text>
-            <text class="algo-body" x="200" y="226" text-anchor="middle">StAR &middot; CYP11A1</text>
-
-            <rect class="algo-amber" x="248" y="180" width="146" height="56" rx="6"/>
-            <text class="algo-title algo-title-amber" x="321" y="206" text-anchor="middle">Pregnenolone</text>
-            <text class="algo-q-sub" x="321" y="222" text-anchor="middle">parent of every steroid</text>
-
-            <!-- to progesterone -->
-            <path class="algo-edge" d="M394,208 H418 V90 H448" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="378" y="120" width="52" height="15"/>
-            <text class="algo-edge-label" x="404" y="132" text-anchor="middle">3&beta;-HSD</text>
-
-            <rect class="algo-amber" x="448" y="64" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-amber" x="510" y="88" text-anchor="middle">Progesterone</text>
-            <text class="algo-q-sub" x="510" y="104" text-anchor="middle">corpus luteum</text>
-
-            <!-- to androstenedione -->
-            <path class="algo-edge" d="M394,208 H448" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="396" y="184" width="54" height="15"/>
-            <text class="algo-edge-label" x="423" y="196" text-anchor="middle">CYP17A1</text>
-
-            <rect class="algo-blue" x="448" y="182" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-blue" x="510" y="204" text-anchor="middle">Androstene-</text>
-            <text class="algo-title algo-title-blue" x="510" y="220" text-anchor="middle">dione</text>
-
-            <!-- to testosterone -->
-            <path class="algo-edge" d="M572,208 H612" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="566" y="184" width="52" height="15"/>
-            <text class="algo-edge-label" x="592" y="196" text-anchor="middle">17&beta;-HSD</text>
-
-            <rect class="algo-blue" x="612" y="182" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-blue" x="674" y="204" text-anchor="middle">Testosterone</text>
-            <text class="algo-q-sub" x="674" y="220" text-anchor="middle">Leydig &middot; theca</text>
-
-            <!-- aromatase down x2 -->
-            <path class="algo-edge" d="M510,234 V294" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="472" y="255" width="76" height="15"/>
-            <text class="algo-edge-label" x="510" y="267" text-anchor="middle">AROMATASE</text>
-
-            <path class="algo-edge" d="M674,234 V294" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="636" y="255" width="76" height="15"/>
-            <text class="algo-edge-label" x="674" y="267" text-anchor="middle">AROMATASE</text>
-
-            <rect class="algo-green" x="448" y="294" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-green" x="510" y="318" text-anchor="middle">Estrone (E&#8321;)</text>
-            <text class="algo-q-sub" x="510" y="334" text-anchor="middle">weak</text>
-
-            <rect class="algo-green" x="612" y="294" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-green" x="674" y="318" text-anchor="middle">Estradiol (E&#8322;)</text>
-            <text class="algo-q-sub" x="674" y="334" text-anchor="middle">the potent one</text>
-
-            <!-- 5 alpha reductase up -->
-            <path class="algo-edge" d="M674,182 V120" marker-end="url(#ster-tip)"/>
-            <rect class="algo-edge-plate" x="620" y="143" width="108" height="15"/>
-            <text class="algo-edge-label" x="674" y="155" text-anchor="middle">5&alpha;-REDUCTASE</text>
-
-            <rect class="algo-orange" x="612" y="64" width="124" height="52" rx="6"/>
-            <text class="algo-title algo-title-orange" x="674" y="88" text-anchor="middle">DHT</text>
-            <text class="algo-q-sub" x="674" y="104" text-anchor="middle">cannot be aromatised</text>
-
-            <text class="algo-q-sub" x="14" y="380">Simplified: the mineralocorticoid and glucocorticoid arms of the same tree are omitted.</text>
-            <text class="algo-q-sub" x="14" y="394">Intermediates between pregnenolone and androstenedione (17-OH pregnenolone, DHEA) are collapsed into &ldquo;CYP17A1&rdquo;.</text>
-          </svg>
-          <figcaption>The reproductive branch of steroidogenesis. Read it left to right: one precursor, one bottleneck, then a fan of end products separated by single enzymes. The two enzymes worth memorising are the two drawn in capitals.</figcaption>
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/steroidogenesis.jpg" alt="Steroidogenesis pathway diagram: cholesterol is converted by cholesterol side-chain cleavage enzyme to pregnenolone, then through the progestagen, mineralocorticoid, glucocorticoid, androgen and estrogen branches, with the enzymes 17-alpha-hydroxylase, 3-beta-HSD, 17,20-lyase, 21-hydroxylase, 11-beta-hydroxylase, aldosterone synthase, 17-beta-HSD, aromatase and 5-alpha-reductase marked, and enzyme locations colour-coded to mitochondria or smooth endoplasmic reticulum">
+          <figcaption>The whole steroid tree. For this lecture follow only three things: the <strong>entry point</strong> top-left (cholesterol &rarr; pregnenolone by side-chain cleavage &mdash; the rate-limiting step, and the pink colour code means <strong>mitochondria</strong>); the <strong>androgen block</strong> in blue; and the two arrows out of it &mdash; <strong>aromatase</strong> into the pink estrogen triangle, and <strong>5&alpha;-reductase</strong> down to dihydrotestosterone. The mineralocorticoid and glucocorticoid arms belong to the adrenal lecture.</figcaption>
         </figure>
 
         <h3>The rate-limiting step</h3>
@@ -884,65 +776,18 @@
         <h2>How Steroids Actually Signal</h2>
         <p>Two routes, and the genomic one has two sub-routes. The distinction that matters is <strong>timescale</strong>.</p>
 
-        <figure class="topic-figure algo-figure">
-          <svg viewBox="0 0 700 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three mechanisms of steroid action. In the direct genomic pathway the receptor releases HSP90, dimerises, enters the nucleus and binds a hormone response element on DNA. In the tethered genomic pathway the receptor never contacts DNA and instead binds other transcription factors such as AP-1 or SP1. Both produce new messenger RNA and new protein over hours to days. In the non-genomic pathway a membrane receptor such as GPER1 triggers kinase and calcium cascades within seconds to minutes with no new transcription.">
-            <defs>
-              <marker id="sig-tip" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0,0.5 L7,4 L0,7.5 z" fill="#8b93a7"/>
-              </marker>
-            </defs>
-
-            <rect class="algo-root" x="190" y="16" width="320" height="50" rx="6"/>
-            <text class="algo-root-label" x="350" y="40" text-anchor="middle">SEX STEROID REACHES THE TARGET CELL</text>
-            <text class="algo-root-sub" x="350" y="57" text-anchor="middle">lipophilic &mdash; crosses the membrane without a transporter</text>
-
-            <path class="algo-edge" d="M350,66 V88 H130 V112" marker-end="url(#sig-tip)"/>
-            <path class="algo-edge" d="M350,66 V112" marker-end="url(#sig-tip)"/>
-            <path class="algo-edge" d="M350,66 V88 H570 V112" marker-end="url(#sig-tip)"/>
-
-            <rect class="algo-blue" x="30" y="112" width="200" height="134" rx="6"/>
-            <text class="algo-title algo-title-blue" x="130" y="134" text-anchor="middle">1 &middot; GENOMIC, DIRECT</text>
-            <text class="algo-body" x="130" y="156" text-anchor="middle">receptor sits in the cytoplasm</text>
-            <text class="algo-body" x="130" y="172" text-anchor="middle">ligand binds &rarr; HSP90 released</text>
-            <text class="algo-body" x="130" y="188" text-anchor="middle">receptor dimerises, enters nucleus</text>
-            <text class="algo-body-em" x="130" y="210" text-anchor="middle">binds an HRE on the DNA</text>
-            <text class="algo-q-sub" x="130" y="230" text-anchor="middle">switches specific genes on or off</text>
-
-            <rect class="algo-green" x="250" y="112" width="200" height="134" rx="6"/>
-            <text class="algo-title algo-title-green" x="350" y="134" text-anchor="middle">2 &middot; GENOMIC, TETHERED</text>
-            <text class="algo-body" x="350" y="156" text-anchor="middle">same activated receptor</text>
-            <text class="algo-body-em" x="350" y="176" text-anchor="middle">never touches DNA itself</text>
-            <text class="algo-body" x="350" y="196" text-anchor="middle">binds other transcription factors</text>
-            <text class="algo-body" x="350" y="212" text-anchor="middle">(AP-1, SP1) and rides them</text>
-            <text class="algo-q-sub" x="350" y="232" text-anchor="middle">indirect protein&ndash;protein interaction</text>
-
-            <rect class="algo-orange" x="470" y="112" width="200" height="134" rx="6"/>
-            <text class="algo-title algo-title-orange" x="570" y="134" text-anchor="middle">3 &middot; NON-GENOMIC</text>
-            <text class="algo-body" x="570" y="156" text-anchor="middle">membrane receptor</text>
-            <text class="algo-body" x="570" y="172" text-anchor="middle">e.g. GPER1 (GPR30)</text>
-            <text class="algo-body" x="570" y="192" text-anchor="middle">kinase cascades, Ca<tspan dy="-4" style="font-size:8px">2+</tspan><tspan dy="4"> flux</tspan></text>
-            <text class="algo-body-em" x="570" y="214" text-anchor="middle">no new transcription at all</text>
-
-            <path class="algo-edge" d="M130,246 V272 H240 V296" marker-end="url(#sig-tip)"/>
-            <path class="algo-edge" d="M350,246 V272 H240 V296" marker-end="url(#sig-tip)"/>
-            <path class="algo-edge" d="M570,246 V296" marker-end="url(#sig-tip)"/>
-
-            <rect class="algo-node" x="30" y="296" width="420" height="52" rx="6"/>
-            <text class="algo-body-em" x="240" y="318" text-anchor="middle">New mRNA &rarr; new protein</text>
-            <text class="algo-q-sub" x="240" y="336" text-anchor="middle">HOURS TO DAYS &mdash; this is the main event</text>
-
-            <rect class="algo-node" x="470" y="296" width="200" height="52" rx="6"/>
-            <text class="algo-body-em" x="570" y="318" text-anchor="middle">Existing proteins switched on</text>
-            <text class="algo-q-sub" x="570" y="336" text-anchor="middle">SECONDS TO MINUTES</text>
-          </svg>
-          <figcaption>Routes 1 and 2 are the &ldquo;two pathways&rdquo; on the lecture slide &mdash; both genomic, differing only in whether the receptor contacts DNA. Route 3 is the membrane-initiated pathway; it is what accounts for steroid effects too fast for transcription to explain.</figcaption>
+        <figure class="topic-figure">
+          <img src="../../../../assets/images/week-2/hpg-axis/steroid-mechanism-of-action.jpg" alt="Diagram of steroid receptor action: ligand crosses the cell membrane into the cytoplasm, binds the steroid receptor, and the complex enters the nucleus where pathway 1 is direct binding of the receptor dimer to a hormone response element on DNA, and pathway 2 is indirect binding through protein-protein interaction with other transcription factors; both lead to mRNA and new protein">
+          <figcaption>The two pathways from the lecture, both <strong>genomic</strong>. The ligand crosses the membrane unaided, binds its cytoplasmic receptor, and the complex enters the nucleus. <strong>(1) Direct</strong> &mdash; the receptor dimer binds a <strong>hormone response element</strong> on the DNA itself. <strong>(2) Indirect</strong> &mdash; the receptor never touches DNA, and instead tethers to other transcription factors and rides them to their genes. Either way the output is <strong>new mRNA and new protein</strong>, over hours to days. Wierman, 2007, via the lecture.</figcaption>
         </figure>
+
+        <p>There is a third route the slide does not draw: a <strong>non-genomic</strong> one, through membrane receptors such as <strong>GPER1 (GPR30)</strong>, working via kinase cascades and Ca<sup>2+</sup> flux with no new transcription at all. That is what accounts for steroid effects appearing in <strong>seconds to minutes</strong> &mdash; too fast for transcription to explain. <span style="color:var(--color-text-muted)">(Added; not on the slides.)</span></p>
 
         
       </section>
 
       <p class="topic-source">
-        Adapted (not reproduced verbatim) from Dr. Andrew J. Watson, Depts. of Obstetrics &amp; Gynaecology and Physiology &amp; Pharmacology, Western University &mdash; &ldquo;The HPG axis&rdquo; &mdash; plus lecture notes. <strong>All figures here are original</strong>; the deck&rsquo;s anatomical and pathway figures are third-party copyrighted material (Wiley; Plant, <em>Front Neuroendocrinol</em> 2012;33:160&ndash;68; Pearson; Wierman 2007) and were redrawn rather than reproduced.
+        Adapted (not reproduced verbatim) from Dr. Andrew J. Watson, Depts. of Obstetrics &amp; Gynaecology and Physiology &amp; Pharmacology, Western University &mdash; &ldquo;The HPG axis&rdquo; &mdash; plus lecture notes. <strong>Anatomical and pathway figures are taken from the lecture slides</strong> and reproduced here for personal study, with the deck&rsquo;s own credits kept in the captions (Plant, <em>Front Neuroendocrinol</em> 2012;33:160&ndash;68; &copy; 2004 Pearson Education; Wierman 2007; Saedi et al., <em>J Chem Neuroanat</em> 2018). Six figures are mine and say so in their captions &mdash; the axis overview, the hypothalamic navigation map, the pulse-frequency simulator, the kisspeptin two-population diagram, the agonist-versus-antagonist time course and the two-cell model &mdash; because the deck presents those as prose or bullet lists rather than figures.
         <br><strong>Added beyond the slides:</strong> pulse-frequency numbers and the ER&alpha;/kisspeptin relay from Endotext, <em>Physiology of GnRH and Gonadotropin Secretion</em> (NBK279070), after Wildt et al., <em>Endocrinology</em> 1981;109:376&ndash;85 and Belchetz et al., <em>Science</em> 1978;202:631&ndash;3; the tail-less type&nbsp;I GnRH receptor and its G<sub>q/11</sub> coupling (PMC5662886); StAR as the transport bottleneck; GnRH-neuron origin and Kallmann genetics (PMC6637222); the circumventricular list, the inhibin/activin/follistatin set and the two-cell model from standard reproductive endocrinology sources. Clinical correlations (PCOS, SHBG, finasteride, aromatase inhibitors) are application, not lecture content. <br>One correction: the deck&rsquo;s summary slide says &ldquo;cholesterol to progesterone&rdquo; as the rate-limiting step &mdash; the product of CYP11A1 is <strong>pregnenolone</strong>, as the earlier slide states correctly.
       </p>
 

@@ -674,6 +674,7 @@ main.has-toc {
 }
 
 .topic-figure img {
+  display: block;
   max-width: 100%;
   height: auto;
   border: 1px solid var(--color-border);
@@ -3786,3 +3787,66 @@ main.has-toc {
 .chart-figure svg { max-width: 860px; }
 .hotspot-canvas svg { max-width: 620px; }
 .pulse-plot svg { max-width: 720px; }
+
+/* ============================================================
+   Figure rows and specimen images
+   ------------------------------------------------------------
+   For putting two or three lecture images side by side as a
+   comparison — the three endometrial phases, low vs high power.
+   Collapses to a single column on narrow screens.
+   ============================================================ */
+
+.fig-row {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  align-items: start;
+}
+
+.fig-row figure { margin: 0; }
+
+.fig-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.fig-row .fig-cap {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.fig-row .fig-cap strong { color: var(--color-text); }
+
+/* Specimen thumbnail inside a hotspot detail panel */
+.hs-specimen {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.15rem 0 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.hs-specimen-cap {
+  display: block;
+  margin: -0.35rem 0 0.7rem;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+/* Tall lecture figures otherwise dominate the page — cap the height and
+   let width follow, so a portrait diagram sits at a readable size instead
+   of filling the viewport twice over. Landscape figures are unaffected. */
+.topic-figure img {
+  max-height: 620px;
+  width: auto;
+  margin: 0 auto;
+}
