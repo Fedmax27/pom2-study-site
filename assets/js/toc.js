@@ -10,6 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     const heading = section.querySelector("h2");
     if (!heading) return;
+
+    // A lecture long enough to be split into parts marks them with a
+    // .part-divider between sections; carry that break into the contents
+    // so the sidebar shows the same structure the page does.
+    let prev = section.previousElementSibling;
+    while (prev && !prev.matches("section[id], .part-divider")) {
+      prev = prev.previousElementSibling;
+    }
+    if (prev && prev.classList.contains("part-divider")) {
+      const eyebrow = prev.querySelector(".part-eyebrow");
+      const title = prev.querySelector("h2");
+      const head = document.createElement("li");
+      head.className = "toc-part";
+      head.textContent = [eyebrow && eyebrow.textContent, title && title.textContent]
+        .filter(Boolean)
+        .join(" \u00b7 ");
+      list.appendChild(head);
+    }
+
     const li = document.createElement("li");
     const a = document.createElement("a");
     a.href = `#${section.id}`;

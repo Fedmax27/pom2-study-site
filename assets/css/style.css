@@ -4068,3 +4068,45 @@ main.has-toc {
 :root[data-theme="dark"] .axis-flag-plate { fill: #34210f; stroke: #e2833c; }
 :root[data-theme="dark"] .axis-flag-text { fill: #f4a259; }
 :root[data-theme="dark"] .axis-flag-lead { stroke: #e2833c; }
+
+/* Part divider — for a lecture long enough to have two halves */
+.part-divider {
+  margin: 3rem 0 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 3px solid var(--color-primary);
+}
+
+.part-divider .part-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+}
+
+.part-divider h2 {
+  margin: 0 0 0.3rem;
+  border: none;
+  padding: 0;
+}
+
+.part-divider p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* Part heading inside the on-this-page list — a label, not a link */
+.lecture-toc .toc-part {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0.9rem 0 0.25rem;
+  list-style: none;
+}
+
+.lecture-toc .toc-part:first-child { margin-top: 0; }
