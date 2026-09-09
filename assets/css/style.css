@@ -3850,3 +3850,221 @@ main.has-toc {
   width: auto;
   margin: 0 auto;
 }
+
+/* ============================================================
+   HPA axis state simulator
+   ------------------------------------------------------------
+   One diagram, many lesions. The axis is drawn once; picking a
+   state moves a lesion marker and rewrites the four hormone
+   chips (CRH, ACTH, cortisol, aldosterone). It is the single
+   graphic that ties the whole adrenal week together, so it is
+   shared by the insufficiency and Cushing pages.
+
+   Chip colour reuses the algorithm figures' Okabe-Ito palette,
+   and never carries meaning alone — every chip also shows an
+   arrow glyph and a word.
+   ============================================================ */
+
+.axis-sim {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.axis-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--panel-bg);
+}
+
+.axis-head h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.axis-hint {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.axis-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.axis-opt {
+  position: relative;
+  flex: 1 1 150px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: var(--color-bg);
+  padding: 0.5rem 0.65rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.axis-opt:hover { border-color: var(--color-primary); }
+
+.axis-opt.is-on {
+  border-color: var(--color-primary);
+  background: rgba(109, 40, 217, 0.09);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.axis-opt input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.axis-opt-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.axis-opt-sub {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* On the selected card the muted sub-label sits on a tinted
+   ground — take it up to full text colour for contrast. */
+.axis-opt.is-on .axis-opt-sub { color: var(--color-text); }
+
+.axis-plot { padding: 0.9rem 1rem 0.4rem; overflow-x: auto; }
+
+.axis-plot svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  max-width: 700px;
+  margin: 0 auto;
+  height: auto;
+}
+
+/* --- diagram primitives --- */
+
+.axis-gland {
+  fill: var(--chart-complex);
+  stroke: var(--color-border);
+  stroke-width: 1.4;
+}
+
+.axis-gland-name { font-size: 13px; font-weight: 800; fill: var(--color-text); }
+.axis-gland-sub  { font-size: 10.5px; fill: var(--color-text-muted); }
+.axis-flow       { fill: none; stroke: var(--color-text-muted); stroke-width: 2; stroke-linejoin: round; }
+.axis-feedback   { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.axis-minus      { font-size: 15px; font-weight: 800; fill: var(--color-text-muted); }
+.axis-stress     { font-size: 10px; font-weight: 800; fill: var(--color-text-muted); letter-spacing: 0.1em; }
+.axis-arrowhead  { fill: var(--color-text-muted); }
+.axis-note       { font-size: 9.5px; fill: var(--color-text-muted); }
+
+/* --- hormone chips --- */
+
+.axis-chip {
+  fill: var(--chart-complex);
+  stroke: var(--color-border);
+  stroke-width: 1.3;
+}
+
+.axis-chip-name { font-size: 11.5px; font-weight: 800; fill: var(--color-text); }
+.axis-chip-val  { font-size: 14px; font-weight: 800; fill: var(--color-text); }
+.axis-chip-word { font-size: 9.5px; font-weight: 700; fill: var(--color-text-muted); letter-spacing: 0.05em; }
+
+[data-axis-slot].is-high .axis-chip { fill: #fdf1e7; stroke: #d55e00; }
+[data-axis-slot].is-high .axis-chip-val,
+[data-axis-slot].is-high .axis-chip-word { fill: #8f3f00; }
+
+[data-axis-slot].is-low .axis-chip { fill: #eaf2f8; stroke: #0072b2; }
+[data-axis-slot].is-low .axis-chip-val,
+[data-axis-slot].is-low .axis-chip-word { fill: #005b8f; }
+
+[data-axis-slot].is-normal .axis-chip { fill: #e7f4f0; stroke: #009e73; }
+[data-axis-slot].is-normal .axis-chip-val,
+[data-axis-slot].is-normal .axis-chip-word { fill: #00674c; }
+
+/* --- the lesion marker --- */
+
+.axis-flag.is-off { display: none; }
+.axis-flag-plate { fill: #fdf1e7; stroke: #d55e00; stroke-width: 1.5; }
+.axis-flag-text  { font-size: 11px; font-weight: 800; fill: #8f3f00; }
+.axis-flag-lead  { fill: none; stroke: #d55e00; stroke-width: 1.5; stroke-dasharray: 4 3; }
+
+/* --- explanation panel --- */
+
+.axis-readout {
+  border-top: 1px solid var(--color-border);
+  background: var(--panel-bg);
+  padding: 0.85rem 1rem 0.95rem;
+}
+
+.axis-readout h5 {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.axis-readout p { margin: 0 0 0.55rem; font-size: 0.9rem; }
+.axis-readout p:last-child { margin-bottom: 0; }
+
+.axis-readout .axis-clin {
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--color-border);
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+.axis-readout .axis-clin strong { color: var(--color-text); }
+
+.axis-sim figcaption { padding: 0 1rem 0.9rem; }
+
+/* Dark theme for the axis simulator's baked-in light plates. */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .axis-opt.is-on { background: rgba(167, 139, 250, 0.14); }
+  :root:not([data-theme="light"]) [data-axis-slot].is-high .axis-chip { fill: #34210f; stroke: #e2833c; }
+  :root:not([data-theme="light"]) [data-axis-slot].is-high .axis-chip-val,
+  :root:not([data-theme="light"]) [data-axis-slot].is-high .axis-chip-word { fill: #f4a259; }
+  :root:not([data-theme="light"]) [data-axis-slot].is-low .axis-chip { fill: #10283a; stroke: #4aa3d8; }
+  :root:not([data-theme="light"]) [data-axis-slot].is-low .axis-chip-val,
+  :root:not([data-theme="light"]) [data-axis-slot].is-low .axis-chip-word { fill: #7cc4ec; }
+  :root:not([data-theme="light"]) [data-axis-slot].is-normal .axis-chip { fill: #102b24; stroke: #34d399; }
+  :root:not([data-theme="light"]) [data-axis-slot].is-normal .axis-chip-val,
+  :root:not([data-theme="light"]) [data-axis-slot].is-normal .axis-chip-word { fill: #4fd6ab; }
+  :root:not([data-theme="light"]) .axis-flag-plate { fill: #34210f; stroke: #e2833c; }
+  :root:not([data-theme="light"]) .axis-flag-text { fill: #f4a259; }
+  :root:not([data-theme="light"]) .axis-flag-lead { stroke: #e2833c; }
+}
+
+:root[data-theme="dark"] .axis-opt.is-on { background: rgba(167, 139, 250, 0.14); }
+:root[data-theme="dark"] [data-axis-slot].is-high .axis-chip { fill: #34210f; stroke: #e2833c; }
+:root[data-theme="dark"] [data-axis-slot].is-high .axis-chip-val,
+:root[data-theme="dark"] [data-axis-slot].is-high .axis-chip-word { fill: #f4a259; }
+:root[data-theme="dark"] [data-axis-slot].is-low .axis-chip { fill: #10283a; stroke: #4aa3d8; }
+:root[data-theme="dark"] [data-axis-slot].is-low .axis-chip-val,
+:root[data-theme="dark"] [data-axis-slot].is-low .axis-chip-word { fill: #7cc4ec; }
+:root[data-theme="dark"] [data-axis-slot].is-normal .axis-chip { fill: #102b24; stroke: #34d399; }
+:root[data-theme="dark"] [data-axis-slot].is-normal .axis-chip-val,
+:root[data-theme="dark"] [data-axis-slot].is-normal .axis-chip-word { fill: #4fd6ab; }
+:root[data-theme="dark"] .axis-flag-plate { fill: #34210f; stroke: #e2833c; }
+:root[data-theme="dark"] .axis-flag-text { fill: #f4a259; }
+:root[data-theme="dark"] .axis-flag-lead { stroke: #e2833c; }

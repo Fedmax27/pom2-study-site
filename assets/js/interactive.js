@@ -1,10 +1,10 @@
 /*
  * Interactive lecture figures.
  *
- * Two components, both progressive enhancement — the underlying SVG
+ * Three components, all progressive enhancement — the underlying SVG
  * and the panel text are in the HTML, so the figure still reads with
- * JavaScript off. All colour comes from CSS variables so both
- * components follow the light/dark theme without extra work.
+ * JavaScript off. All colour comes from CSS variables so every
+ * component follows the light/dark theme without extra work.
  *
  *   .hotspot-fig   A labelled diagram where each region is clickable.
  *                  Regions carry [data-hotspot="id"], the side panel
@@ -16,6 +16,12 @@
  *                  each describe one frequency regimen; the spike
  *                  train, the LH/FSH output bars and the explanatory
  *                  panel all redraw from the selected input's data.
+ *
+ *   .axis-sim      HPA axis state simulator. One drawing of the axis;
+ *                  each radio input describes where the lesion sits
+ *                  and what the four hormones do. Used to hold the
+ *                  primary/secondary/Cushing patterns side by side
+ *                  rather than as four separate diagrams.
  */
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -117,5 +123,70 @@ document.addEventListener("DOMContentLoaded", () => {
     inputs.forEach((i) => i.addEventListener("change", () => apply(i)));
     apply(inputs.find((i) => i.checked) || inputs[0]);
     (inputs.find((i) => i.checked) || inputs[0]).checked = true;
+  });
+
+  /* ---------------- HPA axis state simulator ---------------- */
+
+  document.querySelectorAll(".axis-sim").forEach((sim) => {
+    const inputs = Array.from(sim.querySelectorAll(".axis-opt input"));
+    const slots = Array.from(sim.querySelectorAll("[data-axis-slot]"));
+    const flag = sim.querySelector(".axis-flag");
+    const panels = Array.from(sim.querySelectorAll("[data-axis-panel]"));
+    if (!inputs.length || !slots.length) return;
+
+    // Where the lesion marker parks for each level of the axis, in the
+    // SVG's own user units. Every position is on the same x so the
+    // marker reads as sliding up and down one rail.
+    const LESION_Y = { hypo: 70, pit: 178, ectopic: 231, adrenal: 296, exog: 452 };
+
+    // Chip colour follows the arrow glyph, so the two can never
+    // disagree — and the glyph carries the meaning on its own.
+    function toneOf(symbol) {
+      if (symbol.indexOf("\u2191") === 0) return "is-high";
+      if (symbol.indexOf("\u2193") === 0) return "is-low";
+      return "is-normal";
+    }
+
+    function apply(input) {
+      slots.forEach((slot) => {
+        const key = slot.dataset.axisSlot;
+        const symbol = input.dataset[key];
+        // A state that says nothing about this hormone leaves the
+        // chip out of the picture entirely rather than guessing.
+        if (!symbol) {
+          slot.style.display = "none";
+          return;
+        }
+        slot.style.display = "";
+        slot.classList.remove("is-high", "is-low", "is-normal");
+        slot.classList.add(toneOf(symbol));
+        const val = slot.querySelector(".axis-chip-val");
+        const word = slot.querySelector(".axis-chip-word");
+        if (val) val.textContent = symbol;
+        if (word) word.textContent = input.dataset[key + "Word"] || "";
+      });
+
+      if (flag) {
+        const at = input.dataset.lesion;
+        if (!at || at === "none") {
+          flag.classList.add("is-off");
+        } else {
+          flag.classList.remove("is-off");
+          flag.setAttribute("transform", `translate(560, ${LESION_Y[at] || 178})`);
+          const label = flag.querySelector(".axis-flag-text");
+          if (label) label.textContent = input.dataset.lesionLabel || "";
+        }
+      }
+
+      panels.forEach((p) => (p.hidden = p.dataset.axisPanel !== input.value));
+      sim.querySelectorAll(".axis-opt").forEach((o) =>
+        o.classList.toggle("is-on", o.contains(input))
+      );
+    }
+
+    inputs.forEach((i) => i.addEventListener("change", () => apply(i)));
+    const start = inputs.find((i) => i.checked) || inputs[0];
+    start.checked = true;
+    apply(start);
   });
 });
