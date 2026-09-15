@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
           flag.classList.add("is-off");
         } else {
           flag.classList.remove("is-off");
-          flag.setAttribute("transform", `translate(560, ${LESION_Y[at] || 178})`);
+          flag.setAttribute("transform", `translate(568, ${LESION_Y[at] || 178})`);
           const label = flag.querySelector(".axis-flag-text");
           if (label) label.textContent = input.dataset.lesionLabel || "";
         }
