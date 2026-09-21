@@ -792,6 +792,17 @@ main.has-toc {
   background: rgba(109, 40, 217, 0.08);
 }
 
+/* Wide comparison tables: scroll sideways instead of squeezing columns */
+.data-table.compare-table th,
+.data-table.compare-table td {
+  min-width: 10rem;
+  vertical-align: top;
+}
+.data-table.compare-table th:first-child,
+.data-table.compare-table td:first-child {
+  min-width: 7rem;
+}
+
 /* AI tutor widget */
 
 .ai-tutor-note {
