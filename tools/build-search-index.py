@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "tools", "assets", "node_modules"}
+SKIP_DIRS = {".git", "tools", "assets", "node_modules", "daily-case"}
 # Pages that are pure navigation add noise without adding answers.
 SKIP_FILES = {"index.html"} if False else set()
 
@@ -59,6 +59,8 @@ def page_context(src: str) -> str:
 def kind_for(rel: str) -> str:
     if rel.startswith("daily-case/") and rel != "daily-case/index.html":
         return "case"
+    if rel.startswith("emerg/") and rel != "emerg/index.html":
+        return "cheat"
     if "/exam/" in rel:
         return "exam"
     if rel.startswith("units/") and rel.count("/") >= 3:

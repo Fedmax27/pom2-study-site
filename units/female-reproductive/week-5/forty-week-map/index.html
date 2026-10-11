@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>The Forty-Week Map | Week 5 | Female Reproductive | POM2</title>
+<script src="../../../../assets/js/theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a Gantt-style week ruler (0–42 weeks from LMP) as the spine, lanes grouped by what is being done,
+   a scrubber that reads out any week, then trimester-by-trimester detail. */
+:root {
+  --bg: #f4f6f9;
+  --panel: #ffffff;
+  --ink: #18202e;
+  --muted: #5c6678;
+  --faint: #8a93a3;
+  --line: #dde2ea;
+  --band: #e9edf3;
+  --dev: #b4436a;      /* the fetus */
+  --screen: #177168;   /* screening & diagnosis */
+  --lab: #4c53a3;      /* bloodwork & swabs */
+  --prev: #a8680e;     /* vaccines & prevention */
+  --mom: #3a74a8;      /* watching the mother */
+  --cursor: #18202e;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f131a; --panel: #161b24; --ink: #e8ebf2; --muted: #a2abbb; --faint: #7a8496;
+    --line: #273040; --band: #1b2230;
+    --dev: #e87fa3; --screen: #4fc3b6; --lab: #9aa1f0; --prev: #e6a64a; --mom: #7db4e6; --cursor: #e8ebf2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f131a; --panel: #161b24; --ink: #e8ebf2; --muted: #a2abbb; --faint: #7a8496;
+  --line: #273040; --band: #1b2230;
+  --dev: #e87fa3; --screen: #4fc3b6; --lab: #9aa1f0; --prev: #e6a64a; --mom: #7db4e6; --cursor: #e8ebf2;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 36px; }
+
+/* ---------- hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 5.4vw, 4.4rem); line-height: .95; letter-spacing: -.025em; margin: 10px 0 0; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--dev); }
+.lede { color: var(--muted); max-width: 58ch; margin: 0; font-size: 1rem; }
+.keyfacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.keyfacts div { padding: 12px 12px 0 0; }
+.keyfacts b { display: block; font-family: var(--display); font-size: 1.9rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.keyfacts span { font-size: 12.5px; color: var(--muted); }
+
+/* ---------- legend ---------- */
+[hidden] { display: none !important; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; padding: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 8px); z-index: 5; }
+.tabs button { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 600 14px var(--body); color: var(--muted); background: transparent; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; white-space: nowrap; }
+.tabs button i { width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
+.tabs button .n { font: 500 11.5px var(--mono); color: var(--faint); }
+.tabs button:hover { color: var(--ink); background: var(--band); }
+.tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.tabs button[aria-selected="true"] { color: var(--panel); background: var(--c); }
+.tabs button[aria-selected="true"] .n { color: var(--panel); opacity: .8; }
+.chart.focused .row .name { font-size: 14px; min-height: 44px; }
+.chart.focused .row .track { min-height: 44px; }
+.chart.focused .bar { top: 12px; height: 20px; border-radius: 10px; }
+.chart.focused .mk { top: 13px; width: 18px; height: 18px; margin-left: -9px; }
+.chart.focused .barlabel { top: 12px; font-size: 12.5px; }
+.lanehead { display: grid; gap: 4px; }
+.lanehead h2 { font-family: var(--display); font-weight: 800; font-size: 1.6rem; margin: 0; }
+.lanehead p { margin: 0; color: var(--muted); max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 18px; height: 8px; border-radius: 4px; display: inline-block; }
+.legend i.marker { width: 10px; height: 10px; border-radius: 0; transform: rotate(45deg); background: var(--ink) !important; }
+
+/* ---------- chart ---------- */
+.chartbox { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 0 8px; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 18px 10px; }
+.chart { --label: 200px; min-width: 900px; display: grid; grid-template-columns: var(--label) minmax(0, 1fr); position: relative; }
+.track { position: relative; }
+.axis { grid-column: 2; position: relative; height: 34px; }
+.axis .tick { position: absolute; bottom: 4px; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.axis .tick.major { color: var(--ink); font-weight: 500; }
+.trimesters { grid-column: 2; position: relative; height: 26px; margin-bottom: 4px; }
+.tri { position: absolute; top: 0; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--line); }
+.group-label { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; font-family: var(--display); font-weight: 700; font-size: 14px; }
+.group-label::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
+.row { display: contents; }
+.row .name { grid-column: 1; font-size: 13px; padding: 5px 12px 5px 0; color: var(--ink); line-height: 1.25; display: flex; align-items: center; min-height: 32px; }
+.row .name small { display: block; color: var(--faint); font-size: 11.5px; }
+.row .track { grid-column: 2; min-height: 32px; border-top: 1px dashed var(--line); }
+.bar { position: absolute; top: 8px; height: 16px; border-radius: 8px; background: var(--c); cursor: pointer; border: 0; padding: 0; transition: transform .15s ease, box-shadow .15s ease; }
+.bar.soft { background: color-mix(in srgb, var(--c) 28%, transparent); outline: 1.5px dashed var(--c); outline-offset: -1.5px; }
+.bar.fade { background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 0%, transparent)); }
+.bar.from-before::before { content: "◂"; position: absolute; left: -12px; top: -2px; font-size: 13px; color: var(--c); }
+.bar:hover, .bar:focus-visible, .bar.on { transform: scaleY(1.25); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 30%, transparent); outline: none; }
+.mk { position: absolute; top: 9px; width: 14px; height: 14px; margin-left: -7px; transform: rotate(45deg); background: var(--c); border: 2px solid var(--panel); cursor: pointer; padding: 0; }
+.mk:hover, .mk:focus-visible, .mk.on { box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 35%, transparent); outline: none; }
+.barlabel { position: absolute; top: 7px; font-size: 11.5px; font-family: var(--mono); color: var(--muted); white-space: nowrap; pointer-events: none; }
+.vline { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1.5px dashed var(--c, var(--faint)); pointer-events: none; }
+.vline span { position: absolute; top: 2px; left: 5px; font-family: var(--mono); font-size: 10.5px; color: var(--c, var(--faint)); white-space: nowrap; background: var(--panel); padding: 0 3px; }
+.cursor { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--cursor); pointer-events: none; z-index: 3; transition: left .12s ease; }
+.cursor::after { content: attr(data-w); position: absolute; top: -2px; left: 50%; transform: translate(-50%, -100%); background: var(--cursor); color: var(--panel); font-family: var(--mono); font-size: 11px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+.overlay { position: absolute; left: var(--label); right: 0; top: 60px; bottom: 0; pointer-events: none; }
+.hint { font-size: 12px; color: var(--faint); padding: 2px 18px 0; }
+
+/* ---------- scrubber + readout ---------- */
+.now { display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.dial { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 12px; }
+.dial .big { font-family: var(--display); font-weight: 800; font-size: 4.2rem; line-height: .9; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.dial .big small { font-size: 1.3rem; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+.dial .tri-now { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.dial label { font-size: 13px; color: var(--muted); }
+input[type=range] { width: 100%; accent-color: var(--dev); height: 28px; }
+.jumps { display: flex; flex-wrap: wrap; gap: 6px; }
+.jumps button { font: 500 12.5px var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 5px 11px; cursor: pointer; }
+.jumps button:hover, .jumps button:focus-visible { border-color: var(--ink); outline: none; }
+.readout { display: grid; gap: 10px; }
+.readout h2 { font-family: var(--display); font-size: 1.35rem; margin: 0; }
+.item { display: grid; grid-template-columns: 6px minmax(0, 1fr); gap: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 12px 0; }
+.item::before { content: ""; background: var(--c); border-radius: 0 3px 3px 0; }
+.item h3 { margin: 0; font-size: 14.5px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.item h3 .when { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
+.item p { margin: 3px 0 0; font-size: 13.5px; color: var(--muted); max-width: 72ch; }
+.item .src { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+.empty { color: var(--muted); font-size: 14px; }
+
+/* ---------- trimester detail ---------- */
+.tri-sections { display: grid; gap: 28px; }
+.tri-sec { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 28px; border-top: 2px solid var(--ink); padding-top: 16px; }
+.tri-sec h2 { font-family: var(--display); font-weight: 800; font-size: 1.9rem; margin: 0; line-height: 1; letter-spacing: -.02em; }
+.tri-sec .range { font-family: var(--mono); color: var(--muted); font-size: 13px; margin-top: 6px; }
+.tri-sec .dev { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.item.flash { box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 40%, transparent); }
+.foot { font-size: 12.5px; color: var(--faint); max-width: 90ch; }
+
+@media (max-width: 860px) {
+  .hero, .now, .tri-sec { grid-template-columns: minmax(0, 1fr); }
+  .dial { position: static; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; }
+  .keyfacts b { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .bar, .cursor { transition: none; } }
+.backlink { display: inline-flex; gap: 6px; font: 500 13px var(--mono); color: var(--muted); text-decoration: none; margin-bottom: 18px; }
+.backlink:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backlink" href="../index.html">&larr; Week 5</a>
+  <header class="hero">
+    <div>
+      <div class="eyebrow">POM2 · Weeks 4–5 · Pregnancy</div>
+      <h1>The Forty-Week <em>Map</em></h1>
+    </div>
+    <div style="display:grid; gap:18px;">
+      <p class="lede">What the fetus is doing, and every test, vaccine and check you order along the way, on one ruler. Weeks are counted the obstetric way, from the first day of the last menstrual period (LMP).</p>
+      <div class="keyfacts">
+        <div><b>280</b><span>days LMP → due date</span></div>
+        <div><b>5–10</b><span>weeks of peak teratogen risk</span></div>
+        <div><b>23–24</b><span>weeks: the peri-viable line</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Show"></nav>
+  <div class="lanehead" id="laneHead" hidden><h2 id="laneTitle"></h2><p id="laneBlurb"></p></div>
+  <div class="legend" id="legend" aria-label="Legend">
+    <span><i style="background:var(--dev)"></i>The fetus</span>
+    <span><i style="background:var(--screen)"></i>Screening &amp; diagnosis</span>
+    <span><i style="background:var(--lab)"></i>Bloodwork &amp; swabs</span>
+    <span><i style="background:var(--prev)"></i>Vaccines &amp; prevention</span>
+    <span><i style="background:var(--mom)"></i>Watching the mother</span>
+    <span><i class="marker"></i>A single moment</span>
+    <span><i style="background:transparent;outline:1.5px dashed var(--muted)"></i>Only if indicated</span>
+  </div>
+
+  <section class="chartbox" aria-label="Timeline of pregnancy from 0 to 42 weeks">
+    <div class="scroll" id="scroll">
+      <div class="chart" id="chart"></div>
+    </div>
+    <div class="hint">Tap any bar or diamond for the details. On a phone, swipe the chart sideways.</div>
+  </section>
+
+  <section class="now" aria-label="What happens at a given week">
+    <div class="dial">
+      <div class="tri-now" id="triNow">First trimester</div>
+      <div class="big" id="bigWeek">12<small>+0 wk</small></div>
+      <label for="week">Drag to any week</label>
+      <input type="range" id="week" min="0" max="42" step="0.5" value="12">
+      <div class="jumps" id="jumps"></div>
+    </div>
+    <div class="readout">
+      <h2 id="readTitle">Happening at 12 weeks</h2>
+      <div id="readList"></div>
+    </div>
+  </section>
+
+  <section class="tri-sections" id="triSections"></section>
+
+  <p class="foot">Built from the POM2 lectures: 4.16 Genetic Screening, 5.9 Teratogenesis, 5.10 First Trimester Bleeding &amp; Ultrasound, 5.11 Pathology of First Trimester Bleeding, 5.12 Care for Pregnancy in the First Trimester, 5.14 Topics of Antenatal Care, 5.15 Second Trimester Ultrasound and 5.16 Hypertension in Pregnancy, plus the course's own quiz questions for GBS, gestational diabetes and fetal movement. Teratology counts weeks from fertilization, two weeks behind the obstetric count, so the embryonic weeks 3–8 appear here as weeks 5–10. The anatomy scan window is 18–22 weeks in 5.15 and 18–20 in 4.16.</p>
+</div>
+
+<script>
+const MAXW = 42;
+const LANES = [
+  { key: 'dev', name: 'The fetus', c: 'var(--dev)' },
+  { key: 'screen', name: 'Screening & diagnosis', c: 'var(--screen)' },
+  { key: 'lab', name: 'Bloodwork & swabs', c: 'var(--lab)' },
+  { key: 'prev', name: 'Vaccines & prevention', c: 'var(--prev)' },
+  { key: 'mom', name: 'Watching the mother', c: 'var(--mom)' },
+];
+const SHORT = { dev: 'The fetus', screen: 'Screening', lab: 'Bloodwork', prev: 'Vaccines', mom: 'Mother' };
+const BLURB = {
+  dev: 'How the embryo and fetus develop, what ultrasound can see and when, and the windows that matter: teratogen risk, viability and term.',
+  screen: 'Every scan and genetic test in order, from the first hCG to the anatomy scan. Dashed bars are only done when indicated.',
+  lab: 'The bloodwork and swabs: the first-visit panel, the diabetes screen, antibody titres if sensitized, and GBS before labour.',
+  prev: 'What you give to protect mother and baby, and what you hold back until after delivery.',
+  mom: 'What you check at every visit: blood pressure against the 20-week rule, and fundal height.' };
+let SEL = 'all';
+try { SEL = localStorage.getItem('fwm-tab') || 'all'; } catch (e) {}
+const shown = i => SEL === 'all' || i.lane === SEL;
+// s/e in completed weeks from LMP (4.5 = 4 weeks 3–4 days). m = single moment.
+const ITEMS = [
+  // the fetus
+  { lane: 'dev', id: 'fert', name: 'Ovulation & fertilization', m: 2, when: '2 wk', note: 'Conception happens about two weeks after the LMP, which is why a pregnancy is already "4 weeks" at the first missed period.', src: '5.12' },
+  { lane: 'dev', id: 'aon', name: 'All-or-nothing period', sub: 'embryo weeks 1–2', s: 2, e: 4, when: '2–4 wk', note: 'Before organs start forming, an insult either ends the pregnancy or the remaining cells replace the damage and development carries on normally. The risk here is loss, not malformation.', src: '5.9' },
+  { lane: 'dev', id: 'impl', name: 'Implantation', m: 3, when: '~3 wk', note: 'By day 6 the trophoblast invades the endometrium; by day 8 it has split into cytotrophoblast and syncytiotrophoblast. The syncytiotrophoblast makes hCG.', src: '5.11' },
+  { lane: 'dev', id: 'organo', name: 'Organogenesis', sub: 'embryo weeks 3–8 · peak teratogen risk', s: 4, e: 10, when: '4–10 wk', note: 'The embryonic period: every organ system is forming, so this is when a teratogen causes major structural defects. The CNS window opens first and runs longest.', src: '5.9' },
+  { lane: 'dev', id: 'us-seq', name: 'Seen on ultrasound', sub: 'sac → yolk sac → CRL → heart', s: 4.5, e: 6, marks: [4.6, 5, 5.7, 6], when: '4+4 to 6+0 wk', note: 'Gestational sac at ~32 days (4+4 wk), yolk sac at 5 to 5+5, crown–rump length from 5+5, fetal heart by 6+0. A sac alone does not prove an intrauterine pregnancy; you need at least a yolk sac.', src: '5.10 · 5.12' },
+  { lane: 'dev', id: 'fetal', name: 'Fetal period', sub: 'growth & function', s: 10, e: 40, when: '10 wk → birth', note: 'From here on, exposures mostly cause functional defects and growth restriction rather than major malformations. The palate and external genitalia stay sensitive into this period.', src: '5.9' },
+  { lane: 'dev', id: 'quick', name: 'Fetal movements felt', s: 18, e: 24, soft: true, when: '18–24 wk', note: 'Quickening. The course quiz gives 18–24 weeks. Maternal perception of movement is also one way a late-presenting pregnancy is recognized.', src: 'course quiz · 5.12' },
+  { lane: 'dev', id: 'viable', name: 'Peri-viable', m: 23.5, when: '23–24 wk', note: 'The period where counselling about resuscitation turns on an accurate due date, which is why dating early matters so much.', src: '5.12' },
+  { lane: 'dev', id: 'term', name: 'Term', s: 37, e: 42, when: '37–42 wk', note: 'Term from 37 weeks. The EDB is day 280 (40+0). Post-dates management starts at 41–42 weeks.', src: '5.12' },
+
+  // screening & diagnosis
+  { lane: 'screen', id: 'hcg', name: 'Pregnancy test (β-hCG)', m: 4, when: '~4 wk (missed period)', note: 'Serum hCG over 25 is positive, under 5 negative. An intrauterine sac is usually visible on transvaginal scan by ~1500 (5.12). 5.10 raises the discriminatory zone to 2000–3000.', src: '5.10 · 5.12' },
+  { lane: 'screen', id: 'dating', name: 'Dating ultrasound', sub: 'crown–rump length', s: 7, e: 12, tail: 14, when: '7–12 wk (CRL valid to 14)', note: 'The best way to set the due date, better than the LMP. Use the first scan with a CRL of at least 10 mm (~7 wk). Once set, the due date never changes; later disagreement means a growth problem.', src: '5.10 · 5.12' },
+  { lane: 'screen', id: 'nipt', name: 'NIPT', sub: 'cell-free fetal DNA', s: 9, e: 20, fade: true, soft: false, when: 'any time from 9 wk', note: 'Detects ~99% of trisomy 21 with under 1% false positives. Still a screen: a positive needs an invasive test to confirm. Results take about 10 days.', src: '4.16' },
+  { lane: 'screen', id: 'efts', name: 'NT + eFTS', sub: 'nuchal translucency + 4 serum markers', s: 11, e: 13.86, when: '11–13+6 wk', note: 'Offered to every pregnancy, whatever the age or risk. NT over 3.5 mm raises the risk of aneuploidy and heart defects. eFTS detects 85–90% of trisomy 21.', src: '4.16 · 5.12' },
+  { lane: 'screen', id: 'cvs', name: 'CVS', sub: 'diagnostic', s: 11, e: 14, soft: true, when: '11–13 wk', note: 'Samples the placenta (chorionic villi). Miscarriage risk about 1 in 400 (~1%); can be confused by maternal cell contamination or placental mosaicism.', src: '4.16' },
+  { lane: 'screen', id: 'amnio', name: 'Amniocentesis', sub: 'diagnostic', s: 15, e: 21, soft: true, when: '15–20 wk', note: 'Samples fetal cells shed into the amniotic fluid. Miscarriage risk about 1 in 800 (~0.5%). Also an Rh-sensitizing event.', src: '4.16 · 5.14' },
+  { lane: 'screen', id: 'mss', name: 'Maternal serum screen', sub: 'if past the NT window', s: 16, e: 21, soft: true, when: '16–20 wk', note: 'Serum-only screening for women with no ultrasound access, or who present after 14 weeks and missed eFTS.', src: '4.16' },
+  { lane: 'screen', id: 'anat', name: 'Anatomy scan', sub: 'offered to everyone', s: 18, e: 22, when: '18–22 wk', note: 'Growth, number of fetuses, placental location (placenta previa), a screen of fetal anatomy (birth defects affect 2–3%) and soft markers for trisomy 21 and 18. A biophysical profile is not part of it.', src: '5.15' },
+  { lane: 'screen', id: 'term24', name: 'Decisions before 24 wk', m: 24, when: '24 wk', note: 'Termination for a fetal anomaly must happen before 24 weeks, so testing turnaround matters: NIPT ~10 days, microarray ~2 weeks.', src: '4.16' },
+
+  // labs
+  { lane: 'lab', id: 'booking', name: 'Booking bloodwork', sub: 'first visit', s: 6, e: 13, when: 'first visit, 1st trimester', note: 'Everyone: CBC, group & screen (blood type, Rh, antibodies), rubella immunity, hepatitis B, HIV, syphilis, gonorrhea/chlamydia and a urine culture. Selected women: TSH, hepatitis C/HSV, hemoglobinopathy screen.', src: '5.12' },
+  { lane: 'lab', id: 'gdm', name: 'Gestational diabetes screen', sub: '50 g glucose challenge', s: 24, e: 28, when: '24–28 wk', note: 'Non-fasting 50 g test: under 7.8 mmol/L stops; over 11.0 is diabetes; in between goes to a fasting 75 g test, where one high value makes the diagnosis.', src: 'course exam question' },
+  { lane: 'lab', id: 'titre', name: 'Antibody titres', sub: 'if sensitized', s: 8, e: 34, soft: true, when: 'monthly if under 1:8', note: 'A titre of 1:8 or more is critical. Below it, repeat monthly. Above it, watch the fetus with MCA Doppler, and deliver a stable sensitized pregnancy at 37–38 weeks.', src: '5.14' },
+  { lane: 'lab', id: 'gbs', name: 'GBS swab', s: 35, e: 37, when: '35–37 wk', note: 'Group B strep screening before birth, so a positive mother gets intrapartum antibiotics.', src: 'course quiz' },
+
+  // prevention
+  { lane: 'prev', id: 'folic', name: 'Folic acid', sub: 'from 3 months before', s: 0, e: 13, before: true, when: '−12 → 13 wk', note: '0.8–1 mg a day from three months before conception through the first trimester, to reduce neural tube defects.', src: '4.16 · 5.14' },
+  { lane: 'prev', id: 'flu', name: 'Influenza vaccine', sub: 'in flu season', s: 0, e: 40, soft: true, when: 'any gestation', note: 'Recommended at any gestational age, or postpartum, in flu season. Reduces maternal severity and transmission to the newborn.', src: '5.14' },
+  { lane: 'prev', id: 'rhig-event', name: 'Rh immunoglobulin', sub: 'after bleeding · procedure · trauma', s: 8, e: 40, soft: true, when: 'from 8–10 wk, if Rh-negative', note: 'Any bleeding, CVS/amniocentesis or trauma can leak fetal cells into her circulation. One dose covers about 12 weeks.', src: '5.14' },
+  { lane: 'prev', id: 'rhig', name: 'Rh immunoglobulin', sub: 'routine, if Rh-negative', s: 28, e: 30, when: '28–30 wk + postpartum', note: 'Routinely at 28–30 weeks, then again postpartum if the baby is Rh-positive. It clears fetal cells before her immune system learns to attack them.', src: '5.14' },
+  { lane: 'prev', id: 'tdap', name: 'Tdap (pertussis)', s: 27, e: 32, when: '27–32 wk', note: 'Every pregnancy. Maternal IgG crosses the placenta and protects the newborn from whooping cough.', src: '5.14' },
+  { lane: 'prev', id: 'live', name: 'No live vaccines', sub: 'MMR · varicella · BCG', s: 0, e: 40, fade: false, soft: true, when: 'all pregnancy', note: 'The only class held back, for a theoretical risk. A rubella-non-immune woman is vaccinated postpartum.', src: '5.14 · 5.12' },
+
+  // mother
+  { lane: 'mom', id: 'bpdip', name: 'Normal BP dip', s: 8, e: 24, soft: true, when: '8–12 wk, back by 20–24', note: 'Vascular resistance falls faster than blood volume rises, so BP drops from 8–12 weeks and returns to baseline by 20–24. High BP before 20 weeks is therefore chronic hypertension.', src: '5.16' },
+  { lane: 'mom', id: 'bp', name: 'BP every visit', sub: '≥140/90 after 20 wk = gestational', s: 20, e: 42, when: 'every visit', note: 'After 20 weeks, new hypertension is gestational; with proteinuria or organ or placental dysfunction it is preeclampsia. ≥160/110 is severe: treat urgently.', src: '5.16' },
+  { lane: 'mom', id: 'sfh', name: 'Fundal height', sub: 'cm ≈ weeks', s: 20, e: 40, when: 'from 20 wk', note: 'Fundus at the symphysis at 12 weeks and the umbilicus at 20. From 20 weeks the symphysis–fundal height in cm roughly equals the gestational age in weeks.', src: '5.12' },
+];
+
+const TRIMESTERS = [
+  { name: 'First trimester', s: 0, e: 14, range: '0 to 13+6 weeks', dev: 'From conception through organogenesis. Everything is set up here: the diagnosis, the due date, the baseline bloods and the aneuploidy screen.' },
+  { name: 'Second trimester', s: 14, e: 28, range: '14+0 to 27+6 weeks', dev: 'Fetal growth and the anatomy scan. Any hypertension from 20 weeks is pregnancy-related, and decisions about anomalies have to be made before 24 weeks.' },
+  { name: 'Third trimester', s: 28, e: 42, range: '28 weeks to birth', dev: 'Growth and maturation. Rh immunoglobulin, pertussis protection for the newborn, and the GBS swab before labour.' },
+];
+const VLINES = [{ w: 20, t: '20 wk', c: 'var(--mom)' }, { w: 24, t: '24 wk', c: 'var(--screen)' }, { w: 40, t: 'EDB 40+0', c: 'var(--dev)' }];
+const JUMPS = [[4, 'Missed period'], [7, 'Organogenesis'], [12, 'eFTS'], [20, 'Anatomy scan'], [26, 'GDM screen'], [29, 'RhIG · Tdap'], [36, 'GBS'], [40, 'Due date']];
+
+const pct = w => (w / MAXW * 100) + '%';
+const laneOf = k => LANES.find(l => l.key === k);
+const fmtW = w => { const wk = Math.floor(w), d = Math.round((w - wk) * 7); return wk + '+' + d; };
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+function buildChart() {
+  const chart = document.getElementById('chart');
+  let h = '<div></div><div class="trimesters">';
+  TRIMESTERS.forEach(t => h += `<div class="tri" style="left:${pct(t.s)};width:calc(${pct(t.e - t.s)} - 4px)">${t.name}</div>`);
+  h += '</div><div></div><div class="axis">';
+  for (let w = 0; w <= MAXW; w += 2) h += `<span class="tick ${w % 10 === 0 ? 'major' : ''}" style="left:${pct(w)}">${w}</span>`;
+  h += '</div>';
+  LANES.filter(l => SEL === 'all' || l.key === SEL).forEach(lane => {
+    h += `<div class="group-label" style="--c:${lane.c}">${lane.name}</div>`;
+    ITEMS.filter(i => i.lane === lane.key).forEach(i => {
+      h += `<div class="row"><div class="name"><div>${esc(i.name)}${i.sub ? `<small>${esc(i.sub)}</small>` : ''}</div></div><div class="track">`;
+      const lab = `${esc(i.name)}, ${esc(i.when)}`;
+      if (i.m !== undefined) {
+        h += `<button class="mk" data-id="${i.id}" style="--c:${lane.c};left:${pct(i.m)}" aria-label="${lab}"></button>`;
+        h += `<span class="barlabel" style="left:calc(${pct(i.m)} + 12px)">${esc(i.when)}</span>`;
+      } else {
+        const cls = ['bar', i.soft ? 'soft' : '', i.fade ? 'fade' : '', i.before ? 'from-before' : ''].join(' ');
+        h += `<button class="${cls}" data-id="${i.id}" style="--c:${lane.c};left:${pct(i.s)};width:${pct(i.e - i.s)}" aria-label="${lab}"></button>`;
+        if (i.tail) h += `<span class="bar soft" style="--c:${lane.c};left:${pct(i.e)};width:${pct(i.tail - i.e)};pointer-events:none"></span>`;
+        (i.marks || []).forEach(m => h += `<span class="mk" style="--c:${lane.c};left:${pct(m)};pointer-events:none;width:10px;height:10px;margin-left:-5px;top:11px"></span>`);
+        const end = Math.max(i.e, i.tail || 0);
+        const labelLeft = end > 33 ? `left:calc(${pct(i.s)} - 8px);transform:translateX(-100%)` : `left:calc(${pct(end)} + 8px)`;
+        if (!(i.s === 0 && i.e >= 40)) h += `<span class="barlabel" style="${labelLeft}">${esc(i.when)}</span>`;
+      }
+      h += '</div></div>';
+    });
+  });
+  h += '<div class="overlay" id="overlay">';
+  VLINES.forEach(v => h += `<div class="vline" style="--c:${v.c};left:${pct(v.w)}"><span>${v.t}</span></div>`);
+  h += '<div class="cursor" id="cursor"></div></div>';
+  chart.innerHTML = h;
+  chart.classList.toggle('focused', SEL !== 'all');
+  if (!chart.dataset.wired) chart.dataset.wired = 1, chart.addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) focusItem(b.dataset.id); });
+}
+
+function itemCard(i) {
+  const lane = laneOf(i.lane);
+  return `<article class="item" id="card-${i.id}" style="--c:${lane.c}"><div><h3>${esc(i.name)} <span class="when">${esc(i.when)}</span></h3><p>${esc(i.note)}</p><span class="src">${esc(i.src)}</span></div></article>`;
+}
+
+function buildTri() {
+  const sec = document.getElementById('triSections');
+  sec.innerHTML = TRIMESTERS.map(t => {
+    const its = ITEMS.filter(shown).filter(i => { const s = i.m ?? i.s, e = i.m ?? i.e; return s < t.e && (e >= t.s) && !(i.s === 0 && i.e >= 40) && !(i.lane === 'dev' && i.id === 'fetal' && t.s > 0) && s >= t.s - 0.01; });
+    return `<div class="tri-sec"><div><h2>${t.name}</h2><div class="range">${t.range}</div><p class="dev">${t.dev}</p></div><div class="cards">${its.map(itemCard).join('')}</div></div>`;
+  }).join('') + `<div class="tri-sec"><div><h2>All the way through</h2><div class="range">0 to 40 weeks</div></div><div class="cards">${ITEMS.filter(shown).filter(i => i.s === 0 && i.e >= 40).map(itemCard).join('') || '<p class="empty">Nothing in this category runs all pregnancy.</p>'}</div></div>`;
+}
+
+function setWeek(w) {
+  w = Math.max(0, Math.min(MAXW, w));
+  document.getElementById('week').value = w;
+  const cur = document.getElementById('cursor');
+  cur.style.left = pct(w); cur.dataset.w = fmtW(w) + ' wk';
+  const [wk, d] = fmtW(w).split('+');
+  document.getElementById('bigWeek').innerHTML = `${wk}<small>+${d} wk</small>`;
+  const tri = TRIMESTERS.find(t => w >= t.s && w < t.e) || TRIMESTERS[2];
+  document.getElementById('triNow').textContent = w >= 42 ? 'Post-dates' : tri.name;
+  document.getElementById('readTitle').textContent = `Happening at ${fmtW(w)} weeks`;
+  const active = ITEMS.filter(shown).filter(i => i.m !== undefined ? Math.abs(i.m - w) <= 1 : (w >= i.s && w <= Math.max(i.e, i.tail || 0)));
+  active.sort((a, b) => LANES.findIndex(l => l.key === a.lane) - LANES.findIndex(l => l.key === b.lane));
+  document.querySelectorAll('.bar[data-id], .mk[data-id]').forEach(b => b.classList.toggle('on', active.some(a => a.id === b.dataset.id)));
+  document.getElementById('readList').innerHTML = active.length ? `<div style="display:grid;gap:10px">${active.map(itemCard).join('').replace(/id="card-/g, 'data-card="')}</div>` : `<p class="empty">Nothing from ${SEL === 'all' ? 'any category' : SHORT[SEL].toLowerCase()} this week. Drag the slider or pick another tab.</p>`;
+}
+
+function focusItem(id) {
+  const i = ITEMS.find(x => x.id === id); if (!i) return;
+  setWeek(i.m ?? i.s + Math.min(1, (i.e - i.s) / 2));
+  const card = document.getElementById('card-' + id);
+  document.getElementById('readTitle').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  if (card) { card.classList.add('flash'); setTimeout(() => card.classList.remove('flash'), 1600); }
+}
+
+function buildTabs() {
+  const opts = [{ key: 'all', c: 'var(--ink)' }, ...LANES];
+  document.getElementById('tabs').innerHTML = opts.map(o => {
+    const n = o.key === 'all' ? ITEMS.length : ITEMS.filter(i => i.lane === o.key).length;
+    return `<button type="button" role="tab" id="tab-${o.key}" data-k="${o.key}" style="--c:${o.c}" aria-selected="${o.key === SEL}">${o.key === 'all' ? '' : '<i></i>'}${o.key === 'all' ? 'Everything' : SHORT[o.key]}<span class="n">${n}</span></button>`;
+  }).join('');
+}
+function select(k) {
+  SEL = k; try { localStorage.setItem('fwm-tab', k); } catch (e) {}
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.k === k));
+  const lane = LANES.find(l => l.key === k);
+  document.getElementById('laneHead').hidden = !lane;
+  document.getElementById('legend').hidden = !!lane;
+  if (lane) { document.getElementById('laneTitle').textContent = lane.name; document.getElementById('laneTitle').style.color = lane.c; document.getElementById('laneBlurb').textContent = BLURB[k]; }
+  buildChart(); buildTri(); setWeek(+document.getElementById('week').value);
+}
+buildTabs();
+document.getElementById('tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) select(b.dataset.k); });
+document.getElementById('tabs').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const bs = [...document.querySelectorAll('#tabs button')]; const i = bs.findIndex(b => b.dataset.k === SEL);
+  const n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; select(n.dataset.k); n.focus();
+});
+if (!['all', ...LANES.map(l => l.key)].includes(SEL)) SEL = 'all';
+buildChart(); buildTri();
+document.getElementById('jumps').innerHTML = JUMPS.map(([w, t]) => `<button type="button" data-w="${w}">${t}</button>`).join('');
+document.getElementById('jumps').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setWeek(+b.dataset.w); });
+document.getElementById('week').addEventListener('input', e => setWeek(+e.target.value));
+select(SEL);
+setWeek(12);
+</script>
+</body>
+</html>

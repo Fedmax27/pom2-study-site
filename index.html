@@ -13,6 +13,13 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-title" href="index.html">POM<span>2</span></a>
+      <nav class="unit-nav">
+        <a class="unit-nav-item is-active" href="index.html">POM2</a>
+        <a class="unit-nav-item" href="qbank/index.html">Qbank</a>
+        <a class="unit-nav-item" href="review/index.html">Review</a>
+        <a class="unit-nav-item" href="emerg/index.html">Emerg</a>
+        <a class="unit-nav-item" href="topics/index.html">Topics</a>
+      </nav>
     </div>
   </header>
 
@@ -20,20 +27,32 @@
     <div class="hero">
       <div class="hero-eyebrow">Principles of Medicine 2</div>
       <h1>Course Units</h1>
-      <p>Five units, worked through in order. Endocrinology and Female Reproductive are underway; the rest unlock as the syllabus is filled in.</p>
+      <p>Five units, worked through in order. Endocrinology, Female Reproductive and Musculoskeletal are underway; the rest unlock as the syllabus is filled in.</p>
     </div>
 
-    <section class="daily-case-banner">
+    <section class="daily-case-banner review-banner">
       <div>
-        <span class="daily-case-tag">Daily Case &middot; Emergency Medicine Workshop</span>
-        <h2>The Number That Was Never Going to Be the Diagnosis</h2>
-        <p>A sim lab built on a real hypercalcemic crisis &mdash; you order the investigations yourself and only get back what you ask for, convert and correct the calcium, then find the single test that splits the entire differential in half.</p>
+        <span class="daily-case-tag">Qbank &middot; Progress Test 1 is Wed Oct 14</span>
+        <h2>Question bank: 400+ Endo, 400+ Repro</h2>
+        <p>Patient-style questions for every lecture, sorted by week. Tutor or timed mode, a 100-question mock progress test, and misses that come back until they stick.</p>
       </div>
       <div class="daily-case-banner-actions">
-        <a class="daily-case-start-link" href="daily-case/2026-09-05/index.html">Start Workshop &rarr;</a>
-        <a class="daily-case-archive-link" href="daily-case/index.html">All cases &rarr;</a>
+        <a class="daily-case-start-link" href="qbank/index.html">Open the qbank &rarr;</a>
       </div>
     </section>
+
+    <section class="daily-case-banner review-banner">
+      <div>
+        <span class="daily-case-tag">Review &middot; Progress Test 1 is Wed Oct 14</span>
+        <h2>Review by system: Endo done, Repro started</h2>
+        <p>Four Endo modules, and Repro 1 &middot; Pelvic Pain &amp; Abnormal Bleeding is ready (five more Repro modules on the way). Each has a warm-up, the high-yield tables and pictures, and a final quiz.</p>
+      </div>
+      <div class="daily-case-banner-actions">
+        <a class="daily-case-start-link" href="review/repro-1-pelvic-pain-bleeding/index.html">Start Repro 1 &rarr;</a>
+        <a class="daily-case-archive-link" href="review/index.html">All reviews &rarr;</a>
+      </div>
+    </section>
+
 
     <div class="unit-grid">
 
@@ -51,12 +70,12 @@
         <div class="unit-card-meta"><span>Week 4</span><span>Start &rarr;</span></div>
       </a>
 
-      <div class="unit-card is-disabled" style="--unit-color:#2563eb">
+      <a class="unit-card is-linked" style="--unit-color:#2563eb" href="units/musculoskeletal/index.html">
         <span class="unit-card-index">Unit 3</span>
         <h3>Musculoskeletal</h3>
         <p>Bone, joint, muscle, and connective tissue &mdash; from trauma to rheumatologic disease.</p>
-        <div class="unit-card-meta"><span class="badge coming-soon">Coming soon</span></div>
-      </div>
+        <div class="unit-card-meta"><span>Week 7</span><span>Start &rarr;</span></div>
+      </a>
 
       <div class="unit-card is-disabled" style="--unit-color:#0891b2">
         <span class="unit-card-index">Unit 4</span>
@@ -73,12 +92,25 @@
       </div>
 
     </div>
+
+    <h2 class="section-label">Emergency Medicine &middot; separate from the course</h2>
+    <section class="daily-case-banner em-banner">
+      <div>
+        <span class="daily-case-tag">Emerg Cheat Sheets &middot; Rosen&rsquo;s 9th ed.</span>
+        <h2>Signs, Symptoms &amp; Presentations</h2>
+        <p>One sheet per chapter, Fever to Back Pain. Each runs differentials, history, physical exam, investigations, then decision rules.</p>
+      </div>
+      <div class="daily-case-banner-actions">
+        <a class="daily-case-start-link" href="emerg/index.html">Open cheat sheets &rarr;</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     POM2 &mdash; a work in progress.
   </footer>
 
+  <script src="assets/js/topics.js"></script>
   <script src="assets/js/search.js"></script>
 </body>
 </html>

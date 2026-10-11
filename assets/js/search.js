@@ -201,7 +201,7 @@
     return out;
   }
 
-  const KIND_LABEL = { lecture: "Lecture", case: "Daily Case", exam: "Exam", page: "Page" };
+  const KIND_LABEL = { lecture: "Lecture", case: "Daily Case", exam: "Exam", cheat: "Cheat Sheet", page: "Page" };
 
   function render(query) {
     const el = list();
@@ -209,7 +209,7 @@
 
     if (!query.trim()) {
       el.innerHTML =
-        '<div class="search-empty">Search across every lecture, Daily Case and exam question.</div>';
+        '<div class="search-empty">Search across every lecture, cheat sheet and exam question.</div>';
       return;
     }
     if (!results.length) {

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Topics to Review | POM2</title>
+  <script src="../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="../index.html">POM<span>2</span></a>
+      <nav class="unit-nav">
+        <a class="unit-nav-item" href="../index.html">POM2</a>
+        <a class="unit-nav-item" href="../qbank/index.html">Qbank</a>
+        <a class="unit-nav-item" href="../review/index.html">Review</a>
+        <a class="unit-nav-item" href="../emerg/index.html">Emerg</a>
+        <a class="unit-nav-item is-active" href="../topics/index.html">Topics</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a> /
+    Topics to Review
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="hero-eyebrow">Your list</div>
+      <h1>Topics to Review</h1>
+      <p>Anything you want to come back to. Type a topic and pick a matching page to link it, or press <strong>＋ Review</strong> in the header of any lecture or cheat sheet to add the section you're reading. Tick topics off as you review them.</p>
+    </div>
+
+    <div id="tp-app" class="tp-app">
+      <form class="tp-add" autocomplete="off">
+        <div class="tp-add-row">
+          <div class="tp-add-field">
+            <input class="tp-add-text" type="text" maxlength="200" placeholder="What do you want to review? e.g. brachial plexus, DKA fluids" aria-label="New topic">
+            <div class="tp-sug" hidden></div>
+          </div>
+          <select class="tp-add-unit" aria-label="Unit"></select>
+          <button type="submit" class="tp-btn">Add</button>
+        </div>
+        <div class="tp-add-chip" hidden></div>
+        <textarea class="tp-add-note" rows="1" maxlength="600" placeholder="Note (optional): what to focus on, where you got stuck"></textarea>
+      </form>
+
+      <div class="tp-bar">
+        <div class="tp-tabs" role="tablist">
+          <button type="button" class="tp-tab" data-f="todo">To review <span></span></button>
+          <button type="button" class="tp-tab" data-f="done">Done <span></span></button>
+          <button type="button" class="tp-tab" data-f="all">All <span></span></button>
+        </div>
+        <span class="tp-count"></span>
+      </div>
+      <div class="tp-units"></div>
+
+      <ul class="tp-list"></ul>
+
+      <div class="tp-foot">
+        <span>Saved in this browser only. Export a backup to move your list to another device.</span>
+        <span class="tp-foot-btns">
+          <button type="button" class="tp-btn is-ghost tp-export">Export</button>
+          <button type="button" class="tp-btn is-ghost tp-import">Import</button>
+          <input type="file" class="tp-import-file" accept="application/json,.json" hidden>
+        </span>
+      </div>
+      <div class="tp-toast" role="status" hidden></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    POM2 &mdash; a work in progress.
+  </footer>
+
+  <script src="../assets/js/topics.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>
