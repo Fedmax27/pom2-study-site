@@ -4859,6 +4859,7 @@ a.rv-card:hover { border-color: var(--color-primary); text-decoration: none; tra
 .cs-pill.is-red { background: var(--cs-crit-bg); color: var(--cs-crit); border: 1px solid var(--cs-crit-line); }
 .cs-pill.is-beyond { background: var(--cs-non-bg); color: var(--cs-non); border: 1px dashed var(--cs-non-line); }
 .cs-pill.is-ok { background: var(--cs-ok-bg); color: var(--cs-ok); border: 1px solid var(--cs-ok-line); }
+.cs-pill.is-emer { background: var(--cs-emer-bg); color: var(--cs-emer); border: 1px solid var(--cs-emer-line); }
 
 /* Decision-rule cards */
 .cs-rule {
@@ -5298,6 +5299,21 @@ a.cs-card:hover { border-color: var(--em-color); text-decoration: none; transfor
   :root:not([data-theme="light"]) .cs-flow { --flow-line: #7d7796; }
 }
 :root[data-theme="dark"] .cs-flow { --flow-line: #7d7796; }
+
+/* Three-column tables on a sheet stack into cards on a phone,
+   each cell labelled with its column, instead of scrolling sideways. */
+@media (max-width: 600px) {
+  .data-table.cs-stack { display: block; overflow: visible; font-size: 0.88rem; }
+  .data-table.cs-stack thead { display: none; }
+  .data-table.cs-stack tbody, .data-table.cs-stack tr, .data-table.cs-stack td { display: block; width: auto; }
+  .data-table.cs-stack tr { border: 1px solid var(--color-border); border-radius: 8px; margin: 0 0 0.5rem; padding: 0.4rem 0.65rem; }
+  .data-table.cs-stack td { border: 0; padding: 0.15rem 0; }
+  .data-table.cs-stack td:first-child { font-weight: 700; }
+  .data-table.cs-stack td[data-label]::before {
+    content: attr(data-label); display: block; margin-top: 0.2rem;
+    font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted);
+  }
+}
 
 /* ============================================================
    Topics to review: the list page (#tp-app) and the "+ Review"
